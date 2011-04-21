@@ -1,0 +1,80 @@
+
+_________________________________________________________________________________________________________
+
+1) Beslutning vedr. valg af samarbejdspartner (og, i forlængelse heraf, projektet): 
+
+Naja svarer DKUUG og siger at onsdag aften er et godt tidspunkt for et møde. 
+Lasse laver et udkast til en præsentation. 
+Lasse laver et udkast til en liste af mål vi vil opnå ved mødet (til brug ved evaluering senere). 
+
+Naja svarer Greve og prøver at sætte en aftale op med Greve gymnasium om et møde i starten a kommende uge. 
+Ligemeget hvad vil vi gerne bibeholde kontakten til Greve gymnasium. 
+Simon melder sig til at lave udkast. 
+Lasse laver et udkast til en liste af mødets mål. 
+
+Naja er ordfører på møderne. 
+Arinbjørn er referent. 
+
+____________________________________________________________________________________________________________
+
+2) Versionsstyringsværktøj: 
+
+Vi har besluttet os for git, og Søren har meldt sig til at være ansvarlig for at sætte det op på Simons
+server. 
+
+____________________________________________________________________________________________________________
+
+3) Objektorienteret analyse og design-modellen: Problemer ifbm vores projekt
+
+Vi har observeret at der er visse problemer forbundet med at sammenkæde bogens analysestrategi med 
+(hvad der lader til at blive) vores projekts indhold. Bogens metode er øjensynligt lagt an på systemer
+som refererer til/monitorerer/modellerer fysiske objekter ude i verdenen, og det har man indtil videre
+ikke kunnet sige om vores projekt. 
+
+Naja: Kan vi ikke bare lade være med at bruge bogens metode? Selve metoden udspecificerer jo at det er
+vigtigt at skræddersy model/metode til det forhåndeværende projekt, så vi burde vel kunne beslutte os
+for simpelthen at benytte et andet teoretisk grundlag end OOAD. 
+
+Djangolas: NEJ. Det er ikke 'ulovligt' at gøre ovenstående, men det er meget besværligt og dumt
+ifbm. kursets læringsplaner. Det er samlet set mest anbefalelsesværdigt at finde et projekt som er
+nemt at håndtere under OOAD. Heldigvis skal der ikke særlig innovation til for at omdefinere vores 
+hidtdige projekt indefor rammer der passer til bogens opfattelsesmåde: Hvis vi beslutter at lade 
+værktøjssiden arbejde med brugere (så at man som elev kan logge ind, gennemføre tutorials og ændre 
+på sin 'score') bliver det med det samme nemmere at tænke på projektet i termer af objekter, klasser
+o. lign. 
+____________________________________________________________________________________________________________
+
+4) Referatstrategi: Dagbogsføring
+
+Efter at have læst artiklen af Jepsen et al. ('Back to thinking mode') er vi i gruppen ret vilde med
+idéen om at bruge kollektive dagbøger som et led i projektstyringen. Vi synes det virker som en fornuftig
+måde at holde øje med om vi når det vi skriver op som vores mål. 
+
+Det indebærer indtil videre at vi, udover at skulle forberede points til præsentationer til de forskellige 
+møder i den kommende uge, også skal lave en liste af mål vi gerne vil opnå med bemeldte møder. Det er anført
+i referatet ovenfor
+____________________________________________________________________________________________________________
+
+5) Rapport/Interviewforberedelse: 
+
+
+
+Opgaver til næste møde
+
+- OPsættelse af wiki (simon!)
+- opsættelse af git på simons server (Søren)
+- Overførelse af hidtidigt materiale på den nye wiki (naja)
+- Fremstilling af præsentation+forventningsplaner til DKUUG-møde (Lasse)
+- Fremstilling af præsentation+forventningsplaner til Greve-møde (Simon)
+- Svar til Greve (Naja)
+ 
+
+
+
+
+
+
+ 
+
+
+

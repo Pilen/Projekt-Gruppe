@@ -1,0 +1,63 @@
+Dagsorden for møde d. 22/02/2011
+
+Tilstedeværende: Alle
+Afmeldte: Ingen
+Udeblevne: Ingen
+
+Siden sidst:
+	- Status på wiki
+		Vi venter på at Simon får løn (det gør han den første), for at han kan købe et modem. 
+		Wikien er oppe og køre om en uge. 
+
+	- Status på git
+		Vi bruger github. Vi har ikke sat det op endnu, men det burde være nemt nok. 
+
+	- Status på div. doodles
+		Alle skal besvare doodles. Lasse vælger den bedste dag og sender ud på listen
+				
+	- Status på korrespondance m. Greve
+		Bo har ferie i denne uge, sp Greve gymnasium er lukket. Naja har skrevet til ham
+		for at høre om han kan mødes alligevel - han har ikke svaret endnu. 
+		
+	
+Arinbjørn skal bringes up-to-date: 
+	- Sidste mødes beslutninger (dagbogsreferatteknik, objektbrainstorm)
+		Naja fortæller, Arinbjørn nikker og smiler. 
+
+Projektsamarbejde: 
+	- Hvordan undgår vi pjat til møderne uden at kede os?
+		- Ikke nogen åbne datamater udover referat-datamaten
+		- Det er vigtigt at vi husker at det ikke udelukkende er kode-arbejdet der er vigtigt i PK-SU. 
+		- Vi skal begynde at holde pauser i møderne så at vi ikke bliver for trætte. 
+		- Vi kan ikke lide at holde møder på nuværende tidspunkt fordi det ikke virker som om vi har så
+                  meget at snakke om mht. projektet. 
+
+Præsentation til DKUUG: Vis os hvad I har
+		- Det er vigtigt at huske at selvom Greve virker som et mere oplagt 
+		- Det vi forventer af mødet: Så mange konkrete projektidéer som muligt
+		- Vi skal huske ikke at afbryde for at forklare hvad det er vi gerne vil - 
+		  - det vigtige ved mødet er det input vi får fra DKUUG, ikke hvad vi kan give dem. 
+
+Forberedelse af kommende delrapport
+	- Hvem laver hvad?
+	- Det ligner ikke at opgaven er så omfattende i denne omgang - vi uddeler de specifikke arbejdsopgaver
+	  efter mødet i morgen. 
+	
+Eventuelt
+	- Der er ikke nogen der har noget til eventuelt. 
+
+
+Opgaver til næste møde
+	- Simon skal skrive forventningsdokumenter til Greve-mødet
+	- Naja skal sørge for et møde med Greve
+	- Arinbjørn skal læse om referater
+	- Vi vil gerne have en wiki snart. 
+ 
+
+Tid og sted for næste møde: 
+I morgen 16:45 ude hos DKUUG. 
+
+
+
+
+
