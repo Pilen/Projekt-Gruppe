@@ -1,0 +1,83 @@
++--------------------------------+
+| Referat for møde 15/02/2011: |
++--------------------------------+
+
+Småkager fra Naja 
+Præsentation af projektidéen til Arinbjørn
+
+Ikke nødvendigt
+
+Siden sidst
+	- Velkommen til Arinbjørn
+	- Status på mailingliste
+		- Vi har ikke fået lov af staff til at få vores egen mailingliste, øv øv
+		- Lasse kigger på at opsætte mailingliste på sin egen server
+	- Status på wiki
+		- Simon sætter et system op i løbet af vinterferien
+	- Mail
+		- Vi skal skrive to forskellige mails: én til dkuug og én til gymnasierne
+		- Naja færdiggør skitser og sender dem ud til listen i dag tirsdag
+		- Vi ringer og nulrer instruktor-lasse for at få input til mailen så hurtigt som muligt
+		- ALLE hjælper med at finde mails at sende ud til efter mødet. 
+		- Mail skal sendes ud i aften/ i morgen. Det gør Naja. 
+
+Diskussion af gruppens organisation
+	- Opdeling i teams?
+		- Vi vil gerne vente til vi ved hvad projektet kommer til at være
+		- En mulig opdeling: netværk/django og applikationer
+		- Naja foreslår et suppleant-system som skal tænkes ind i den endegyldige opdeling
+
+	- Håndtering af SLACK
+		- Beslutning: Hvis man misser tre møder (og ikke har haft virkelig god grund)
+		  skal éns medlemsskab af gruppen tages alvorligt op til overvejelse blandt de
+		  andre gruppemedlemmer. 
+
+	- Naja har forberedt et Getting-to-know-you spørgeskema - udfyld og indsend prompte!
+		- Lasse og Simon og Naja mangler udyfyldning. 
+
+	- Systemvalg: 
+		- Vi har besluttet os for at kode i python
+		- Hvis det bliver webudvikling har vi besluttet at bruge frameworket django
+
+Skemalægning: 
+	- Datoer for python/django/unix-playday skal planlægges: 
+		- Måneden skal være marts
+		- Lasse sender doodle ud!
+	- Faste mødedage skal fastlægges
+		- Vi har besluttet: Vi mødes tirsdage efter øvelsestimer og torsdage 10:00 i
+		  i terminalrummet.
+	- Vi koordinerer fælles deltagelse om torsdagen
+
+Rapportforberedelse: 
+	- Vi skal alle sammen læse om BATOFF, for det er en vigtig del af kravene til den 
+	  kommende rapport.
+	- Formatvalg: Kender alle teX?
+		- Undtagen Arinbjørn: Ja. Arinbjørn kigger på TeX på sin DIKU-stick. 
+		- Vi skriver i TeX, har vi besluttet. 
+		- Der burde skrives noget om TeX på dikutal om LaTeX, siger Søren. 
+
+Eventuelt
+
+	- Vi skal have mere seriøsitet til møderne. Fremover holder vi dem ikke i kantinen. 
+	- Næste gang holder vi en times fri inden mødet. 
+
+Opgaver til næste gang
+
+	- Folk skal TÆPPEBOMBES med mails (Naja)
+	- Opsætning af mailingliste (Lasse)
+	- Opsætning af wiki (Simon)
+	- Udfyldning af spørgeskema (Naja, Simon, Lasse)
+	- Udsending af python-playday-doodle (Lasse)
+	- Lavning af program til python/django-playday (Søren)
+	- Læsning om BATOFF (ALLE)
+	- Indsættelse i python (Arinbjørn)
+
+
+Tid og sted for næste møde
+
+	ER: torsdag kl. 10:00 (INTET AKADEMISK KVARTER)
+
+
+
+	
+

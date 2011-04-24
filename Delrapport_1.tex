@@ -1,0 +1,211 @@
+\documentclass[10pt,a4paper,danish]{article}
+%% Indlæs ofte brugte pakker
+\usepackage{amssymb}
+\usepackage[danish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\rhead{\today}
+\rfoot{\thepage}
+
+% Opsæt indlæsning af filer
+\lstset{
+  language=Python,
+  extendedchars=\true,
+  inputencoding=utf8,
+  linewidth=\textwidth, basicstyle=\small,
+  numbers=left, numberstyle=\footnotesize,
+  tabsize=2, showstringspaces=false,
+  breaklines=true, breakatwhitespace=false,
+}
+
+%% Titel og forfatter
+\title{Informationsteknologi: Projekt e-læring \\ Projektkursus: Systemudvikling \\Forår 2011}
+\author{Arinbjørn Brandsson (hkt789)\\Lasse Ahlbech Madsen (xsc606)\\Naja Mottelson (vsj465)\\Simon Maibom (xvm226) \\Søren Pilgård (vpb984)\\
+\\
+Gruppeid : LO6\\
+\\Instruktor: Lasse Nørregaard}
+
+
+%% Start dokumentet
+\begin{document}
+
+%% Vis titel
+\maketitle
+\newpage
+
+%% Vis indholdsfortegnelse
+\tableofcontents
+\newpage
+
+%% HER STARTER RAPPORTEN
+
+\section{Formål}
+Formålet for vores projekt er at fremstille et interaktivt e-læringsværktøj til brug i undervisningen af det kommende gymnasiefag Informationsteknologi. Værktøjet vil fokusere på at introducere eleven til grundlæggende progammeringsteknikker i forbindelse med udvikling af simple spil. Det vil som sådan henvende sig til elever med ingen eller meget begrænset datalogisk erfaring, og assistere dem i de første spæde skridt ved gradvist at stille eleven forskellige opgaver af stigende sværhedsgrad. Værktøjet vil altså fungere som et supplement til den klassiske tekstbogsbaserede tavleundervisning, men også til den almindelige indlæring vha. tutorial-hjemmesider på nettet. Modsat disse undervisnings- og indlæringsformer vil vores program bygge på løbende interaktion med eleven og som sådan fordre en mere aktiv, kreativ og konkret problemløsningsorienteret involvering fra elevens side. 
+
+Vi har valgt at lade værktøjet fokusere på spiludvikling af flere årsager: Først og fremmest er spil og spiludvikling emner som i forvejen interesserer mange mennesker i vores aldersmålgruppe, og som de fleste er bekendt med. Dernæst taler spiludvikling umiddelbart til de flestes fantasi og kreative impulser, og er som sådan godt egnet som emne for introduktionsmateriale. Tillige vil produktionen af et mindre, fungerende spil give eleven et konkret produkt imellem hænderne, som de selv vil kunne bygge videre på i fremtiden.
+
+I nærværende rapport (samt i det projektarbejde der ligger til grund for den) benytter vi den analysemetode og terminologi som findes i kursets lærebog \emph{Objektorienteret analyse og design}. 
+
+\section{Systemdefinition m. BATOFF}
+\subsection{Systemdefinition}
+Systemet består af et digitalt interaktivt læringsværktøj hvis mål er at indføre elever på gymnasiefaget Informationsteknologi i programmering af systemer i forskellig størrelse. Disse systemer vil primært være fokuseret på udvikling af spil, men bredt datalogisk kompetencegivende. Systemet opbygges som et Integreret Udviklings Miljø (IDE) med et centralt tekstredigeringsværktøj og en række præetablerede programmeringsforløb som eleven kan deltage i. Et forløb består af en række trin - konkrete programmeringsopgaver som hver indeholder en beskrivelse, en række hints samt et sæt tests der holder styr på om brugeren har opfyldt målet for hvert trin. Når brugeren har gennemgået alle trinene vil vedkommende have et komplet spil der kan afvikles seperat fra Udviklingsværktøjet. Systemet vil blive udviklet som en skrivebordsapplikation der kan afvikles lokalt på den enkelte brugers datamat/foldedatamat eller på datamater i gymnasiets eventuelle it-rum.
+
+\subsection{BATOFF}
+\begin{itemize}
+\item \textbf{Betingelser}: Gymnasieelever med begrænsede programmering- og systemudviklingserfaringer. 
+\item \textbf{Anvendelsesområde}: Eleven som bruger af systemet. Hvis værktøjet instaleres centralt på et
+gymnasiums datamater vil der typisk være en Itadministrator hvis rolle er at opsætte systemet.
+\item \textbf{Teknologi}: Systemet designes til at kunne køre på almindelige hjemmedatamater/foldedatamater.
+Systemet vil blive baseret på python samt forskellige biblioteker dertil.
+\item \textbf{Objekter}: En bruger som udvikler et spil i forbindelse med et forløb af opgaver. 
+\item \textbf{Funktion}: Udvikling af spil.
+\item \textbf{Filosofi}:  Digitalt interaktivt læringsværktøj
+\end{itemize}
+
+\section{Omgivelser}
+\subsection{Forbilleder}
+Vi har under projektarbejdet fundet to forskellige undervisningsværktøjer som på hver sin måde tjener som rollemodeller for det program vi gerne vil skrive. Først kan nævnes hjemmesiden tryruby.org (http://tryruby.org/). tryruby.org er et interaktivt læringsværktøj som hjælper én til at forstå og afprøve  programmeringssproget ruby på en simpel måde. tryruby.org bygger på nogle enkle idéer som vi gerne vil integrere i projektet:
+\begin{itemize}
+\item Siden giver interaktiv hjælp til givne, konkrete problemer.
+\item Siden øger nivuauet over tid, fra nemt til sværere.
+\item Siden tester om brugeren du har kodet korrekt.
+\end{itemize}
+Vores system skal kunne hjælpe brugeren med kodeprocessen, i en situation hvor man kan forvente at brugeren har meget lidt kodeerfaring. Derfor er det nødvendigt at have disse egenskaber i vores system. \\
+\newline
+
+Programmet Greenfoot (http://www.greenfoot.org/) er en editor designet til begyndere. Den gør det nemt for nye brugere at finde rundt i deres objekter og tilbyder muligheden for interaktion med disse på en visuel metode. Den er bygget på følgende centrale idéer:
+\begin{itemize}
+\item Siden tilbyder en nem og intuitiv måde at interagere med objekter i koden. 
+\item Siden visualiserer koden i letforståelige grafiske objekter
+\end{itemize}
+Greenfoot gør det nemt at se den proces der foregår mens man skriver koden, hvilket gør hele indlæringsprocessen mindre skræmmende for den uerfarne prorammør.
+
+\subsection{Metaforer}
+Vi har indtil videre identificeret to metaforiske grupper som kunne være interessante at arbejde med. På den ene side kan det være givtigt er at tænke på programmet som en virtuel \emph{sandkasse} eller en \emph{legeplads}. Med denne metaforik understreges programmeringen som en fri leg, noget uden begrænsninger og med masser af muligheder og fantasi. En legeplads/sandkasse er et sted hvor man har mulighed for at eksperimentere og finde sine egne løsninger på problemer, hvilket er noget vi gerne vil opnå med programmet. Med sin meget positive ladning er legeplads/sandkassemetaforikken ligeledes egnet til at snakke med lægfolk om projektet. 
+
+En anden intuitiv måde at tænke på projektet er som en slags virtuel \emph{øvelsestime}, eller på programmet selv som en slags \emph{øvelseslærer}. Her understreges programmet som værende hjælpsomt, tryghedsskabende og til stede når man løber ind i problemer man ikke selv kan løse. Værktøjet bliver en slags guide gennem programmering som kan stille opgaver, forklare og give hints.
+
+\subsection{Problemområde}
+Den grundliggende problemstilling vi vil forsøge at løse er at elever på gymnasiefaget Informationsteknologi skal lære at programmere. Derfor er det naturligt at arbejde med en \emph{bruger} som igennem arbejdet med værktøjet tilegner sig kompetencer inden for programmering og systemudvikling.
+Brugeren vil følge et \emph{forløb} som i et tilpas tempo vil indføre brugeren i stadigt sværere og mere avancerede problemstillinger samt værktøjer til at løse disse.
+\newline
+\newline
+Ved at arbejde ud fra et forløb sikres at eleven vil have forudsætningerne til at løse de forskellige opgaver som forekommer undervejs.
+Konkret vil hvert forløb handle om at udvikle et \emph{spil}. Dette har den fordel at spil fordrer brugerens fantasi og kreativitet samtidigt med at problemstillingerne ved udviklingen er bredt dækende for mange af de udfordringer man kan møde i udvikling af anden programmel.
+Da en stor del af de studerende på faget kan antages at være drenge med en interesse for datamater, vil en del af dem højst sansyndligt også have en interesse for spil. Udvikling af spil som indlæringsform kan derfor være motiverende på en sådan måde at brugeren fortsætter med udviklingen af spillet efter det konkrete forløb er overstået.
+\newline
+\newline
+Vi arbejder altså med en bruger, et spil og et forløb. Et forløb ses illustreret på Figur 2. Et forløb består af en række trin der gennemgås lineært af brugeren. Det første trin er opsætningen - her opsættes spillet så det er klar til at brugeren kan udvikle på det. Herefter kommer en række trin bestående af 3 dele: først en beskrivelse af hvad dette trin går ud på. I beskrivelsen forklares de generelle koncepter brugeren skal lære samt den konkrete opgave han står overfor. Eventuelle ledetråde findes også her. Anden del af hvert trin er at brugeren prøver at løse den konkrete opgave via kode. Når brugeren har kodet færdigt kommer 3. del af trinnet - Her køres unittests af brugerens kode. Hvis afprøvingerne fejler ved vi at brugerens kode ikke er god nok og trinet gentages. Beskrivelsen kan evt. uddybes med råd alt efter hvilke unittests der fejlede. Hvis afprøvingerne er succesfulde ved vi at brugeren har gennemført opgaven tilfredsstillende og han føres videre til næste trin. Når alle trin er gennemført er forløbet færdigt.
+
+
+
+\subsection{Anvendelsesområde}
+Anvendelsesområdet består af et gymnasium som udbyder faget Informationsteknologi. Mere konkret vil andvendelsesområdet bestå af eleverne som  benytter programmet til at gennemgå et indlæringsforløb. Der vil ikke være fokus på læreren som blot vil fungere som udbyder af værktøjet.
+I og med at værktøjet fokuserer på et valgfag hvori der undervises i programmering kan vi antage at vores bruger har i hvertfald en basal forståelse for at kode. Da faget er et valgfag er der også mulighed for at eleverne interesserer sig for datamater og har forudgående erfaring med programmering. Når værktøjet er færdigt er der rig mulighed for at udbrede det til folk med interesse for programmering og et tilsvarende kompetenceniveau.
+
+\subsection{Rige billeder}
+\begin{figure}[htb]
+\begin{center}
+\leavevmode
+\includegraphics[scale=0.40]{rigebilleder1.png}
+\end{center}
+\caption{Den klassiske undervisningssituation}
+\label{fig:klassisk_undervisning}
+\end{figure}
+Figur 1 illustrerer en typisk brugssituation hvori vores løsning kan bruges.
+Øverst ser vi en lærer, i midten elever og nederst datamater.
+Tegningen kan læses som den retning fokus er. I toppen står læreren som har styr på faget og igangsættelse af forløbet. Lærerens fokus er på eleverne og på om disse opnår det de skal for at kunne gennemføre faget. I midten ses det centrale element: eleverne som har fokus ned på en datamat hvor arbejdet udføres. Eleverne har mulighed for at kommunikere op ad mod læreren i tilfælde af tvivl. Interaktion mellem eleverne selv bliver dog sjældent tilgodeset da dette oftest ses som forstyrrende af det totalitære styre et gymnasium udgør.
+\newline
+\newline
+\begin{figure}[htbp]
+\begin{center}
+\leavevmode
+\includegraphics[scale=0.50]{rigebilleder2.png}
+\end{center}
+\caption{En tænkt usecase til vores værktøj}
+\label{fig:usecase}
+\end{figure}
+Figur 2 illustrerer et typisk forløb ved brugen af vores værktøj.
+Figuren uddybes nærmere under problemområdet.
+
+\section{Projektetableringen}
+Vores projektgruppe består af fem gruppemedlemmer, og er således større end sædvanen i PK-SU. Dette resulterer i udvidede muligheder (bla. vedr. størrelsen af det system der skal udvikles i sidste ende) men det skaber også en række af potentielle faldgruber. En stor del af vores projektetablering har kredset om at forsøge at forudse og imødegå de probematikker vi vil blive konfronteret med som en større udviklingsgruppe - bl.a. ved at sørge for klart definerede kommandoveje, inddeling i mindre, interne grupper samt en robust og seriøs dokumentationsstrategi. En problematik har bl.a. været at ikke alle i gruppen kendte hinanden lige godt ved kursusstart. Som en indledende manøvre til at starte projektarbejdet besvarede vi derfor alle sammen et spørgeskema udfærdiget af et af gruppemedlemmerne, som tjente til at kortlægge vores indviduelle forventninger til projektet, kompetencer og interesser.  
+
+\subsection{Generelle overvejelser vedr. gruppens organisering}
+Af risici ved en større gruppe er der i særdeleshed tre vi har behandlet som centrale: 
+\begin{itemize}
+\item Det er nemmere for inaktive medlemmer at drukne i mængden, resulterende i en generelt ineffektiv gruppe.
+\item Det gør fælles aktiviteter (møder, fælles kodedage o. lign.) sværere at koordinere
+\item Det nødvediggør et større kodeopgave (for at skabe arbejde nok til fem mennesker) og betyder generelt at det bliver sværere at overskue projektet som helhed. 
+\end{itemize}
+
+\subsubsection{Kommadoveje og projektledelse}
+En af måderne hvorpå vi modarbejder disse problematikker er ved at sørge for at have så klar og veldefineret en kommandovej som muligt: Fra starten af projektarbejdet har det fx. stået tydeligt at selve organiseringen af gruppen er en separat opgave, som kan atomiseres og skilles ud fra det resterende gruppearbejde. For at sørge for at denne opgave ikke drukner i mængden har vi valgt at lade et enkelt gruppemedlem (Naja Mottelson) have det overordnede ansvar for gruppens organisering - dette involverer indkaldelse til møder, udsendelse af dagsordener, uddelegering af dokumentationsansvar samt generel kommunikation på gruppens vegne med omverdenen. Ved at have en enkelt person som ansvarlig for møder, delegering og kommunikation sikrer vi at der er én person som har en bred forståelse for projektets generelle fremskridt og at gruppens størrelse ikke resulterer i unødig forvirring. 
+
+\subsubsection{Inddeling i undergrupper}
+En yderligere kaosfaktor vil dog potentielt opstå når selve programmeringsarbejdet påbegyndes - det er, trods alt, mere krævende at koordinere talrige konkrete småopgaver løbende end det generelle planlægningsarbejdet vi har beskæftiget os med hidtil. For at simplificere gruppearbejdet længere inde i projektforløbet har vi derfor valgt at dele gruppen op i to programmeringshold á hhv. to og tre mennesker. De to hold vil stadig skulle koordinere opgaver ved de fælles møder, men arbejde autonomt om implementeringen af de individuelle opgaver. 
+
+\subsection{Aftaler om gruppens arbejdsformer}
+Vi har i etableringen af aftaler om gruppens samarbejde fokuseret på to ting: Fastlæggelse af tidspunkter og krav til gruppemøder og fastlæggelse af gruppens interne kommunikationsformer. Indtil videre mødes gruppen fast to gange ugentligt (tirsdag og torsdag). Dette er to forskellige slags møder; Tirsdagsmødet bliver indtil videre brugt til planlægning og koordinering af gruppearbejdet imens mødet torsdag tjener til at forberede gruppen på dagens øvelsestimer. Medmindre andet udspecificeres har hver opgave som uddeleres til et tirsdagsmøde deadline til mødet ugen efter. 
+
+\subsection{Gruppens dokumentationsstrategi}
+Grundet størrelsen af gruppen (og den heraf øgede risiko for delvist frafald til møderne) er et grundigt dokumenationsarbejde særligt vigtigt i vores tilfælde. Til brug for distribuering og lagring af tekstdokumenter som referater, gamle delrapporter o.lign. har vi planlagt at bruge en simpel wiki sat op vha. githubs indbyggede wiki-funktionalitet. Til hurtig koordinering og udveksling af beskeder har vi en dedikeret mailingliste. For at holde samling på dokumentationsstrategien som helhed har vi udfærdiget og vedtaget nærværende dokumentationsstrategiaftale:
+\begin{itemize}
+\item Ved afslutningen af et gruppemøde skal referatet øjeblikkeligt lægges op på wikien. Indtil den er oprettet bliver de 
+sendt ud over mailinglisten. 
+\item Inden hvert møde med kunden skrives  og udsendes en check-liste over hvad gruppen ønsker at få ud af møde.
+\item Under hvert møde med kunden tages (traditionelt) referat. Dette skal efterfølgende omskrives til at passe på aktion-reaktion-formen beskrevet i artiklen af Jepsen et. al (1989). Omskrivningen skal foregå så hurtigt som muligt efter mødet, senest to dage efter. 
+\item Efter hver delopgave tages dokumentationsstrategien op til revision. 
+\end{itemize}
+
+\subsection{Aftaler med kunden}
+Vores gruppes forløb omkring at finde og konsolidere en kunde har været en smule anderledes end sædvanen i PK-SU, eftersom vi fra start havde besluttet at have faget Informationsteknologi som fokus for projektet. Eftersom vi fra start forestillede os at det færdige produkt enten skulle benyttes af fagets kommende undervisere eller elever valgte vi at kontakte en række gymnasier i storkøbenhavn. Ud af de positivt stemte svar vi modtog valgte vi at etablere en aftale med Greve Gymnasium. Vi valgte netop dette uddannelsessted af den grund at de var de eneste som rent faktisk havde et aktivt undervisningshold i det nuværende datalogifag. Som vores hovedsamarbejdspartner har vi klassens underviser (Bo Christiansen), men eftersom gymnasieelever kommer til at udgøre hovedbrugergruppen for den færdige applikation forekom det vigtigt for os at have 'adgang' til en aktiv datalogiklasse ifbm. fremtidige tests af prototyper mm.
+
+På nuværende tidspunkt har gruppen afholdt ét møde med Bo Christiansen, hvor vi ligeledes traf den datalogiklasse han underviser. Rammen for mødet (som er det der refereres i afsnittet nedenfor) var grundlæggende at vælge hvilket program vi skulle skrive ud af de idéer vi havde diskuteret med underviseren. Vi havde i ugerne op til været i kontakt med ham over mail, hvor vi uformelt havde talt om forskellige muligheder for hvad programmet skulle gøre og kunne. Vi var dog i gruppen tøvende overfor at sende specifikke forslag til konkrete programmer, da vi nødigt ville komme til at bestemme for meget. Ved mødet diskuterede vi forskellige alternativer (bl.a. et databasesystem til brug for lærerens administration af kurset og en platform for begynderudvikling til mobliltelefoner), men besluttede os i sidste ende for det system vi har beskrevet i nærmere detaljer i denne rapport.  
+
+\section{Referat af gruppens møde med kunden}
+Inden mødet med Bo Christiansen på Greve Gymnasium var vi i gruppen gået med til at komme til én af hans undervisningstimer og hilse på eleverne. Efter aftale med Bo afholdt vi indledningsvis en kort præsentation om datalogistudiet og DIKU, som blev afsluttet af at vi bad dem fortælle en smule om dem selv. Efterfølgende bad Bo os fortælle eleverne  en smule om faget PK-SU og det projekt vi gerne ville skrive - dette var vi lidt tøvende overfor, i særdeleshed eftersom Bo efterfølgende prøvede at få eleverne indraget i ideprocessen. Vi var en smule nervøse for at inddrage en hel gymnasieklasse i den indledende proces, så vi forsøgte at lede diskussionen over i elevernes hidtidige erfaringer.
+\newline
+\newline
+Aktion:\\
+Vi spurgte hvad eleverne havde brugt af læringsværktøjer.\\
+\newline
+Reaktion:\\
+De svarede at de havde brugte nogle lettilgængelige værktøjer (bl.a. Visual Studio, Access) som generelt ikke var blevet opfattet som specielt gode.\\
+\newline
+Aktion:\\
+Vi spurgte eleverne hvilke forløb i undervisningen de syntes havde været interessante.\\
+\newline
+Reaktion:\\
+De svarede at de syntes forløbene med javascript og spiludvikling havde været det mest spændende.\\
+\newline
+Efter dette lod det til at eleverne løb tør for ting at sige, og ikke så lang tid efter ringede klokken. Vi afholdt efterfølgende et møde alene med Bo Christiansen for at tale mere konkret om projektplanerne.
+\newline
+\newline
+Aktion:\\
+Vi startede mødet med at fortælle Bo Christiansen en lille smule om hvem vi var og hvad vi havde lavet før, og bad ham om at fortælle hvilke idéer han havde til programmer som kunne være interessante ifbm. det nye gymnasiefag. 
+\newline
+Bos første forslag var en database, hvor han kunne gemme oplysninger om eleverne og undervisningen.\\
+\newline
+Reaktion:\\
+Vi syntes dette virkede unødvendigt da holdet var meget lille. Vi spurgte om en sådan opgave ikke ville kunne løses ligeså effektivt med et tekstdokument, hvilket han medgav. Herefter omtale Bo en idé til en hjemmeside som underviste eleverne i udvikling af mobiltelefonapplikationer.\\
+\newline
+Reaktion:\\
+Vi diskuterede denne idé et stykke tid, men det blev hurtigt klart at hverken Bo eller gruppen kunne afgrænse hvad et sådan program skulle gøre eller hvordan det egentlig skulle virke. Efter disse idéer opfordrede Bo os til at fortælle om de idéer vi selv havde gjort os inden mødet.\\
+\newline
+Aktion:\\
+Vi forslog en hjemmeside med e-learning i form af en portal med forskellige klassiske tutorials på den. Det blev dog hurtigt tydeligt at denne idé ikke rigtig indeholdt nok substans til et helt projekt.\\
+\newline
+Aktion:\\
+Vi forslog et værktøj til læring hvor man kunne lave et spil, hvor eleverne kunne udvide spillet. Bo syntes godt om denne ide. Vi diskuterede hvornår i deres undervisningsforløb man kunne tænke sig at benytte et lignende redskab, og Bo foreslog at det kunne være et forløb i slutningen af året hvor de havde repetition, og man kunne benytte den viden man havde lært. Han forslog også at det kunne løbe over hele året. 
+Han nævte at det var svært at holde eleverne koncentreret igennem to undertimer med den samme ting. De havde dog været meget aktive, når de f.eks. arbejdede med spil. Vi sagde projektet var meget skalerbart, og det kunne tilpasses til hvornår det evt. skulle bruges. Afslutningsvis aftalte vi at afholde et møde efterfølgende udærdigelsen af den konkrete systemdefinition, hvor Bo kunne komme med yderligere input og idéer. 
+
+%% Herunder følger diverse bilag
+\end{document}
+
+

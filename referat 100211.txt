@@ -1,0 +1,49 @@
+Liste indeholdende potentielt egnede samarbejdspartnere
+
+Instruktor-Lasses kontaktinformation
+lassennorregaard@gmail.com
+60156379
+
+
+Falkonérgården (udbyder informationsteknologi)
+Skt. Annæ (udbyder datalogi)
+Frederiksberg 
+(denne liste skal udvides!)
+
+
+Projektidéer
+
+- UNIX-værktøjer
+- basale terminalkommandoer (en slags wrapper til en normal bash-shell)
+- netværksværktøjer (ssh)
+- sortering (en eller anden måde at illustrere forskellige sorteringsalgoritmer)
+- algoritmer (meget lig ovenstående)
+- analyse af køretid og køretidskompleksitet
+- en lille samling   
+- regulære udtryk (kan også være selvstændigt projekt)
+  - sed
+- simpel sql 
+
+
+
+Vi snakker med Lasse og Dreng Med Krøller (også kendt som Simon N. L. Maibom). De vil måske være med i vores gruppe, men de skal lige snakke med deres tredje gruppemedlem. 
+
+De potentielle gruppemedlemmers navne og mails: 
+
+Naja W. Mottelson: n.w.mottelson@gmail.com
+Søren Pilgård: fiskomatebn@gmail.com
+Lasse A. Madsen: dreadmuffin@gmail.com
+Simon N. L. Maibom smaibom@gmail.com
+(arinbjørn findes på skinken)
+
+Liste af kommende (haste-)opgaver (med ansvarshavende person): 
+
+-Oprettelse af intern mailingliste (naja)
+-Oprettelse af projekt-wiki (til deling af referater, mail-formularer mm.) (simon)
+-Snak med Arinbjørn (lasse)
+-Oprettelse af mail-formular til brug ved kontakt m. gymnasier (naja laver skitse)
+-NB! VIGTIGT! Oprettelse af doodle til endelig afgørelse af kommende mødedage
+
+Tid og sted for næste møde:
+På tirsdag, i øvelseslokale 1, efter DB-og-web-øvelser. Vi sætter os ind til Canadier-Tom. 
+
