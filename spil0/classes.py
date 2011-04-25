@@ -1,6 +1,6 @@
 
 import pygame
-import config, resources
+import direction, config, resources
 
 class Wall(pygame.sprite.Sprite):
     def __init__(self, x, y):
@@ -29,28 +29,35 @@ class Monster(pygame.sprite.Sprite):
         self.add(config.all_entities)
         self.add(config.all_monsters)
 
-    
 
 
-class Player():
+
+class Player(pygame.sprite.Sprite):
     def __init__(self, x, y):
-        self.x = x
-        self.y = y
-        self.direction = 0
+        pygame.sprite.Sprite.__init__(self)
+        self.image, self.rect = resources.load_image("player.png",-1)
+        self.rect.move_ip(x,y)
+        self.add(config.all_entities)
+        self.direction = direction.NONE
+        self.SPEED = 2
     
-    def update():
-        if self.direction == "STAY":
-            pass
-        if self.direction == "RIGHT":
-            self.x += 32
-        elif self.direction == "LEFT":
-            self.x -= 32
-        elif self.direction == "UP":
-            self.y -= 32
-        elif self.direction == "DOWN":
-            self.y += 32
-        else:
-            pass
-        
-    def move(direction):
-        self.direction = direction
+    def update(self):
+        vector = [0,0]
+        if self.direction == direction.NONE:
+            vector = [0,0]
+        elif self.direction == direction.EAST:
+            vector = [self.SPEED,0]
+        elif self.direction == direction.WEST:
+            vector = [-self.SPEED,0]
+        elif self.direction == direction.NORTH:
+            vector = [0,-self.SPEED]
+        elif self.direction == direction.SOUTH:
+            vector = [0,self.SPEED]
+
+        self.move(vector)
+
+    def move(self, vector):
+        self.rect.move_ip(vector[0], vector[1])
+
+           
+    
