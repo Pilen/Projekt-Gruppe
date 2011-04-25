@@ -59,7 +59,12 @@ class Player(pygame.sprite.Sprite):
         self.move(vector)
 
     def move(self, vector):
-        self.rect.move_ip(vector[0], vector[1])
 
+        rect = self.rect
+        self.rect = self.rect.move(vector[0], vector[1])
+        if len(pygame.sprite.spritecollide(self,config.all_walls, False)) > 0:
+            self.rect = rect
+
+    
            
     
