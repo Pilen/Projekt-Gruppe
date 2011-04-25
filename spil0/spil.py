@@ -1,51 +1,5 @@
 
 import pygame
-import config
-
-
-class Wall(pygame.sprite.Sprite):
-    def __init__(self, x, y):
-        pygame.sprite.Sprite.__init__(self)
-        self.image, self.rect = resources.load_image("wall.png")
-        self.rect.move_ip(x,y)
-
-        self.add(config.all_walls)
-        
-class Gold(pygame.sprite.Sprite):
-    def __init__(self, x, y):
-        pygame.sprite.Sprite.__init__(self)
-        self.image, self.rect = resources.load_image("gold.png")
-        self.rect.move_ip(x,y)
-
-        self.add(config.all_gold)
-
-
-class Monster(pygame.sprite.Sprite):
-    def __init__(self, x, y):
-        pygame.sprite.Sprite(self)
-        
-
-
-class Player():
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
-        self.direction = 0
-    
-    def update():
-        if self.direction == "stay":
-            pass
-        elif self.direction == "right":
-            self.x += 32
-        elif self.direction == "left":
-            self.x -= 32
-        elif self.direction == "up":
-            self.y -= 32
-        elif self.direction == "down":
-            self.y += 32
-        
-    def move(direction):
-        self.direction = direction
 
 def main():
     pygame.init()
@@ -54,8 +8,15 @@ def main():
     pygame.display.set_caption("Sploink")
     clock = pygame.time.Clock()
 
-    screen.blit(background, (0,0))
-    pygame.display.update()
+    import config, classes
+
+    player = classes.Player(128,128)
+    wall = classes.Wall(256,256)
+    wall = None
+
+    screen.blit(config.background, (0,0))
+    config.all_walls.draw(screen)
+    pygame.display.flip()
 
 
     while True:
@@ -63,7 +24,36 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
-            elif
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    return
+                elif event.key == pygame.K_UP:
+                    player.direction = "UP"
+                elif event.key == pygame.K_DOWN:
+                    player.direction = "DOWN"
+                elif event.key == pygame.K_LEFT:
+                    player.direction = "LEFT"
+                elif event.key == pygame.K_RIGHT:
+                    player.direction = "RIGHT"
+
+                elif event.key == pygame.KEYUP:
+                    if event.key == pygame.K_UP and player.direction == "UP":
+                        player.direction = "STAY"
+                    elif event.key == pygame.K_DOWN and player.direction == "DOWN":
+                        player.direction = "STAY"
+                    elif event.key == pygame.K_LEFT and player.direction == "LEFT":
+                        player.direction = "STAY"
+                    elif event.key == pygame.K_RIGHT and player.direction == "RIGHT":                 
+                        player.direction = "STAY"
+                        
+
+        config.all_entities.update()
+        pygame.display.update(config.all_entities.draw(screen))
+    
+
+
+
+
 
 if __name__ == "__main__":
     main()
