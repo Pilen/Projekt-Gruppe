@@ -48,6 +48,7 @@ def main():
                         
 
         config.all_entities.update()
+        config.all_entities.clear(screen, config.background)
         pygame.display.update(config.all_entities.draw(screen))
     
 

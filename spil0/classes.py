@@ -40,6 +40,8 @@ class Player(pygame.sprite.Sprite):
         self.add(config.all_entities)
         self.direction = direction.NONE
         self.SPEED = 2
+
+        self.add(config.all_entities)
     
     def update(self):
         vector = [0,0]
