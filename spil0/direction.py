@@ -1,3 +1,4 @@
+import random as rand
 
 NONE, EAST, SOUTH, WEST, NORTH = range(0,5)
 
@@ -9,3 +10,9 @@ def right(direction):
 
 def reverse(direction):
     return ((direction+1)%4)+1
+
+def random():
+    return rand.randint(1,4)
+
+
+    

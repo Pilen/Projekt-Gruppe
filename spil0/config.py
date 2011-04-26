@@ -4,6 +4,7 @@ import resources, classes
 
 size = width, height = 800, 600
 screen = pygame.display.set_mode(size)
+gamespeed = 30
 clock = None
 
 entities = pygame.sprite.RenderUpdates()
@@ -20,6 +21,8 @@ def proccesCharacter(x,y):
         classes.Wall(x*32,y*32)
     elif level[y][x] == '@':
         classes.Player(x*32,y*32)
+    elif level[y][x] == 'M':
+        classes.Monster(x*32, y*32)
 
 for y in range(0,(600/32)):
     for x in range(0,(800/32)):
