@@ -2,6 +2,10 @@
 import pygame
 import resources, classes
 
+size = width, height = 800, 600
+screen = pygame.display.set_mode(size)
+clock = None
+
 entities = pygame.sprite.RenderUpdates()
 walls    = pygame.sprite.Group()
 monsters = pygame.sprite.Group()

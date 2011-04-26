@@ -3,20 +3,18 @@ import pygame
 
 def main():
     pygame.init()
-    size = width, height = 800, 600
-    screen = pygame.display.set_mode(size)
-    pygame.display.set_caption("Sploink")
-    clock = pygame.time.Clock()
-
     import direction, config, classes
 
-    screen.blit(config.background, (0,0))
-    config.walls.draw(screen)
+    pygame.display.set_caption("Sploink")
+    config.clock = pygame.time.Clock()
+
+    config.screen.blit(config.background, (0,0))
+    config.walls.draw(config.screen)
     pygame.display.flip()
 
 
     while True:
-        clock.tick(30)
+        config.clock.tick(30)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
@@ -44,8 +42,8 @@ def main():
                         
 
         config.entities.update()
-        config.entities.clear(screen, config.background)
-        pygame.display.update(config.entities.draw(screen))
+        config.entities.clear(config.screen, config.background)
+        pygame.display.update(config.entities.draw(config.screen))
     
 
 
