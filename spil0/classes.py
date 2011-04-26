@@ -9,7 +9,7 @@ class Wall(pygame.sprite.Sprite):
         self.image, self.rect = resources.load_image("wall.png")
         self.rect.move_ip(x,y)
 
-        self.add(config.all_walls)
+        self.add(config.walls)
         
 class Gold(pygame.sprite.Sprite):
     def __init__(self, x, y):
@@ -17,7 +17,7 @@ class Gold(pygame.sprite.Sprite):
         self.image, self.rect = resources.load_image("gold.png")
         self.rect.move_ip(x,y)
 
-        self.add(config.all_gold)
+        self.add(config.gold)
 
 
 class Monster(pygame.sprite.Sprite):
@@ -26,8 +26,8 @@ class Monster(pygame.sprite.Sprite):
         self.image, self.rect = resources.load_image("monster.png")
         self.rect.move_ip(x,y)
 
-        self.add(config.all_entities)
-        self.add(config.all_monsters)
+        self.add(config.entities)
+        self.add(config.monsters)
 
 
 
@@ -37,11 +37,12 @@ class Player(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         self.image, self.rect = resources.load_image("player.png",-1)
         self.rect.move_ip(x,y)
-        self.add(config.all_entities)
+        self.add(config.entities)
         self.direction = direction.NONE
         self.SPEED = 2
 
-        self.add(config.all_entities)
+        self.add(config.entities)
+        config.player = self
     
     def update(self):
         vector = [0,0]
@@ -62,7 +63,7 @@ class Player(pygame.sprite.Sprite):
 
         rect = self.rect
         self.rect = self.rect.move(vector[0], vector[1])
-        if len(pygame.sprite.spritecollide(self,config.all_walls, False)) > 0:
+        if len(pygame.sprite.spritecollide(self,config.walls, False)) > 0:
             self.rect = rect
 
     
