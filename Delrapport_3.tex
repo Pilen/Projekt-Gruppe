@@ -1,0 +1,110 @@
+\documentclass[10pt,a4paper,danish]{article}
+%% Indlæs ofte brugte pakker
+\usepackage{amssymb}
+\usepackage[danish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\rhead{\today}
+\rfoot{\thepage}
+
+% Opsæt indlæsning af filer
+\lstset{
+  language=Python,
+  extendedchars=\true,
+  inputencoding=utf8,
+  linewidth=\textwidth, basicstyle=\small,
+  numbers=left, numberstyle=\footnotesize,
+  tabsize=2, showstringspaces=false,
+  breaklines=true, breakatwhitespace=false,
+}
+
+%% Titel og forfatter
+\title{Informationsteknologi: Projekt e-læring \\ Projektkursus: Systemudvikling \\Forår 2011}
+\author{Arinbjørn Brandsson (hkt789)\\Lasse Ahlbech Madsen (xsc606)\\Naja Mottelson (vsj465)\\Søren Pilgård (vpb984)\\
+\\
+Gruppeid : LO6\\
+\\Instruktor: Lasse Nørregaard}
+
+%% Start dokumentet
+\begin{document}
+
+%% Vis titel
+\maketitle
+\newpage
+
+%% Vis indholdsfortegnelse
+\tableofcontents
+\newpage
+
+%% HER STARTER RAPPORTEN
+\section{Erfaringer med evalueringer af IT-løsningen i samarbejde med brugerne}
+Denne sektion er en smule besværlig for vores gruppe at skrive, eftersom vi på nuværende
+tidspunkt ikke har en kørende prototype af vores program som kan afprøves af brugerne. 
+Som beskrevet i de hidtidige rapporter kommer vores program til at bede brugeren om at kode
+et bestemt spil - siden Delrapport 2 har vi brugt vores tid på at implementere dette spil.
+Vores motivation til at prioritere på denne måde er at det (fra vores synspunkt) vil være
+umuligt at implementere de enkelte trin i undervisningsforløbene hvis man ikke har et 
+solidt kendskab til spillets tiltænkte struktur.  
+
+\subsection{Problematikker ifbm. afprøvning}
+Dette er en problematisk situation: eftersom vores program beskæftiger sig med pædagogik
+er netop afprøvning med brugere en central del af udviklingen. Dog: i forbindelse med dette 
+projekt er vores spil nærmere at betragte som data end som 
+programmel, og det er ikke selve spillet der skal afprøves af brugerne.
+
+I vores arbejde har vi fundet frem til to essentielle udfordringer mht. afprøvning, som præger 
+vores projekt i en smule højere grad end normalt. Først og fremmest vurderer vi at det potentielt 
+er sværere for os at lave traditionel løbende afprøvning, eftersom vores 
+program ikke rigtig lader sig opdele og afprøve separat. Det er derfor en smule besværligt at 
+sikre en optimal iterativ afprøvning i det hele taget. 
+
+Mere vigtigt end dette er dog hvad man kan kalde forudsætningerne for vores program - selve den
+måde interaktionen er planlagt er simpelthen problematisk at teste, eftersom en typisk use case
+vil vare betragteligt længere end fx. use casen for et af de databaseadministrationssystemer der
+præsenteres i lærebogen. Et læringsværktøj er jo netop et program man forventes at bruge som
+minimum nogle timer på at arbejde med, og dette har vi ikke resurser til at afprøve i gruppen. 
+En anden, mere praktisk del af denne problematik er at vores tilgængelige brugergruppe muligvis er 
+uegnet til at give et repræsentativt resultat. Vores ønske med programmet er at skabe et læringsværktøj
+som kan benyttes af folk på et forholdsvis lavt niveau af programmeringserfaring, men det kræver
+dog kendskab til bl.a. grundlæggende python-syntaks (en tillæringsopgave som ikke er triviel for
+mange førstegangsprogrammører). Den datalogiklasse vi samarbejder med har ikke modtaget undervisning
+i python, så de eneste af dem vi ville kunne benytte som testpersoner ville være dem der kunne 
+overtales til at sætte sig ind i grundlæggende python på egen hånd, eksternt fra undervisningen. 
+De elever der ville være villige (og i stand til) dette er sandsynligvis mere engagerede og dygtigere
+end normen, og ville således ikke give et helt troværdigt indblik i de spørgsmål vi kunne tænke os
+at få besvaret. 
+
+Med baggrund i disse overvejelser har vi derfor besluttet at følge en lidt anderledes afprøvningsstrategi,
+som dokumenteres i dette afsnit. 
+
+\subsection{Overvejelser vedr. brugertests}
+Som det kan ses af billeddokumentationen i sidste rapport, kommer den grafiske brugergrænseflade
+for vores program til at være meget simpel. Endvidere føler vi selv at vi har et godt
+billede af hvordan den skal udformes fra papir-mockup-testingen som beskrives i Delrapport 2.
+Vi mener derfor ikke at det GUI-specifikke egentlig er af største vigtighed når det kommer til bruger-afprøvning. 
+Hvad der derimod er kritisk at afprøve er udformningen af de forskellige trin vi har opdelt 
+kodeopgaverne i - om niveauet er for højt/lavt, om opgavebeskrivelserne fungerer, om rækkefølgen
+er intuitiv mm. 
+
+\subsection{Planlægning af brugertests}
+I vores kommende afprøvningsarbejde er vi, som nævnt, nødt til at overvinde den forhindring at en
+kørende prototype mangler. Måden vi regner med
+at gøre dette kan siges at være en variation over sidste rapports mockup-testing.
+
+- Vi tegner og fortæller i stedet for at give dem software 
+- Vi afprøver med maks tre elever, afhængigt af hvor mange der er interesserede. 
+- Spørgsmålene vi vil stlle planlægges at være på formen 'Beskriv hvordan du ville gøre x'
+- Måske er der endda fordele ved denne måde at gøre det på: Vi kommer udenom python-problematikken. 		
+
+
+
+\end{document}
+
+
