@@ -1,6 +1,8 @@
 \section{Projektsamarbejdet}
 Siden sidste aflevering har vi holdt pause i påskeferien, og har derfor kun haft to uger til at holde møder og arbejde i. Herefter har vi dog holdt jævnlige møder, hvor vi har uddelegeret, prioriteret og planlagt den videre udvikling af projektet og rapportskrivningen. 
 
+Vi oplever visse kommunikationsproblemer i gruppen. Folk er dårlige til at melde ud om status på deres opgaver, hvilket er meget problematisk. Det begrænser det overordnede overblik af udviklingen. Man kan hjælpe dem, hvis de sidder fast, kan de ikke hjælpes videre. Er de overhovedet i gang? Er der andre, som bliver nød til at overtage opgaven? Eller er den måske næsten færdig? I sidste ende lægger det pres på resten af gruppen og er med til at skabe intern konflikt. For at løse dette, har vi forsøgt os med alvorlige samtaler, med de medlemmer af gruppen, som opfører sig sådan. Vi håber at det vil være nok, da vi ellers ikke kan se, hvad de skal gøre for at forbedre situationen. Ydermere er der en tendens til tage lidt for let på tidsfrister. Ting bliver lavet meget sent, og det er svært for den ansvarshavene, at nå at læse det igennem og give kritisk input. I sidste ende står vi med et dårligere produkt. For at læse dette har vi prøvet at uddelegere opgaverne tidligere, så folk og længere tid til at lave dem, det virkede ikke. Som et fremtidigt eksperiment, forsøger vi at uddelegere opgaver parvis. Det vil sige at en en enkelt person får ansvaret for at produktet bliver lavet, mens den anden søger for at følge processen, og sørger for at den ansvarshavende ikke går død i det.
+
 - Vi har et problem med kommunikation intern i gruppen!
 	- Folk skriver ikke ud på listen om hvor langt de er med deres opgaver før i sidste øjeblik
     - Dette er virkelig skidt, eftersom det mindsker muligheden for at holde overblik over udviklingen
@@ -18,9 +20,9 @@ Siden sidste aflevering har vi holdt pause i påskeferien, og har derfor kun haft
 
 
 \subsection{Mødeform og dokumentationsstrategi} 
-	Til egne møder holder vi os stadig til en ret basal referat strategi, hvor vi noterer beslutninger og statusopdateringer ved de enkelte punkter i dagsordenen og konkrete forslag og tanker ved diskussioner. Dette er praktisk på kort sigt, men det giver ikke en den store indsigt i hvorfor vi har taget de beslutninger vi har, og kan i værste fald ikke være brugbare i en eksamenssammenhæng, når vi skal redegøre for processen.  Dette er stadig et punkt vi forsøger at forbedre, men det er ikke prioriteret særligt højt i forhold til mere nærværende problemer (begrund). Referaterne deler vi over Github (sammen med vores kode), og er derved let tilgængelige for all gruppemedlemmer. Dette er vi glade for, om end vi har problemer med at det ikke er alle der har lige nemt ved at finde ud af git. 
+	Til egne møder holder vi os stadig til en ret basal referat strategi, hvor vi noterer beslutninger og statusopdateringer ved de enkelte punkter i dagsordenen og konkrete forslag og tanker ved diskussioner. Dette er praktisk på kort sigt, men det giver ikke en den store indsigt i hvorfor vi har taget de beslutninger vi har, og kan i værste fald ikke være brugbare i en eksamenssammenhæng, når vi skal redegøre for processen.  Dette er stadig et punkt vi forsøger at forbedre, men det er ikke prioriteret særligt højt i forhold til mere nærværende problemer (begrund). Referaterne deler vi over Github (sammen med vores kode), og er derved let tilgængelige for alle gruppemedlemmer. Dette er vi glade for, om end vi har problemer med at det ikke er alle der har lige nemt ved at finde ud af git.
 
-Vores møder foregår som regel med stramme dagsordener, der er med til at effektivisere dem, og minimere spildtid. Vi udpeger en referant, går punktvist frem. Det er for det meste fuldt fremmøde, men vi spilder en betragtelig mængde tid på, at folk kommer for sent. 
+Vores møder foregår som regel med stramme dagsordener, der er med til at effektivisere dem, og minimere spildtid. Vi udpeger en referent, går punktvist frem. Det er for det meste fuldt fremmøde, men vi spilder en betragtelig mængde tid på, at folk kommer for sent. For at udbedre situation forsøger vi at lægge møderne i forlængelse af forelæsninger og øvelsestimer, så folk allerede er her. Som forlængelse af dette, har vi også problemer med sygdom, og det er ofte, der mangler en person. Dette er der selvfølgelig ikke en helt masse at gøre ved, men vi forsøger at opfordre folk til overveje, om de nu også har det SÅ dårligt.
 
 
 - Hvad regner vi med at gøre mht. for-sent-hed? Vi holder møder efter undervisningen, så at folk allerede er til stede. 
@@ -30,6 +32,8 @@ Vores møder foregår som regel med stramme dagsordener, der er med til at effekti
 - Vi fokuserer på at lave det 'pædagogiske' indhold af vores projekt
  - dette er pga. testing, og fordi det ikke rigtig er muligt at lave programmet uden forudgående, omfattende viden om det pædagogiske
 - programmet udenfor forløbet er ret tomt, og behøver 'data' for at kunne bruges og testes
+
+
 
 	For at øge kontrollen med projektet, og sikrer at vi får det hele mede, har vi uddelt de 4 hovedpunkter i projekt til en person hver. Disse er projektledelse, kodeudvikling, unit-tests og dokumentation af kode. Tanken er ikke, at hver enkelt person stå for sit punkt alene, men vedkommende har ansvaret for, at det bliver gjort, og opsyn med punktet egentlig status. På denne måde aktiverer og engagerer vi også alle gruppemedlemmer, så ansvaret ikke hænger på blot en del af gruppen, som det ellers har været præget af tidligere i projektet. Ydermere har vi fordelt de første trin i vores programmel, så vi hver især skriver udkast til 2-3 af trinene i vores første forløb, dog skal alle kigge på samtlige punkter (begrund - ansvarsfordeling, forskellige tilgangsvinkler, samling af vigtigste pointer fra de forskellige vinkler til sidst). 
 
