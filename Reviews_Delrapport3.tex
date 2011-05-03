@@ -1,0 +1,51 @@
+\documentclass[10pt,a4paper,danish]{article}
+%%Pakker
+\usepackage{amssymb}
+\usepackage[danish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\rhead{\today}
+\rfoot{\thepage}
+%%BeginDocument
+\begin{document}
+
+\tableofcontents
+\newpage
+
+\section{Resumé}
+\subsection{User Testing, Discount User Testing, af Rolf Molich}
+Artiklen handler om usability testing, (User testing), hvordan man holder en vellykket brugertest, samt hvordan man sørger for at sin testbruger føler sig godt tilpas før, under og efter en brugertest, samt forskellige teknikker man kan tage i brug. Artiklen beskriver for det meste en test procedure, kaldet "Thinking Aloud Testing", hvor testbrugeren siger højt hvad det er han tænker mens han bruger programmet, (ting som hvad han er i tvivl om, hvordan han forventer at programmet reagerer, og hvordan han fortolker en besked). Disse ting bliver enten skrevet ned af en tester, eller optaget på video eller på lydbånd.
+
+En "Thinking Aloud Testing" kræver dog forberedelse. Først skal man tjekke om testbrugerne er over- eller under-kvalificeret ved at interviewe dem på forhånd, (dog dette behøves ikke for vores brugertest, da vi låner nogle gymnasie elever som læser datalogi til at teste programmet siden de ligger i vores målgruppe). Siden skal man også lave en liste af opgaver som testbrugerne skal løse, hvor den første opgave skal være en nem opgave som kan løses på få minutter, så at testbrugerne ikke bliver stresset eller nervøse. Denne liste af opgaver er en integreret del af vores hjælpeprogram, og derfor vil en del af vores brugertest gå ud på at se om hvis testbrugerne kan forstå disse opgaver. Det er også en god idé at afslutte en brugertest med en debriefing, hvor man taler med testbrugeren, og finder ud af hvilken tanker de havde om programmet, hvad var godt ved programmet, og hvad man kunne gøre bedre eller formulere bedre. En vigtig del under debriefing er at man behandler testbrugernes foreslag med respekt, for ellers vil de være tilbageholdende med foreslag og meninger omkring projektet.
+
+Artiklen gennemgik også kortvarigt en anden test procedure, "Constructive Interaction", hvor man lod to testbrugere arbejde sammen for at kunne løse opgaverne, hvorefter de vil diskutere programmet, hvad det gjorde godt, og hvad kan laves om. Vi vælger dog at ikke tage denne test procedure i brug, eftersom vores testbrugere er gymnasieelever vil de sikkert bruge tiden ukonstruktivt, og ikke tage deres opgave seriøst.
+
+Brugertest er afgørende for vores projekts success. Da vores program er et hjælpeprogram, designet til at lære gymnasieelever til at kunne kode spil i python, skal de instruktioner og opgaver som programmet viser frem til brugeren være klare og nemme at forstå. Derfor passer "Thinking Aloud Testing" rigtig godt til vores projekt - ved brug af denne teknik kan vi, fra vores kunder, høre hvad det er de forventer programmet skal kunne gøre, samt om hvis nogle af vores hints, opgavespecifikationer eller meddelser er uklare, eller ikke fortæller nok om opgaven.
+
+\subsection{Software Architecture in Practice, af Bass, Clements og Kazman}
+Artiklen handler om software architecture, hvor software architecture er systemets struktur, eller strukturer, som omfatter sofware elementer, og de relationer imellem elementerne, samt de antagelser som elementer kan have om andre elementer. Arkitekturen definere softwarets elementer, og omfatter de offentlige dele af softwaret. Et arkitektur består af strukturer, (dette plejer at være i flertal medmindre softwaret er meget specialiseret eller simpelt), og disse strukturer behøver ikke at være af samme type, da strukturerne forventes at dække over alle dele af systemet.
+
+Strukturerne for vores program regnes at være af en slags - en modulær baseret struktur, (hvor systemet kan splittes i mindre dele), da dette passer bedre for vores projekt. Siden at hovedparten af vores projekt består af trin, som består af mindre trin, kan denne form af struktur passe godt til systemet, siden at dette lader systemet blive brudt ned i mindre dele. Og siden hvert del af disse trin behøver et overordnet trin for at kunne udføres, (et trin har 'checkpoints', som derefter har hints), sørger denne slags struktur for at systemet blvier sådan.
+
+Derfor kan det være at det bedste form for struktur for vores system ville være at bruge et 'logical' struktur, hvilket opfylder det basis som udgør et modulært struktur. Desværre gav artiklen ikke en bedre beskrivelse af hvad et logical struktur er, udover at det er modulært, og består af objekter, så det kan godt være at det ikke er lige så perfekt som vi tror det er. Men ud fra hvad artiklen har fortalt, virker det godt for os.
+
+De andre former for strukturer som artiklen fortalte om virkede som om de ikke ville fungere for vores system, og derfor vil vores system kun have et struktur. Man kan måske bruge et 'physical' struktur, men da vi lader et tredje-parti program processere koden, samt vi ikke rigtig har brug for meget kommunikation imellem elementerne, kan det nok være at det bare ville komplicere ting at have det med.
+
+\subsection{Foundations for the Study of Software Architecture, af Perry, D. og Wolf, A}
+Artiklen fortæller om en anderledes form for software architecture end præsenteret. Artiklen påstår at et systems arkitektur består af tre dele: 
+\begin{enumerate}
+\item Elementer,
+\item Form, (Elementernes begrænsninger), og
+\item Basis for systemet, (dette plejer at være systemets krav).
+\end{enumerate}
+Dette er en temmelig stor forskel. Bass, Clements og Kasman påstår at systemets arkitektur består af mange forskellige strukturer, som så kollektivt beskriver systemets arkitektur, hvorimod Perry og Wolf ser arkitektur som tre kriterier som bliver defineret, samt det er forventet at arkitekten arbejder med kunden for at kunne definére systemets arkitektur. 
+
+Dette fører til et problem: Hvilken form for system arkitektur er så bedre at bruge for vores projekt? Umiddelbart vil vi sige at den form for system arkitektur beskrevet i Foundations for the Study of Software Architecture ville være af større gavn for vores system. Hvis vi skulle tegne op alle de strukturer som kan beskrive vores system, ville vi ende med ikke særlig mange, hvilket modarbejder Bass, Clements and Kazmans system arkitekturs styrke - ved at have mange forskellige strukturer, vil arkitekturen kunne beskrive systemet på mange flere måder end hvis man havde meget få strukturer. Dog for mindre projekter, som kræver at man arbejder mere intimt med sin kunde, vil Perry og Wolfs arkitektur form være bedre for vores system. 
+\end{document}
