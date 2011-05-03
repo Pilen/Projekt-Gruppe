@@ -1,0 +1,47 @@
+Dagsorden for møde d. 26/04/2011
+Ordstyrer: Naja
+Referent: Lasse
+
+Delrapport 2:
+   - Procesevaluering
+
+Brug github!
+For ringe arbejde ved sidste rapport. Shape up.
+
+   - Genaflevering: Hvad ved vi?
+
+    Ikke en skid.
+    Arinbjørn skal bruge hjælp
+
+Evaluering af dokumetationsstrategi:
+   - Vi skal snakke om hvilke slags informationer vi egentlig får brug for
+     til den afsluttende eksamen.
+
+   Meget uklart, Naja mener projektarbejde-delen af vores raporter kommer   til at spille en stor rolle.
+
+   - Hvordan sørger vi for at det er denne information vi får lagret?
+
+-
+
+Status på koden:
+  - Vi har en tidlig alfa på selve spillet
+  - Søren tegner og fortæller
+  - Fordeling af ansvar for kommende opgaver (unit-testing, dokumentation)
+
+Vi mødes torsdag kl. 10 og gør det i fællesskab.
+
+Samarbejde med Greve
+  - Vi må hellere snart ud til dem igen; eleverne får snart læseferie
+
+Hvem kan vi teste det på? 
+Det kan være svært at få testpersoner, fordi læseferien begynder.
+Vi kan ikke forudsætte python kendskab fra vores testpersoner, men vi forventer det for det færdige produkt.
+Er det dækkende at teste blot med de interesserede elever, eller skal vi have fat i de mere uentusiatiske også?
+
+Delrapport 3:
+   - Alle kender deres ansvarsopgaver, alle gennemgår hvad de har
+tænkt sig at skrive
+   - Skrivning af selve rapporten: LaTeX
+   - Arbejdsgang: git og GitHub
+
+Naja og Lasse mødes onsdag og diskuterer punkt 3.

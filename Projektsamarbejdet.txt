@@ -1,0 +1,38 @@
+\section{Projektsamarbejdet}
+Siden sidste aflevering har vi holdt pause i påskeferien, og har derfor kun haft to uger til at holde møder og arbejde i. Herefter har vi dog holdt jævnlige møder, hvor vi har uddelegeret, prioriteret og planlagt den videre udvikling af projektet og rapportskrivningen. 
+
+- Vi har et problem med kommunikation intern i gruppen!
+	- Folk skriver ikke ud på listen om hvor langt de er med deres opgaver før i sidste øjeblik
+    - Dette er virkelig skidt, eftersom det mindsker muligheden for at holde overblik over udviklingen
+    - Det gør det umuligt at hjælpe de mennesker der skulle have svært ved deres opgaver
+    - Det bliver svært at koordinere: Skal andre mennesker overtage opgaven, eller bare vente lidt?
+    - Det lægger mere pres på gruppen og skaber interne konflikter
+    - Hvad regner vi med at gøre?
+		- Vi har taget en alvorlig samtale med de medlemmer af gruppen der opfører sig på denne måde
+        - Vi ved ikke om dette kommer til at være nok, men på nuværende tidspunkt kan vi ikke komme på
+          noget bedre. 
+    - Forskellige holdninger til tidsfrister. Og ting har det med at blive lavet i sidste øjeblik, hvilket lægger pres på den ansvarshavende. Dette betyder også, at ting der bliver delt ud sent ikke når at blive set ordentlig igennem, og i sidste ende giver et dårligere produkt. 
+         - Vi har prøvet: tidligere uddelegering af opgaver. Dette virker ikke.
+         - Vi prøver nu: For fremtiden uddelegerer vi opgaver 'parvis' - dette er forstået som at ét menneske er ansvarlig for at det endegyldige
+           produkt bliver lavet, en anden for at vedkommende bliver holdt til ilden undervejs. 
+
+
+\subsection{Mødeform og dokumentationsstrategi} 
+	Til egne møder holder vi os stadig til en ret basal referat strategi, hvor vi noterer beslutninger og statusopdateringer ved de enkelte punkter i dagsordenen og konkrete forslag og tanker ved diskussioner. Dette er praktisk på kort sigt, men det giver ikke en den store indsigt i hvorfor vi har taget de beslutninger vi har, og kan i værste fald ikke være brugbare i en eksamenssammenhæng, når vi skal redegøre for processen.  Dette er stadig et punkt vi forsøger at forbedre, men det er ikke prioriteret særligt højt i forhold til mere nærværende problemer (begrund). Referaterne deler vi over Github (sammen med vores kode), og er derved let tilgængelige for all gruppemedlemmer. Dette er vi glade for, om end vi har problemer med at det ikke er alle der har lige nemt ved at finde ud af git. 
+
+Vores møder foregår som regel med stramme dagsordener, der er med til at effektivisere dem, og minimere spildtid. Vi udpeger en referant, går punktvist frem. Det er for det meste fuldt fremmøde, men vi spilder en betragtelig mængde tid på, at folk kommer for sent. 
+
+
+- Hvad regner vi med at gøre mht. for-sent-hed? Vi holder møder efter undervisningen, så at folk allerede er til stede. 
+
+\subsection{Projektstyring og implementation}
+- Som nævnt i prototypeafsnitttet: vi har ingen kørende prototype. 
+- Vi fokuserer på at lave det 'pædagogiske' indhold af vores projekt
+ - dette er pga. testing, og fordi det ikke rigtig er muligt at lave programmet uden forudgående, omfattende viden om det pædagogiske
+- programmet udenfor forløbet er ret tomt, og behøver 'data' for at kunne bruges og testes
+
+	For at øge kontrollen med projektet, og sikrer at vi får det hele mede, har vi uddelt de 4 hovedpunkter i projekt til en person hver. Disse er projektledelse, kodeudvikling, unit-tests og dokumentation af kode. Tanken er ikke, at hver enkelt person stå for sit punkt alene, men vedkommende har ansvaret for, at det bliver gjort, og opsyn med punktet egentlig status. På denne måde aktiverer og engagerer vi også alle gruppemedlemmer, så ansvaret ikke hænger på blot en del af gruppen, som det ellers har været præget af tidligere i projektet. Ydermere har vi fordelt de første trin i vores programmel, så vi hver især skriver udkast til 2-3 af trinene i vores første forløb, dog skal alle kigge på samtlige punkter (begrund - ansvarsfordeling, forskellige tilgangsvinkler, samling af vigtigste pointer fra de forskellige vinkler til sidst). 
+
+- Vi sagde: der er problemer med naja-monarkiet. Ikke udelukkende pga. arbejdsbyrde-problematikken, men grundet dataindkapsling. Dette er der ikke sket så meget med, eftersom  til at vi rigtig har kunnet arbejde fokuseret på at omlægge arbejdsgange. 
+
+	Vi er kommet ordentligt i gang med selve projektet nu, der har ellers hængt lidt, og blevet nedprioriteret i forhold til rapportskrivningen. På trods af begrænsede tid, går det relativt hurtigt fremad, og vi regner med at kunne have i hvert fald en kørende prototype ved kursets slut, om end ikke helt så omfattende, som vi kunne have ønsket. 
