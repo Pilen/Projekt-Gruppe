@@ -1,28 +1,27 @@
 
 import sys
 import pygame
-import direction, config, classes, functions
+import direction, data, functions
+
     
 def main():
     pygame.init()
 
     pygame.display.set_caption("Sploink")
-    config.clock = pygame.time.Clock()
+    data.clock = pygame.time.Clock()
 
-    config.screen.blit(config.background, (0,0))
-    config.walls.draw(config.screen)
+    data.screen.blit(data.background, (0,0))
+    data.walls.draw(data.screen)
     pygame.display.flip()
     mainloop()
 
 def mainloop():
     while True:
-        config.clock.tick(config.gamespeed)
+        data.clock.tick(data.gamespeed)
         handle_input()
+        data.entities.update()
+        draw()
         
-        config.entities.update()
-        config.entities.clear(config.screen, config.background)
-        pygame.display.update(config.entities.draw(config.screen))
-
 
 def handle_input():
     for event in pygame.event.get():
@@ -32,28 +31,27 @@ def handle_input():
             if event.key == pygame.K_ESCAPE:
                 functions.quit()
             elif event.key == pygame.K_UP:
-                config.player.direction = direction.NORTH
+                data.player.direction = direction.NORTH
             elif event.key == pygame.K_DOWN:
-                config.player.direction = direction.SOUTH
+                data.player.direction = direction.SOUTH
             elif event.key == pygame.K_LEFT:
-                config.player.direction = direction.WEST
+                data.player.direction = direction.WEST
             elif event.key == pygame.K_RIGHT:
-                config.player.direction = direction.EAST
+                data.player.direction = direction.EAST
                 
         elif event.type == pygame.KEYUP:
-            if event.key == pygame.K_UP and config.player.direction == direction.NORTH:
-                config.player.direction = direction.NONE
-            elif event.key == pygame.K_DOWN and config.player.direction == direction.SOUTH:
-                config.player.direction = direction.NONE
-            elif event.key == pygame.K_LEFT and config.player.direction == direction.WEST:
-                config.player.direction = direction.NONE
-            elif event.key == pygame.K_RIGHT and config.player.direction == direction.EAST:                 
-                config.player.direction = direction.NONE
+            if event.key == pygame.K_UP and data.player.direction == direction.NORTH:
+                data.player.direction = direction.NONE
+            elif event.key == pygame.K_DOWN and data.player.direction == direction.SOUTH:
+                data.player.direction = direction.NONE
+            elif event.key == pygame.K_LEFT and data.player.direction == direction.WEST:
+                data.player.direction = direction.NONE
+            elif event.key == pygame.K_RIGHT and data.player.direction == direction.EAST:                 
+                data.player.direction = direction.NONE
                 
-                
-                    
-
-
+def draw():
+    data.entities.clear(data.screen, data.background)
+    pygame.display.update(data.entities.draw(data.screen))
 
 
 
