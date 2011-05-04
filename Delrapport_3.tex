@@ -95,16 +95,86 @@ er intuitiv mm.
 
 \subsection{Planlægning af brugertests}
 I vores kommende afprøvningsarbejde er vi, som nævnt, nødt til at overvinde den forhindring at en
-kørende prototype mangler. Måden vi regner med
-at gøre dette kan siges at være en variation over sidste rapports mockup-testing.
+kørende prototype mangler. Måden vi regner med at gøre dette kan siges at være en variation over 
+sidste rapports mockup-testing: I stedet for at give testpersonerne et stykke programmel imellem 
+hænderne agter vi at sætte os ned med dem og 'snakke' de forskellige opgaver igennem. Eftersom denne
+form for testing sandsynligvis kommer til at kræve en del arbejde fra hvert gruppemedlem (vi regner
+fx. med at have én person som er ansvarlig for interaktion med testpersonen og én som er ansvarlig 
+for at dokumentere processen) regner vi med at nøjes med at udføre afprøvning med 2-3 elever fra 
+datalogiklassen på Greve gymnasium. Dette afhænger dog også af hvor mange elever der viser sig at 
+være interesserede i at deltage. 
 
-- Vi tegner og fortæller i stedet for at give dem software 
-- Vi afprøver med maks tre elever, afhængigt af hvor mange der er interesserede. 
-- Spørgsmålene vi vil stlle planlægges at være på formen 'Beskriv hvordan du ville gøre x'
-- Måske er der endda fordele ved denne måde at gøre det på: Vi kommer udenom python-problematikken. 		
+Måden vi planlægger at udføre selve afprøvningen er ved at sætte os ned med den enkelte elev
+og formulere de individuelle kodeopgaver for dem. Derefter vil vi bede dem beskrive (et bud på)
+den algoritme de kunne forestille sig at benytte for at løse den. Der er selvfølgelig en del 
+problematikker iboende i denne måde at gøre det på: En datalogisk uerfaren gymnasieelev kan 
+sandsynligvis ikke forventes at være vant til at skulle komme med et bud på datalogisk problem-
+løsning 'med det samme' på denne måde, og måske vil de have svært ved at forholde sig til den
+måde at tænke på. En anden ting vi er nødt til at tænke på er at der sandsynligvis er en forskel
+på hvor nemt testpersonerne vil have ved at udføre opgaven alene og med god tid, og under tidspres
+med universitetsstuderende der observerer dem imens. 
+
+Der er dog også visse fordele ved denne måde at udføre afprøvningen af programmet (eller, 
+mere præcist, af programmets datalogiske indhold). Problematikken i at ingen af vores 
+forsøgspersoner har specifik erfaring med python kommer her ikke til at udgøre et problem, 
+eftersom de ikke bede kode så meget som at udtrykke sig i generelle algoritmiske termer. 
+
+\section{Projektsamarbejdet}
+Siden sidste aflevering har vi holdt pause i påskeferien, og har derfor kun haft to uger til at holde møder og arbejde. Herefter har vi holdt jævnlige møder, hvor vi har uddelegeret, prioriteret og planlagt den videre udvikling af projektet og rapportskrivningen. 
+
+Vi oplever visse kommunikationsproblemer i gruppen; folk er dårlige til at melde ud om status på deres opgaver, hvilket er aldeles problematisk. Det begrænser vores overblik over den hidtidige udvikling af projektet. Man kan ikke hjælpe dem, hvis de sidder fast, da de ikke melder ud om dette. Er de overhovedet i gang? Er der andre, som bliver nød til at overtage opgaven? Eller er den måske næsten færdig? I sidste ende lægger det pres på resten af gruppen og er med til at skabe interne konflikter. For at løse dette har vi forsøgt os med alvorlige samtaler med de medlemmer af gruppen, som opfører sig sådan. Vi håber at det vil være nok, da vi ellers ikke kan se, hvad de skal gøre for at forbedre situationen. Ydermere er der en tendens til at tage lidt for let på tidsfrister, i særdeleshed i forbindelse med opgaver som rapportskrivning. Ting bliver lavet meget sent, og det er svært for den ansvarshavende at nå at læse det igennem og give kritik. I sidste ende står vi med et dårligere produkt. For at løse dette har prøvede vi efter sidste raportaflevering at uddelegere opgaverne tidligere, så folk havde længere tid til at lave dem. Dette var dog ikke synderligt effektivt, så selvom vi regner med at vedblive med at uddelegere tidligt vil vi prøve at finde andre måder at løse problemet. Som et fremtidigt eksperiment, forsøger vi at uddelegere opgaver parvis. Det vil sige at en enkelt person får ansvaret for at en given opgave bliver lavet, mens den anden søger for at følge processen, og hjælper med sørge for at den ansvarshavende ikke går død i det.
+
+\subsection{Mødeform og dokumentationsstrategi} 
+Til interne møder holder vi os stadig til en ret basal referatstrategi, hvor vi noterer beslutninger og statusopdateringer ved de enkelte punkter i dagsordenen og konkrete forslag og tanker ved diskussioner. Dette er praktisk på kort sigt, men det giver ikke en den store indsigt i, hvorfor vi har taget de beslutninger vi har, og kan i værste fald være unyttige i en eksamenssammenhæng, når vi skal redegøre for processen. Dette er stadig et punkt vi forsøger at forbedre, men det er ikke prioriteret særligt højt i forhold til mere nærværende opgaver. Rapporterne tager meget tid, og vi er ikke så langt med selve it-projektet, som vi gerne ville være. Konsekvensen af dette er, at vi ikke kan finde tid til at udbedre den mangel, og fortsætter med halvtilstrækkelige referater. Referaterne deler vi over Github (sammen med vores kode), og er derved let tilgængelige for alle gruppemedlemmer. Dette er vi glade for, om end vi har problemer med, at det ikke er alle, der har lige nemt ved at finde ud af git.
+
+Vores møder foregår som regel med stramme dagsordener, der er med til at effektivisere dem, og minimere spildtid. Vi udpeger en referent, og går punktvist frem. Der er for det meste fuldt fremmøde, men vi spilder en betragtelig mængde tid på, at folk kommer for sent. For at udbedre situation forsøger vi at lægge møderne i forlængelse af forelæsninger og øvelsestimer, så folk allerede er her. Herudover har vi på det seneste oplevet problemer med sygdom, og vi mangler ofte en person. Dette er der selvfølgelsig ikke en helt masse at gøre ved, men vi forsøger at opfordre folk til overveje, om de nu også har det SÅ dårligt, og måske kunne komme alligevel.
 
 
+\subsection{Projektstyring og implementation}
+Som nævnt i prototypeafsnittet, så har vi ingen kørende prototype. Dette er ikke uproblematisk, men vi har valgt at fokusere på at lave den pædagogiske del af projektet først. Dette har vi gjort fordi programmet i sig selv er meget simpelt, og ikke rigtig kan testes alene, ej heller ville det give mening at teste det mere, end vi allerede har gjort med vores papirsprototyper. Programmet drejer sig i høj grad om indholdet af forløbene, og uden nogen forløb er programmet tomt og ubrugeligt. Derfor har vi valgt at udvikle det første forløb først eller evt. en del af det, så det kan testes. Denne del af programmet, kan også håndkøres, og er egnet til testing.
 
+Som nævnt i den tidligere rapport havde vi et problem med, at det meget var en enkelt person, der stod for ansvaret for det hele. Dette var ikke udelukkende problematisk, fordi denne person stod med en væsentlig arbejdsbyrde, men også grundet dataindkapsling. Det var kun den ene person, som havde et egentlig overblik over opgaven. Dele af projektet var der ikke andre, som tog del i, og dermed havde resten af gruppen ikke rigtig noget indblik i det. Dette er stadig et problem i gruppen. Vi har ikke haft tid til at fokusere på omlægning af arbejdsstrukturen, og finder os derfor stadig i samme situation. 
+
+For at øge kontrollen med projektet og sikre at vi får det hele med, har vi uddelt 4 af hovedansvarsområderne i projektet til en person hver. Disse er projektledelse, kodeudvikling, unit-tests og dokumentation af kode. Tanken er ikke, at hver enkelt person står for sit punkt alene, men vedkommende har ansvaret for, at det bliver gjort og har opsyn med punktets status. På denne måde aktiverer og engagerer vi også alle gruppemedlemmer, så ansvaret ikke hænger på blot en del af gruppen, som det ellers har været præget af tidligere i projektet. Ydermere har vi fordelt de første trin i vores program, så vi hver især skriver udkast til 2-3 af trinene i vores første forløb. Dog skal alle kigge på samtlige punkter - dette er gjort fordi punktet i høj grad omhandler pædagogik, og man kan forestille sig ret forskellige tilgangsvinkler til dette. Ved at splitte det op sikrer vi, at vi får alles forslag til formidlingen, og kan i fællesskab finde en optimal løsning, hvor vi bruger de bedste dele fra de enkelte vinkler. En anden vigtig grund er selvfølgelig ansvarsfordeling, hvor vi sørger for at alle laver noget, og det ikke bliver en delmængde af gruppen, som kommer til at stå for det hele.  
+
+Vi er kommet ordentligt i gang med selve projektet nu, der har ellers hængt lidt, og blevet nedprioriteret i forhold til rapportskrivningen. På trods af begrænset tid, går det relativt hurtigt fremad, og vi regner med at kunne have i hvert fald en kørende prototype ved kursets slut, om end ikke helt så omfattende, som vi kunne have ønsket. 
+
+
+\section{Reviews}
+\subsection{User Testing, Discount User Testing, af Rolf Molich}
+Artiklen handler om usability testing, (User testing), hvordan man holder en vellykket brugertest, samt hvordan man sørger for at  testbruger føler sig godt tilpas før, under og efter en brugertest, samt forskellige teknikker man kan tage i brug. Artiklen beskriver for det meste en testprocedure, kaldet "Thinking Aloud Testing", hvor testbrugeren siger højt hvad det er han tænker mens han bruger programmet, (ting som hvad han er i tvivl om, hvordan han forventer at programmet reagerer, og hvordan han fortolker en besked). Disse ting bliver enten skrevet ned af en tester, eller optaget på video eller på lydbånd.
+
+En "Thinking Aloud Testing" kræver dog forberedelse. Først skal man tjekke om testbrugerne er over- eller under-kvalificeret ved at interviewe dem på forhånd, (dog dette behøves ikke for vores brugertest, da vi låner nogle gymnasie elever som læser datalogi til at teste programmet siden de ligger i vores målgruppe). Siden skal man også lave en liste af opgaver som testbrugerne skal løse, hvor den første opgave skal være en nem opgave som kan løses på få minutter, så at testbrugerne ikke bliver stresset eller nervøse. Denne liste af opgaver er en integreret del af vores hjælpeprogram, og derfor vil en del af vores brugertest gå ud på at se om hvis testbrugerne kan forstå disse opgaver. Det er også en god idé at afslutte en brugertest med en debriefing, hvor man taler med testbrugeren, og finder ud af hvilken tanker de havde om programmet, hvad var godt ved programmet, og hvad man kunne gøre bedre eller formulere bedre. En vigtig del under debriefing er at man behandler testbrugernes foreslag med respekt, for ellers vil de være tilbageholdende med foreslag og meninger omkring projektet.
+
+Artiklen gennemgik også kortvarigt en anden test procedure, "Constructive Interaction", hvor man lod to testbrugere arbejde sammen for at kunne løse opgaverne, hvorefter de vil diskutere programmet, hvad det gjorde godt, og hvad kan laves om. Vi vælger dog at ikke tage denne test procedure i brug, eftersom vores testbrugere er gymnasieelever vil de sikkert bruge tiden ukonstruktivt, og ikke tage deres opgave seriøst.
+
+Brugertest er afgørende for vores projekts success. Da vores program er et hjælpeprogram, designet til at lære gymnasieelever til at kunne kode spil i python, skal de instruktioner og opgaver som programmet viser frem til brugeren være klare og nemme at forstå. Derfor passer "Thinking Aloud Testing" rigtig godt til vores projekt - ved brug af denne teknik kan vi, fra vores kunder, høre hvad det er de forventer programmet skal kunne gøre, samt om hvis nogle af vores hints, opgavespecifikationer eller meddelser er uklare, eller ikke fortæller nok om opgaven. Artiklen gav også tips til god etikette før, under og efter en brugetest, hvilket kommer til at være meget nyttige for os, da vores testbrugers input er uhyre vigtigt for os.
+
+Ikke kun det, artiklen vil også hjælpe os med at skrive de trin som vores fremtidige brugere skal gennemføre - artiklen gav gode råd som, for eksempelt, det første trin skal være det nemmeste så at testbrugerne ikke ville føle sig frustreret eller gå i panik hvis de ikke kan løse det første trin. Man kan vel sige at artiklen gav os gode pædagogik råd, hvilket er præcist det som vi har brug for til vores projekt. Derfor kan man sige at artiklen gavner vores gruppe både før vores brugertest, samt efter vi har holdt vores brugertest.
+
+\subsection{Software Architecture in Practice, af Bass, Clements og Kazman}
+Artiklen handler om software architecture, hvor software architecture er systemets struktur, eller strukturer, som omfatter sofware elementer, og de relationer imellem elementerne, samt de antagelser som elementer kan have om andre elementer. Arkitekturen definere softwarets elementer, og omfatter de offentlige dele af softwaret. Et arkitektur består af strukturer, (dette plejer at være i flertal medmindre softwaret er meget specialiseret eller simpelt), og disse strukturer behøver ikke at være af samme type, da strukturerne forventes at dække over alle dele af systemet.
+
+Strukturerne for vores program regnes at være af én slags - en modulær baseret struktur, (hvor systemet kan splittes i mindre dele), da dette passer bedre for vores projekt. Siden at hovedparten af vores projekt består af trin, som består af mindre trin, kan denne form af struktur passe godt til systemet, siden at dette lader systemet blive brudt ned i mindre dele. Og siden hvert del af disse trin behøver et overordnet trin for at kunne udføres, (et trin har 'checkpoints', som derefter har hints), sørger denne slags struktur for at systemet bliver sådan.
+
+Derfor kan det være at det bedste form for struktur for vores system ville være at bruge et 'logical' struktur, hvilket opfylder det basis som udgør et modulært struktur. Desværre gav artiklen ikke en bedre beskrivelse af hvad et logical struktur er, udover at det er modulært, og består af objekter, så det kan godt være at det ikke er lige så perfekt som vi tror det er. Men ud fra hvad artiklen har fortalt, virker det godt for os.
+
+De andre former for strukturer som artiklen fortalte om virkede som om de ikke ville fungere for vores system, og derfor vil vores system kun have et struktur. Man kan måske bruge et 'physical' struktur, men da vi lader et tredje-parti program processere koden, samt vi ikke rigtig har brug for meget kommunikation imellem elementerne, kan det nok være at det bare ville komplicere ting at have det med.
+
+Da vi, i gruppen, har haft problemer med at kommunikere med hinanden om hvor vi står med vores arbejde, hvad vi skal gøre med vores dele af rapporten, m.m., vil et arkitektur hjælpe os som en gruppe, da et arkitektur vil stå som en basismodel for det system som vi skal lave. Ved at have en basismodel stående fremme, vil vi alle samme vide hvor i projektet vi står, og det vil gør det nemmere for os holde os organiseret - noget som gavner alle grupper. Og hvis der opstår uenigheder eller misforståelser omkring vores opgaver, vil et arkitektur hjælpe os videre.
+
+\subsection{Foundations for the Study of Software Architecture, af Perry, D. og Wolf, A}
+Artiklen fortæller om en anderledes form for software architecture end præsenteret. Artiklen påstår at et systems arkitektur består af tre dele: 
+\begin{enumerate}
+\item Elementer,
+\item Form, (Elementernes begrænsninger), og
+\item Basis for systemet, (dette plejer at være systemets krav).
+\end{enumerate}
+Dette er en temmelig stor forskel. Bass, Clements og Kasman påstår at systemets arkitektur består af mange forskellige strukturer, som så kollektivt beskriver systemets arkitektur, hvorimod Perry og Wolf ser arkitektur som tre kriterier som bliver defineret, samt det er forventet at arkitekten arbejder med kunden for at kunne definére systemets arkitektur. 
+
+Dette fører til et problem: Hvilken form for system arkitektur er så bedre at bruge for vores projekt? Umiddelbart vil vi sige at den form for system arkitektur beskrevet i Foundations for the Study of Software Architecture ville være af større gavn for vores system. Hvis vi skulle tegne op alle de strukturer som kan beskrive vores system, ville vi ende med ikke særlig mange, hvilket modarbejder Bass, Clements and Kazmans system arkitekturs styrke - ved at have mange forskellige strukturer, vil arkitekturen kunne beskrive systemet på mange flere måder end hvis man havde meget få strukturer. Dog for mindre projekter, som kræver at man arbejder mere intimt med sin kunde, vil Perry og Wolfs arkitektur form være bedre for vores system.
+
+Noget andet som artiklen diskutere er Process/Data/Connector Interdependence. Dette er navnet som artiklen giver et fænomen hvor når man laver arkitekturen, er det vigtigt at man har forskellige synspunkter i arkitekturen. Artiklen fortæller om at forarbejdning, data og forbindelser alle har en effekt på hinanden, så hvis et synspunkt er fastsat, (for eksempel hvis forarbejdningens synspunkt er givet), vil der blive givet fokus på datastrømmen igennem forarbejdningens elementer. Det som dette betyder er at arkitekturen skal kunne give et overblik på alle dele af systemet, samt at hvis man kigger på den del af systemet, skal man kunne se hvordan den relatere sig til andre dele af systemet. 
+
+Siden en stor del af vores program er datastrømmen imellem vores hjælpeprogram og det text editor som brugeren kommer til at vælge, samt forarbejdningen af disse dataer, er dette punkt meget hjælpsomt for os. Ved at få et overblik over hvordan de forskellige dele af vores program virker, vil vi nemmere kunne se, via vores system arkitektur, hvilken dele af systemet er afhængige på hvilken andre dele af vores system.
 \end{document}
-
-
