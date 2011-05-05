@@ -44,6 +44,197 @@ Gruppeid : LO6\\
 \newpage
 
 %% HER STARTER RAPPORTEN
+\section{IT-løsningens arkitektur og komponent-design}
+Vores projekt består af en primært todelt løsning.
+På overfladen har vi selve hovedprogrammet/klienten. Det er igennem dette at man gennemgår de konkrete forløb og bliver guidet igennem processen i at lave et spil. Nedenunder dette lag findes selve spillet.
+\\
+
+Vi har dog valgt at holde vores projekt åbent for i fremtiden at kunne udvide med flere forløb. Derfor består projektet i virkeligheden af tre dele.
+\begin{itemize}
+\item \textit{Hovedprogammet} der forklarer brugeren hvad han skal nu.
+\item Et \textit{forløb} som klienten læser fra for at vide hvad brugeren skal. Forløbet er delt ind i en række trin med tilknyttede tests for at gøre det lettere for brugeren samtidig med der kan ydes skarpere kontrol med om brugeren har løst opgaverne undervejs korrekt.
+\item Et \textit{spil} som er det konkrete produkt der arbejdes på af brugeren.
+Spillet tilgås ikke gennem vores program men gennem brugerens eget tekstredigeringsværktøj.
+\end{itemize}
+På figur \ref{fig:brug_og_opdeling} ses hvordan brugeren bruger sit foretrukne tekstredigeringsværktøj til at tilføje og ændre på koden i spillet samtidigt med at vores værktøj bruges til at tilgå informationen om hvad brugeren skal foretage sig. Det er igennem testsne tilknyttet trinene i forløbet at klienten kan holde styr på om brugeren kan få lov til at gå videre til næste trin.
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[scale=0.5]{afl3_brug_og_opdeling.png}
+    \caption{Illustration af programmets brug og opdeling}
+    \label{fig:brug_og_opdeling}
+  \end{center}
+\end{figure}
+
+
+\paragraph{}
+Da projektets primære opgave består i dets formidling, valgte vi at fokusere på selve spillet og forløbet til at starte med. klientens primære funktion består i at vise tekst samt at køre de tests der er defineret i forløbet. Uden et forløb med et tilhørende spil er klienten derfor nytteløst.
+Vi startede derfor med at kode spillet inden selve klienten, for at vi så kunne begynde at lave forløbet. Vi har derfor på nuværende tidspunkt i projektet et stortset færdigudviklet spil men ikke noget af selve klienten på plads.
+
+\subsection{Klienten}
+Klientens primære funktion er at hente beskrivelser for opgaverne til hvert trin fra forløbet og vise det til brugeren. Derudover skal klienten køre de tests der er defineret til hvert trin når brugeren prøver at bevæge sig frem til det næste. Klienten vil derfor virke som en slags tynd fremviser der blot udfører hvad der er defineret i selve forløbet.
+
+\begin{table}[h!]
+  \begin{center}
+    \begin{tabular}{llllll}
+      \toprule
+      Kriterium & Meget   & Vigtigt & Mindre  & Irrelevant & Trivielt \\
+                & vigtigt &         & vigtigt &            & opfyldt  \\
+      \midrule
+      Brugbart        & &x& & & \\
+      Sikkert         & & & &x& \\
+      Effektivt       & & &x& & \\
+      Korrekt         & & &x& & \\
+      Pålideligt      & & &x& & \\
+      Vedligeholdbart & & &x& & \\
+      Testbart        & & & &x& \\
+      Fleksibelt      &x& & & & \\
+      Forståeligt     & &x& & & \\
+      Genbrugeligt    & & &x& & \\
+      Flytbarhed      & &x& & & \\
+      Integrerbart    &x& & & & \\
+      \bottomrule
+    \end{tabular}
+    \caption{Kvalitetsattributter for klienten.}
+    \label{tab:kvalitetsattributter_program}
+  \end{center}
+\end{table}
+
+\subsubsection{Kvalitetsattributter}
+Dette afspejler sig også i kvalitetsatributterne som ses i tabel \ref{tab:kvalitetsattributter_program}.
+Det er vigtigt at klienten er let at bruge så det ikke kommer i vejen for brugerens indlæring, det er meningen brugeren skal spekulere på hvordan han bedst muligt løser de stillede opgaver, ikke hvordan han bruger klienten.
+Vi vil derimod ikke have behov for at tænke synderligt på hvor effektivt klienten er eller på hvor korrekt og pålideligt det er.
+\\
+
+Da systemet køres lokalt uden at skulle forbinde til diverse systemer behøver vi ikke at tænke på sikkerhed. Det eneste data der er at sikre, er de filer brugeren sidder og arbejder med. Vi anser det dog ikke vores opgave at sikre disse filer da de findes på lige fod med brugerens andre filer på det lokale system. Hvis programmet benyttes på en skole og der ønskes større sikkerhed bør brugerretigheder indføres på et bredere niveau der ikke har noget at gøre med vores program. Vi ønkser derfor ikke at sikre filerne på samme måde som f.eks. Word heller ikke sikrer sine filer mod andre.
+\\
+
+Vi går heller ikke op i testbarheden af klienten da vi anser klienten for at være så lille at der ikke vil være behov for synderligt mange resurcer her. Dette gælder dog kun for selve klienten. Når det kommer til forløbet og spillet er testbarheden et af de vigtigste punkter.
+\\
+
+Hvad vi tilgengæld går op i, i klienten er fleksibilitet. Vi håber at kunne gøre klienten så minimal og generel at vi er i stand til at udvikle en bred palette af forskellige forløb med tilhørende spil som hver fører brugeren ind i forskellige emner med forskellige sværhedsgrader. Til at starte med satser vi kun på et enkelt forløb men vi håber med tiden at kunne udvide. Ideen er at forløbene skal defineres i et sådan format at man nemt kan udtrykke os som der behøves. Vi håber på at kunne bruge html eller et lignende format til at udtrykke tekst. Med html får vi en rig markup samtidig med vi kan indsætte referencer til hjemmesider samt billeder og lignende. Planen er at testsne er skrevet som et pythonscript der køres, hvis testen returnere en sandhedsværdi fortsætter klienten til næste trin, hvis testen fejler returnerer den derimod en fejl besked med mulige hints om hvad brugeren kan have gjort forkert.
+\\
+
+Ved at gøre klienten minimalt og generelt gør man det samtidigt nemmere at genbruge koden i andre sammenhænge. Man kunne nok forholdsvist nemt konvertere programmet til andre typer opgaver eller måske andre programmeringssprog end python. Det er dog ikke noget vi anser som vigtigt.
+\\
+
+Et andet punkt vi ser som vigtigt er forståelighed, det er væsentligt at brugeren forstår hvad programmet gør samt hvad det vil have brugeren til at gøre så energien kan bruges på at finde den smarteste løsning på programmeringsopgaven.
+Klienten skal helst være så transperent som muligt så brugeren kan fokusere på de vigtige ting.
+\\
+
+Flytbarhed er en vigtig ting da vi ikke ved præcis hvilken platform vores system bliver rullet ud på. Det kan være en skoles ældgamle it-systemer der kører windows 98, det kan være brugerens egen datamat der kører linux, eller måske en mac.
+Vi håber på at kunne ramme så bredt som muligt så flest muligt kan få gavn af vores program. Det er en af grundene til at vi udvikler i python da det er et sprog der er i stand til at køre på de fleste datamater. Samtidigt bruger alle i gruppen Linux sã derfor er det naturligt for os at sigte efter så brede løsninger som muligt. Disse tanker har vi især nu hvor vi er ved at beslutte os for hvilket guibibliotek vi vil bruge til at udvikle klienten. Det skal helst være så nemt som muligt at installere så vi vil gerne have så få afhængigheder (dependencies) som muligt.
+\\
+
+Sidst men ikke mindst har vi integrerbarheden som vi også vægter højt.
+Da vi har valgt ikke at lave et indbygget tekstredigeringsværktøj, men at lade det være op til brugeren, er vi nød til at gøre det let at bruge sammen med eksisterende systemer. Det er derfor den grafiske del er designet som en lodret søjle så skærmpladsen kan deles med tekstredigeringsværktøjet så effektivt som muligt. Samtidigt er programmet designet meget minimalt med en rimelig genbrugelighed så man kunne forestille sig at klienten blev udviklet som f.eks. et emacs major-mode eller et visual studio/eclipse plugin.
+\\
+
+\paragraph{}
+
+\subsubsection{Teknisk}
+Rent teknisk regner vi med at bygge klienten i python med et af de mange gui biblioteker. Der findes en hel række af sådane biblioteker hvoraf det der hedder Tkinter er det som kan betægnes som standarden for python. Derudover findes PyGTK, PyQt samt wxPython som også er store og udbredte.
+\\
+
+Planen er at forløbet enten er en stor fil eller et filarkiv bestående af en række trin der hver har en beskrivelse samt en række pythonscripts der udgør testsne. For at kunne tillægge mere funktionalitet til beskrivelserne vil det være smart at benytte et allerede veldefineret format. Ligenu går tankerne på html da man der kan lave de fleste grundlægende ting så som understregninger, tabeler, henvisninger osv. Vi skal i så fald benytte et grafisk bibliotek der understøtter visning af simpel html.
+Da testsne er lavet i python vil det være trivielt at indlæse dem og afvikle dem.
+\\
+
+Man kan betragte løsningen som et simpelt Model-View-Controller setup.
+Spillet og forløbet er det data der udgør modelen, klienten står for at køre de rigtige tests osv. i kontroldelen og det grafiske bibliotek står for at vise dette til brugeren.
+\\
+
+Dette er alt der er brug for til den tekniske løsning. Vi har ikke brug for at arbejde med mere avancerede databaser end hvad filsystemet tilbyder. Takket være de mange omfangsrige biblioteker behøver vi heller ikke at tænke på selv at skulle bygge teknologien til at vise tingene grafisk, hverken i klienten eller i spillet.
+
+
+
+\subsection{Spillet}
+\subsubsection{Teknisk}
+Vi valgte at udvikle spillet i python primært fordi det er et lettilgængeligt sprog, både for os, men i lige så høj grad for brugerne. Samtidig havde vi gode erfaringer med biblioteket pygame som er i stand til at håndtere mange grundlæggene ting som tegning af billeder, håndtering af inputs osv.
+\\
+
+Som i klienten har vi også valgt at gå ud fra ModelViewControll mønstret da vi lavede spillet. MVC er et ret udbredt mønster i spilverdenen og vi har derfor valgt at følge det. 
+Spillet selv er splittet op i en række forskellige moduler der tager sig af forskellige ting. Vi har valgt at være ret agresive med opdelingen, dels for at gøre det mere overskueligt for brugeren dels for at vænne dem til at dele deres kode mere op. Opdelt kode er lettere at overskue, rette og teste, tre ting vi gør brug af i projektet.
+
+Spillet består af følgende filer:
+\begin{itemize}
+\item \textit{game.py} indeholder \"main\" metoden, det er herfra spillet startes. Derudover indeholder den selve spilløkken.
+\item \textit{model.py} indeholder alle de klasser der er i spillet, her er alle spilobjekterne defineret.
+\item \textit{data.py} er en slags database over alt i spillet. Modulet holder styr på de forskellige spilkonstanter så som vinduestørrelsen, samt sæt af spillets objekter. Når et nyt objekt bliver oprettet skal det tilføje sig i de relevante grupper så de bliver opdateret og vist korrekt.
+\item \textit{mapping.py} banerne til spillet består af simple tekstfiler der indlæses og gemmes i data modulet. Når banerne er blevet indlæst er der funktionalitet i mapping modulet der kan omsætte banen til faktiske objekter.
+\item \textit{direction.py} Udgør enums for alle 4 verdenshjørner, modulet bliver brugt til bevægelse af spilleren.
+\item \textit{functions.py} indeholder lidt blandede funktioner.
+\item \textit{resources.py} indeholder alt funktionalitet der har med faktisk indlæsning af data at gøre.
+\end{itemize}
+
+Udover disse filer findes to mapper \textit{images} som indeholder alt billedmaterialle, samt \textit{maps} der indeholder banefiler.
+
+
+\begin{table}[h!]
+  \begin{center}
+    \begin{tabular}{llllll}
+      \toprule
+      Kriterium & Meget   & Vigtigt & Mindre  & Irrelevant & Trivielt \\
+                & vigtigt &         & vigtigt &            & opfyldt  \\
+      \midrule
+      Brugbart        & & &x& & \\
+      Sikkert         & & & &x& \\
+      Effektivt       & &x& & & \\
+      Korrekt         &x& & & & \\
+      Pålideligt      &x& & & & \\
+      Vedligeholdbart & &x& & & \\
+      Testbart        &x& & & & \\
+      Fleksibelt      &x& & & & \\
+      Forståeligt     & &x& & & \\
+      Genbrugeligt    & &x& & & \\
+      Flytbarhed      & &x& & & \\
+      Integrerbart    & & & &x& \\
+      \bottomrule
+    \end{tabular}
+    \caption{Kvalitetsattributter for Spillet.}
+    \label{tab:kvalitetsattributter_spil}
+  \end{center}
+\end{table}
+
+\subsubsection{Kvalitetsattributter}
+Vi valgte også at udarbejde et skema af kvalitetsatributter for spillet da kode opgaven deri på mange måder er mere omfattende end klienten. Samtidig er spillets fokus og klientdelens fokus så forskellige at det gav god mening at kigge nærmere på hvor vores data og klient adskilte sig fra hinanden. I tabel \ref{tab:kvalitetsattributter_spil} ses resultatet.
+\\
+
+Det ses at brugbarheden er mindre vigtig i forhold til klientens. Dette er et aktivt valg fra vores side. Vi vil i dette spil fokusere mere på at få noget frem på skærmen som brugeren kan inteargere med og udvide, end at få det til at være særligt brugervenligt. Vi har derfor valgt f.eks. ikke at lave menuer, spillet starter direkte ind i den valgte bane og når man dør slutter spillet.
+Det er ting som er væsentlige hvis man gerne vil tjene penge på et velpoleret spil, men det er ligegyldigt hvis man bare vil lege og lære.
+\\
+
+Sikkerheden er irrelevant. Der er ingen kontakt til andre systemer. I og med at det er brugeren selv der udvikler spillet vil det heller ikke give mening at beskytte spillet mod snyderi fra vores side, så der er intet spildata der skal beskyttes.
+\\
+
+Effektiviteten af spillet er dog lidt vigtig, hvis spillet skal køre med 30fps har man 33 millisekunder til at håndtere input, udføre spillogikken samt tegne spillet. Dog er pygame istand til at håndtere selve tegnefunktionaliteten hvilket er implementeret i c og foregår forholdsvist stærkt så vi slipper for at skulle tage os af det manuelt.
+\\
+
+Det er vigtigt at koden er korrekt og pålidelig, på den måde er vi istand til at lave langt mere gennemførlige tests af brugerens spil. Dermed kan vi sikre os at brugerne lærer det de skal.
+\\
+
+Vedligeholdbarheden er også vigtig, den er med til at gøre det nemmere for brugeren at rette sine fejl og komme videre i forløbet. Vedligeholdbarhed kan blandt andet opnås ved at gøre koden nemmere at overskue.
+\\
+
+Testbarheden skal være i top så vi kan udføre de tests vi skal for at lade brugeren gå videre til næste trin.
+\\
+
+Fleksibiliteten er prioriteret højt da det gør det nemmere for brugeren at modificere spillet til hans behag. På den måde bliver det brugerens spil istedet for vores. Hvis brugeren knytter sig til spillet er der større sansynelighded for at brugeren fortsætter og for mere ud af forløbet. Samtidigt kan det være at det giver brugeren blod på tanden til at kigge nærmere på spiludvikling.
+\\
+
+Det er vigtigt at forståeligheden er høj da det er meningen brugeren skal lære så meget som muligt. Derfor vil vi også forsøge at pakke de mere pygame specifike ting væk så brugeren kan fokusere på det væsentlige.
+\\
+
+Genbrugeligheden bør være høj på to måder, dels er det vigtigt at brugeren kan tage de tekniker han har lært gennem forløbet med sig, dels vil det være en fordel hvis han kan udnytte segmenter af koden hvis han har lyst til at udvikle sit eget spil.
+\\
+
+Igen er det vigtigt med flytbarheden, brugeren skal ikke kun kunne afvikle klienten men også sit spil på den platform han sidder ved.
+\\
+
+Integrerbarheden derimod, er ligegyldig da spillet bare skal kunne køre selvstændigt.
+
+
+
 \section{Erfaringer med evalueringer af IT-løsningen i samarbejde med brugerne}
 Denne sektion er en smule besværlig for vores gruppe at skrive, eftersom vi på nuværende
 tidspunkt ikke har en kørende prototype af vores program som kan afprøves af brugerne. 
