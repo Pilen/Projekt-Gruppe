@@ -1,24 +1,25 @@
 
 import random
 import pygame
-import direction, config, resources, functions
+import direction, data, resources, functions
 
 class Wall(pygame.sprite.Sprite):
     def __init__(self, x, y):
         pygame.sprite.Sprite.__init__(self)
-        #self.image = pygame.image.load
         self.image, self.rect = resources.load_image("wall.png")
         self.rect.move_ip(x,y)
 
-        self.add(config.walls)
+        self.add(data.walls)
+
         
 class Gold(pygame.sprite.Sprite):
     def __init__(self, x, y):
         pygame.sprite.Sprite.__init__(self)
-        self.image, self.rect = resources.load_image("gold.png")
+        self.image, self.rect = resources.load_image("gold.png",-1)
         self.rect.move_ip(x,y)
-
-        self.add(config.gold)
+        
+        self.add(data.gold)
+        self.add(data.entities)
 
 
 class Monster(pygame.sprite.Sprite):
@@ -27,17 +28,17 @@ class Monster(pygame.sprite.Sprite):
         self.image, self.rect = resources.load_image("monster.png", -1)
         self.rect.move_ip(x,y)
 
-        self.add(config.entities)
-        self.add(config.monsters)
+        self.add(data.entities)
+        self.add(data.monsters)
 
         self.SPEED = 3
         self.SENSES = 100
-        self.timetochangedirection = config.gamespeed * 10
+        self.timetochangedirection = data.gamespeed * 10
         self.timeleft = self.timetochangedirection
 
     def update(self):
 
-        if functions.distance_between(self.rect,config.player.rect)> self.SENSES:
+        if functions.distance_between(self.rect,data.player.rect)> self.SENSES:
             if self.timetochangedirection <= 0:
                 self.direction = direction.random()
             
@@ -53,7 +54,7 @@ class Monster(pygame.sprite.Sprite):
     def move(self, vector):
         rect = self.rect
         self.rect = self.rect.move(vector[0], vector[1])
-        if len(pygame.sprite.spritecollide(self,config.walls, False)) > 0:
+        if len(pygame.sprite.spritecollide(self,data.walls, False)) > 0:
             self.rect = rect
 
 
@@ -64,12 +65,12 @@ class Player(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         self.image, self.rect = resources.load_image("player.png",-1)
         self.rect.move_ip(x,y)
-        self.add(config.entities)
+        self.add(data.entities)
         self.direction = direction.NONE
         self.SPEED = 2
-
-        self.add(config.entities)
-        config.player = self
+        self.gold = 0
+        self.add(data.entities)
+        data.player = self
     
     def update(self):
         vector = [0,0]
@@ -89,8 +90,10 @@ class Player(pygame.sprite.Sprite):
     def move(self, vector):
         rect = self.rect
         self.rect = self.rect.move(vector[0], vector[1])
-        if len(pygame.sprite.spritecollide(self,config.walls, False)) > 0:
+        if len(pygame.sprite.spritecollide(self,data.walls, False)) > 0:
             self.rect = rect
+
+        self.gold += len(pygame.sprite.spritecollide(self,data.gold, True))
 
     
            

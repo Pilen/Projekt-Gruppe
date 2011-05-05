@@ -1,7 +1,7 @@
 import os, pygame
 from pygame.locals import *
 
-data_dir = "data"
+data_dir = "images"
 map_dir = "maps"
 def load_image(name, colorkey=None):
     fullname = os.path.join(data_dir, name)
