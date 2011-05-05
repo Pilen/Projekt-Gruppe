@@ -27,3 +27,6 @@ def proccesCharacter(x,y):
 for y in range(0,(600/32)):
     for x in range(0,(800/32)):
         proccesCharacter(x,y)
+
+'''Naja har svært ved at forstå processCharacter'''
+ 
