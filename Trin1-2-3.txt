@@ -1,15 +1,15 @@
 ﻿Trin 1:
 Main
-Beskrivelse.1: Klassen 'main' er hvor man typisk starter spillet op.
+Beskrivelse.1: Metoden 'main' er hvor man typisk starter spillet op.
     Det er der man fortæller python at den skal starte op Pygame, (pygame.init), 
-    og det er også den klasse som tegner op det første billede som man ser 
+    og det er også den metode som tegner op det første billede som man ser 
     når man starter spillet, (dette kan være spillets startside, eller det første
-    level i spillet, m.m.). Klassen 'main' er det første klasse som åbnes når spillet
-    er åbnet, og via denne klasse holder man spillet kørende ved hjælp af en anden klasse,
-    (dog dette bliver diskuteret ved næste trin).
+    level i spillet, m.m.). Metoden 'main' er det første metode som åbnes når spillet
+    er åbnet, og via denne metode holder man spillet kørende ved hjælp af en anden klasse
+    eller metode, (dog dette bliver diskuteret ved næste trin).
 
 
-1. Definér klassen main(), hvor dens funktionalitet er at starte pygame. Der skal ikke
+1. Definér metoden main(), hvor dens funktionalitet er at starte pygame. Der skal ikke
    behøves input.
 
 Hints: Kommandoen for at åbne pygame er 'pygame.init'.
@@ -27,15 +27,15 @@ Hints: Gør brug af blitting for at tegne baggrunden.
 
 
 
-MainBeskrivelse.3: Noget som man skal huske med en main klasse er at man skal få python
-    til at starte klassen når spillet startes. Dette opnås ved et velkendt trick i
-    python hvor man får python til at tjekke for et variabel, __name___ er lig med 
+MainBeskrivelse.3: Noget som man skal huske med en main metode er at man skal få python
+    til at starte metoden når spillet startes. Dette opnås ved et velkendt trick i
+    python hvor man får python til at tjekke for et variabel, __name___, er lig med 
     __main__, (hvor __name__ er hvad python navngiver det modul det kører).
 
 
-3. Sørg for at klassen main startes op når spillet startes.
+3. Sørg for at metoden main startes op når spillet startes.
 
-Hints: Dette skal gøres udenfor klassen "main", da Python ikke vil starte main før
+Hints: Dette skal gøres udenfor metoden "main", da Python ikke vil starte main før
       den får besked for det.
 
        Husk at når du skal sammenligne hvad et variabel er, så hvis det er et string
@@ -45,12 +45,12 @@ Hints: Dette skal gøres udenfor klassen "main", da Python ikke vil starte main 
 
 Trin 2:
 Mainloop
-Beskrivelse.1: Hvis main klassen starter spillet op, er spillets mainloop det 
-    som holder spillet kørende. Mainloop udføres via main klassen, og det er fra
+Beskrivelse.1: Hvis main metoden starter spillet op, er spillets mainloop det 
+    som holder spillet kørende. Mainloop udføres via main metoden, og det er fra
     mainloopen at de klasser som opdatere spillet, eller modtager inputs, køres.
 
 
-1. Lav en ny klasse, mainloop(), som igen tager ingen input. Den skal kunne køres
+1. Lav en ny metode, mainloop(), som igen tager ingen input. Den skal kunne køres
    automatisk når spillet startes.
 
 Hints: En populær måde at få mainloopen til at køre i uendelig løkke er at bruge et 
@@ -60,13 +60,14 @@ Hints: En populær måde at få mainloopen til at køre i uendelig løkke er at 
 
 Trin 3:
 Player
-Beskrivelse.1: Når man vil tilføje en spiller, skal man først lave en spillerklasse, (som vi kalder player). De forskellige     klasser holder styr på de forskellige ting af spillet, ergo player klassen holder styr på spilleren.
-    De ting som holdes styr i denne klasse er ting som selve initialiseringen af spilleren, for spilleren tegnes, samt de     variabler som tilføjes til spilleren, (som for eksempel guld).
+Beskrivelse.1: Når man vil tilføje en spiller, skal man først lave en spillerklasse, (som vi kalder player). De forskellige     klasser holder styr på de forskellige dele af spillet, ergo player klassen holder styr på spilleren.
+    De ting som holdes styr i denne klasse er ting som selve initialiseringen af spilleren, spilleren bliver opdateret,
+    samt de variabler som tilføjes til spilleren, (som for eksempel guld). Hvad typisk bruges til at tegne de forskellige
+    modeller, (som for eksempel player), er et indbygget funktion i pygame, pygame.sprite.Sprite.
 
-1. Lav en ny klasse, player, hvor dens funktioner er at starte op player, samt at tegne spilleren, (brug en af de billeder som er forberedt på forhånd som spillerens grafik).
+1. Lav en ny klasse, player, hvor dens funktioner er at starte op player, samt at tegne spilleren, (brug en af de billeder som
+   er forberedt på forhånd som spillerens grafik). Disse to funktioner skal kunne udføres fra en metode, __init__(self, x, y).
 
-Hints: Husk at en __init__ metode bruges til at starte op en klasse.
-
-       Husk at mainloopen holder alle de relevante dele af spillet i gang.
-
+Hints: Husk at mainloopen holder alle de relevante dele af spillet i gang.
        __init__'s input skal være de koordinater som man vil have spilleren til at spawne.
+       
