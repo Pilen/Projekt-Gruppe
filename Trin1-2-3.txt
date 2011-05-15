@@ -57,3 +57,16 @@ Hints: En populær måde at få mainloopen til at køre i uendelig løkke er at 
       while statement. While True virker da python antager at true forbliver true.
  
        Husk at mainloop skal startes op når main er startet op.
+
+Trin 3:
+Player
+Beskrivelse.1: Når man vil tilføje en spiller, skal man først lave en spillerklasse, (som vi kalder player). De forskellige     klasser holder styr på de forskellige ting af spillet, ergo player klassen holder styr på spilleren.
+    De ting som holdes styr i denne klasse er ting som selve initialiseringen af spilleren, for spilleren tegnes, samt de     variabler som tilføjes til spilleren, (som for eksempel guld).
+
+1. Lav en ny klasse, player, hvor dens funktioner er at starte op player, samt at tegne spilleren, (brug en af de billeder som er forberedt på forhånd som spillerens grafik).
+
+Hints: Husk at en __init__ metode bruges til at starte op en klasse.
+
+       Husk at mainloopen holder alle de relevante dele af spillet i gang.
+
+       __init__'s input skal være de koordinater som man vil have spilleren til at spawne.
