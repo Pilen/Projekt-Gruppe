@@ -1,0 +1,38 @@
+Forslag til rækkefølge: 
+
+Grundlæggende struktur for klasser (Player, Monster, Wall, Gold)
+Få klasserne ud på et board (main)
+Grundlæggende funktioner (
+Få klasserne til at bevæge sig rundt (main)
+
+
+Ting man kunne overveje at skjule for brugeren: 
+Resources - load_image
+
+Designvalg til diskussion: 
+Hvorfor er direction i sit eget modul?
+
+0. spil.py.main (tilføjer 4 linjer til main-funktionen (m. hint til quit-metode men uden at give den eksplicit))
+1. spil.main_loop.py (main loop - lave et clock, input, update, draw) 
+2. classes.py (initmetoden til player)
+3. main.py (config.player = player)
+4. classes.py player (move)
+5. classes.py player (update)
+6. spil.py (handle_input)
+7. classes.py wall (opret klassen wall)
+8. classes.py.player.move (collision detection)
+9. map.py (kod level processering)
+10. classes.py.gold (opret gold-klassen i classes og levelloader)
+11. classes.py.player (opdatér player)
+12. classes.py.monster (opret monster-klassen i classes og levelloader)
+13. spil.py (ai)
+
+
+
+
+
+
+
+
+
+
