@@ -1,0 +1,53 @@
+Skelet: 
+
+def handle_input():
+    for event in pygame.event.get():
+            if event.key == pygame.K_UP:
+                ''Få spilleren til at skifte retning''
+            elif event.key == pygame.K_DOWN:
+                ''Få spilleren til at skifte til en anden retning''
+           
+                
+
+Beskrivelse: 
+
+Du skal nu kode den del af spillet der håndterer input fra spilleren - 
+dvs. at du skal få spillet til at reagere på det data det modtager fra
+tastaturen (fx. når spilleren trykker på piletasterne). I handle_input() 
+skal du konkret finde ud af at stoppe spillet, samt at få spilleren til 
+at bevæge sig vha. input fra tastaturet. 
+
+Måden vi gør dette i pygame er vha. såkaldt hændelseshåndtering (event
+handling). Dette står beskrevet i nærmere detaljer under links-sektionen. 
+ 
+Som du kan se af kodeskelettet lægger vi ud med at indhente en liste 
+(også kaldet en kø) af hændelser fra tastaturet (ln 1). Denne undersøger 
+vi herefter, og angiver hvordan spillet skal reagere på beskeder fra de 
+forskellige taster (eksempel: ln 2-5). 
+
+Hints: 
+
+0: Størstedelen af det data der skal manipuleres her er spillerens retning.
+   Hvor lagres det?
+
+1: Hvilket tastaturinput virker bedst til at bestemme retning på spilleren?
+   Hvornår vil du indhente dataet fra tasterne - når de er blevet trykket ned
+   eller når de er blevet sluppet igen?
+
+2: Du skal (ud fra en hændelse fra tastaturet) få spillet til at stoppe. Hvor
+   har du en funktion der stopper spillet?
+
+3: Du kan hente inputtet til at stoppe spillet på flere måder - bl.a. har 
+   pygame en indbygget quit-konstant. Hvordan kan du ellers stoppe spillet?
+   Er der behov for flere måder at stoppe spillet på?
+
+4: Undersøg forskellen på de to hændelsestyper pygame.KEYUP og pygame.KEYDOWN. 
+   Skal spillet reagere forskelligt på de to?
+
+Links: 
+Pygames hændelseshåndteringsmodul: http://www.pygame.org/docs/ref/event.html
+Pygames liste af tastatur-konstanter: http://www.pygame.org/docs/ref/key.html
+Kort opsummering af begerebet hændelseshåndtering: http://en.wikipedia.org/wiki/Event_handler
+Mini-tutorial om hændelseshåndtering: http://lorenzod8n.wordpress.com/2007/05/30/pygame-tutorial-3-mouse-events/
+Pygames egen tutorial om hændelser mm. : http://inventwithpython.com/chapter18.html
+
