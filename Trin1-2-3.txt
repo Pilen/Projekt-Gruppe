@@ -1,5 +1,6 @@
 ﻿Trin 1:
 Main
+Du får brug for: http://www.pygame.org/docs/tut/ImportInit.html
 Beskrivelse.1: Metoden 'main' er hvor man typisk starter spillet op.
     Det er der man fortæller python at den skal starte op Pygame, (pygame.init), 
     og det er også den metode som tegner op det første billede som man ser 
@@ -12,13 +13,14 @@ Beskrivelse.1: Metoden 'main' er hvor man typisk starter spillet op.
 1. Definér metoden main(), hvor dens funktionalitet er at starte pygame. Der skal ikke
    behøves input.
 
-Hints: Kommandoen for at åbne pygame er 'pygame.init'.
+Hints: Læs de links som er vedhæftet for at komme frem til løsningerne til opgaverne.
        Husk at indentere korrekt.
 
 
 Note: Skal nok inkludére en ny beskrivelse som forklarer hvordan pygame tegner
       op en baggrund.
 
+Du får brug for: http://www.pygame.org/docs/ref/image.html
 2. Ved brug af den baggrund som er suppleret, inkluder en ny funktion i main(), som skal
    kunne åbne baggrunden, og tegne den op som en baggrund. 
 
@@ -45,6 +47,8 @@ Hints: Dette skal gøres udenfor metoden "main", da Python ikke vil starte main 
 
 Trin 2:
 Mainloop
+Du får brug for: Kunne ikke finde links som talte om hvad en mainloop er, så jeg prøvede
+                 at forklare det.
 Beskrivelse.1: Hvis main metoden starter spillet op, er spillets mainloop det 
     som holder spillet kørende. Mainloop udføres via main metoden, og det er fra
     mainloopen at de klasser som opdatere spillet, eller modtager inputs, køres.
@@ -60,7 +64,8 @@ Hints: En populær måde at få mainloopen til at køre i uendelig løkke er at 
 
 Trin 3:
 Player
-Beskrivelse.1: Når man vil tilføje en spiller, skal man først lave en spillerklasse, (som vi kalder player). De forskellige     klasser holder styr på de forskellige dele af spillet, ergo player klassen holder styr på spilleren.
+Beskrivelse.1: Når man vil tilføje en spiller, skal man først lave en spillerklasse, (som vi kalder player). 
+    De forskellige klasser holder styr på de forskellige dele af spillet, ergo player klassen holder styr på spilleren.
     De ting som holdes styr i denne klasse er ting som selve initialiseringen af spilleren, spilleren bliver opdateret,
     samt de variabler som tilføjes til spilleren, (som for eksempel guld). Hvad typisk bruges til at tegne de forskellige
     modeller, (som for eksempel player), er et indbygget funktion i pygame, pygame.sprite.Sprite.
