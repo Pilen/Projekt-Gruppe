@@ -1,13 +1,21 @@
 Trin 2:
 Player
+Skelet:
+
+def mainloop():
+    whilte True:
+         player()
+
+Class player(pygame.sprite.Sprite):
+  def __init__(self, x, y):
+
 Beskrivelse.1: Når man vil tilføje en spiller, skal man først lave en spillerklasse, (som vi kalder player). 
     De forskellige klasser holder styr på de forskellige dele af spillet, ergo player klassen holder styr på spilleren.
     De ting som holdes styr i denne klasse er ting som selve initialiseringen af spilleren, spilleren bliver opdateret,
     samt de variabler som tilføjes til spilleren, (som for eksempel guld). Hvad typisk bruges til at tegne de forskellige
     modeller, (som for eksempel player), er et indbygget funktion i pygame, pygame.sprite.Sprite.
 
-1. Lav en ny klasse, player, hvor dens funktioner er at starte op player, samt at tegne spilleren, (brug en af de billeder som
-   er forberedt på forhånd som spillerens grafik). Disse to funktioner skal kunne udføres fra en metode, __init__(self, x, y).
+1. Kig på skeletet til funktionen __init__ i klassen player. Inkludér en metode til at initialisere pygame.sprite.Sprite.
 
-Hints: Husk at mainloopen holder alle de relevante dele af spillet i gang.
-       __init__'s input skal være de koordinater som man vil have spilleren til at spawne.
+Hints: Tænk over hvordan man har hidtil initialiseret metoder.
+       Hvilken input skal metoden tage hvis den initialiserer sig selv? Kig på __init__ metoden.
