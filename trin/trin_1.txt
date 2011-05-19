@@ -1,5 +1,20 @@
 Trin 1:
 Mainloop
+Skelet:
+
+import pygame
+def main():
+    pygame.init()
+    data.screen.blit(data.background, (0,0))
+    pygame.display.flip()
+    mainloop()
+
+def mainloop():
+
+if __name__ == "__main__":
+    main()
+
+
 Du får brug for: Kunne ikke finde links som talte om hvad en mainloop er, så jeg prøvede
                  at forklare det.
 Beskrivelse.1: Hvis main metoden starter spillet op, er spillets mainloop det 
