@@ -1,30 +1,30 @@
-16. Maj, Referat til møde vedrørende delrapport 4
+16. Maj, Referat til mÃ¸de vedrÃ¸rende delrapport 4
 
 Ingen genaflevering til delrapport 3 - fedt!
 
-VI har besluttet at ikke prøve at lave noget brugbart, som en ekstensiv prototype, for delrapport 4,
+VI har besluttet at ikke prÃ¸ve at lave noget brugbart, som en ekstensiv prototype, for delrapport 4,
 da ti dage er ikke nogt til dette.
 
-Brugertests: Skal vi, eller skal vi ikke? Det kommer nok til at være svært at få fat i nogle
+Brugertests: Skal vi, eller skal vi ikke? Det kommer nok til at vÃ¦re svÃ¦rt at fÃ¥ fat i nogle
   brugere til nogle brugertests. Vi vil tale med Django-Lasse for at se hvad der sker hvis
   vi ikke har brugertests til delrapport 4. Hvis dette betyder at vi vil dumpe eksamen/vi
-  kan ikke aflevere en delrapport 4 uden brugertests, vil vi 'finde en kreativ måde på at
+  kan ikke aflevere en delrapport 4 uden brugertests, vil vi 'finde en kreativ mÃ¥de pÃ¥ at
   vise at vi har lave brugertests'.
 
-#5: Brugergrænsefladen til spillet, samt tegninger/'screenshots
+#5: BrugergrÃ¦nsefladen til spillet, samt tegninger/'screenshots
 #9: Tale mere om samarbejden med brugeren? Opsummering med hvorfor vi fravalgte med DKUUG, samt ting som
-    hvorfor vi valgte at ikke prøve at samarbejde med flere gymnasier, og hvorfor det ville have været
-    mere tidskrævende at have flere gymnasier.
+    hvorfor vi valgte at ikke prÃ¸ve at samarbejde med flere gymnasier, og hvorfor det ville have vÃ¦ret
+    mere tidskrÃ¦vende at have flere gymnasier.
 
 Ansvarsfordeling: 
 Naja: 1-3 og 5
-Søren: 6 og 7
+SÃ¸ren: 6 og 7
 Lasse: 8 og 9
-Arinbjørn: 4 og 10
+ArinbjÃ¸rn: 4 og 10
 
 Deadlines: Fredag d. 20, kl. 18
 
-Vedrørende eksamen: Læs igennem rapporterne, og fortæl om der er noget du ikke forstår,
-  eller hvis der er noget der mangler, så at vi kan gennemgå det/sætte det ind i delrapport 4.
+VedrÃ¸rende eksamen: LÃ¦s igennem rapporterne, og fortÃ¦l om der er noget du ikke forstÃ¥r,
+  eller hvis der er noget der mangler, sÃ¥ at vi kan gennemgÃ¥ det/sÃ¦tte det ind i delrapport 4.
 
-Næste møde kl. 11 på torsdag den 19.
+NÃ¦ste mÃ¸de kl. 11 pÃ¥ torsdag den 19.
