@@ -1,0 +1,35 @@
+Skelet: 
+
+class Wall(pygame.sprite.Sprite):
+    def __init__(self, x, y):
+
+Beskrivelse: 
+Nu hvor du har en bane og en spiller der kan rykke
+rundt på den er det på tide at lave nogle mure som 
+kan gøre banen lidt mere spændende. Som enhver trænet
+koder tænker du øjeblikkeligt på at oprette en klasse
+til at modellere vægge. 
+
+En væg deler visse karakteristika med en spiller:
+De kan begge nedarve fra pygames Sprite-klasse, og 
+alle væggens grundlæggende metoder vil også kunne
+findes hos spilleren. 
+
+Når du har oprettet væg-klassen skal du sørge
+for at væggene bliver lagret det rigtige sted
+i spillet. 
+
+Hints: 
+
+0: Prøv at overvej hvad en mur egentlig består af,
+   samt hvad den skal kunne. Skal den kunne flytte sig?
+   Skal den have et billede? Hvordan spiller disse 
+   to ting sammen?
+1: Hvor ligger informationerne om de ting der er 
+   at finde på en bane? Hvordan sørger du for at
+   væggen bliver placeret dér når dens init-metode
+   bliver kaldt?
+
+
+
+
