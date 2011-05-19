@@ -1,6 +1,6 @@
 Map loader
 
-Opret nyt kodefragment og importer data+model?
+Opret nyt kodefragment og importer data+model
 
 Du skal nu kode en level processer. Tanken er at du skal kunne oprette egne baner, blot ved at rette i en tekst fil. Kig i mappen maps og åben den allerede oprettede bane map0.txt. Som du kan se bruges # for murer, de mindre intuitive er @ for spilleren, M for monstere og x for guld.
 
@@ -8,9 +8,8 @@ For at lave en bane ud fra dette, skal du få python til at løbe igennem alle t
 
 Du skal udregne, hvor mange tegn der kan bruges ved at udnytte tile størrelsen og map height/width.
 
-Det nemmeste er, hvis du deler det op i tre funktioner. En funktion der alt efter de brugte tegn, indsætter objekter. En funktion, som læser hvert tegn i en linje og en funktion, som går igennem alle linjerne.
+Det er nemmeste, hvis du deler det op i tre funktioner. En funktion der alt efter de brugte tegn, indsætter objekter. En funktion som læser hvert tegn i en linje og en funktion, som løber igennem alle linjerne.
 
 Hints: 
-Brug range. 
-elif er nyttig
-Når den har læst et tegn, skal den bruge koordinaterne, til at sætte objektet ind det rigtige sted.
+Hvordan sikrer du at den læser alle tegnene? Hvor mange tegn er der på en linje? 
+Når den har læst et tegn, skal den bruge koordinaterne, til at sætte objektet ind det rigtige sted. 
