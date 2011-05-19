@@ -1,0 +1,17 @@
+Collision detction:
+
+Du skal nu tilføje 'collision detection'. Dette skal bruges til at sørge for at man f.eks. ikke kan stå oven i mure. Dette skal implementeres som en del af move metoden i player klassen.
+Dette gøres nemest ved at udnytte pygames biblioteker.
+
+Du skal bruge:
+pygame.sprite.spritecollide
+http://www.pygame.org/docs/ref/sprite.html#pygame.sprite.spritecollide
+
+Overvej hvor og hvornår den skal bruges.
+
+Udnyt len, gem oprindeligt rect. Udnyttes i flere klasser.
+
+Hints:
+Du skal specifikt sørge for at spilleren ikke kan gå ind i mure. Hvilke argumenter skal spritecollide bruge?
+Hvordan sørger du for at der ikke er flere end 1 sprite i et område?
+Kan du bruge len?

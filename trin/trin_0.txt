@@ -1,4 +1,4 @@
-﻿Trin 1:
+Trin 0:
 Main
 Du får brug for: http://www.pygame.org/docs/tut/ImportInit.html
 Beskrivelse.1: Metoden 'main' er hvor man typisk starter spillet op.
@@ -45,34 +45,3 @@ Hints: Dette skal gøres udenfor metoden "main", da Python ikke vil starte main 
 
        Et if statement skal gerne bruges i løsningen.
 
-Trin 2:
-Mainloop
-Du får brug for: Kunne ikke finde links som talte om hvad en mainloop er, så jeg prøvede
-                 at forklare det.
-Beskrivelse.1: Hvis main metoden starter spillet op, er spillets mainloop det 
-    som holder spillet kørende. Mainloop udføres via main metoden, og det er fra
-    mainloopen at de klasser som opdatere spillet, eller modtager inputs, køres.
-
-
-1. Lav en ny metode, mainloop(), som igen tager ingen input. Den skal kunne køres
-   automatisk når spillet startes.
-
-Hints: En populær måde at få mainloopen til at køre i uendelig løkke er at bruge et 
-      while statement. While True virker da python antager at true forbliver true.
- 
-       Husk at mainloop skal startes op når main er startet op.
-
-Trin 3:
-Player
-Beskrivelse.1: Når man vil tilføje en spiller, skal man først lave en spillerklasse, (som vi kalder player). 
-    De forskellige klasser holder styr på de forskellige dele af spillet, ergo player klassen holder styr på spilleren.
-    De ting som holdes styr i denne klasse er ting som selve initialiseringen af spilleren, spilleren bliver opdateret,
-    samt de variabler som tilføjes til spilleren, (som for eksempel guld). Hvad typisk bruges til at tegne de forskellige
-    modeller, (som for eksempel player), er et indbygget funktion i pygame, pygame.sprite.Sprite.
-
-1. Lav en ny klasse, player, hvor dens funktioner er at starte op player, samt at tegne spilleren, (brug en af de billeder som
-   er forberedt på forhånd som spillerens grafik). Disse to funktioner skal kunne udføres fra en metode, __init__(self, x, y).
-
-Hints: Husk at mainloopen holder alle de relevante dele af spillet i gang.
-       __init__'s input skal være de koordinater som man vil have spilleren til at spawne.
-       

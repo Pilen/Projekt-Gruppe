@@ -1,0 +1,17 @@
+Trin 1:
+Mainloop
+Du får brug for: Kunne ikke finde links som talte om hvad en mainloop er, så jeg prøvede
+                 at forklare det.
+Beskrivelse.1: Hvis main metoden starter spillet op, er spillets mainloop det 
+    som holder spillet kørende. Mainloop udføres via main metoden, og det er fra
+    mainloopen at de klasser som opdatere spillet, eller modtager inputs, køres.
+
+
+1. Lav en ny metode, mainloop(), som igen tager ingen input. Den skal kunne køres
+   automatisk når spillet startes.
+
+Hints: En populær måde at få mainloopen til at køre i uendelig løkke er at bruge et 
+      while statement. While True virker da python antager at true forbliver true.
+ 
+       Husk at mainloop skal startes op når main er startet op.
+
