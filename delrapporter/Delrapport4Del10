@@ -1,0 +1,55 @@
+\documentclass[10pt,a4paper,danish]{article}
+%%Pakker
+\usepackage{amssymb}
+\usepackage[danish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\rhead{\today}
+\rfoot{\thepage}
+%%BeginDocument
+\begin{document}
+
+Artiklen "Designing the Handheld Maritime Communicator" handler om processen som omfattede at
+lave et system som ville være ansvarlig for sikkerheden for store fragtskibe. Artiklen går i dybde
+med dette, hvor den beskriver alle trinene bag systemet, fra udformningen af systemet, til interviews 
+med klientellet, indsamlingen af det information som skulle bruges, designet af systemet, og til sidst 
+den måde som designerne af systemet besluttede at teste systemet, (både brugertests og bugtesting). Fremgangsmåden 
+som programmørerne brugte til at designe systemet vil blive analyseret og sammenlignet med kursuslitteraturen.
+
+I stedet for interviews med deres klientel tog nogle medlemmer af holdet med på nogle af skibene for længere perioder, 
+(Det siges ikke hvor længe), hvor de tog noter om hvordan opgaver var klaret, (som for eksempel hvis sømændene skulle 
+få deres last om bord på skibet). Ud over dette tog de også noter om problemer med den måde som sømændene klarede 
+disse problemer på, som så skulle løses. Holdet tog også lyd-og-video analyser, hvor de tog lyd segmenter eller 
+video segmenter fra om bord på et skib, og kiggede dem igennem. Dette var gjort så at holdet kunne få en bedre 
+idé om forholdene på skibene, samt også for at se hvilken ordrer der blev typisk givet. Deres plan var at bruge disse 
+til at kunne lave forprogrammerede kommandoer. Denne måde som holdet brugte til at få information vedrørende det 
+det system som deres kunde havde brug for er meget anderledes end den metode som Back to Thinking Mode havde 
+argumenteret for, hvor man skulle have adskillige interviews med sin kunde, hvor man skulle føre en dagbog, hvor 
+man hovedsageligt brugte et 'action-reaction' type format. Dog kan man argumentere for at denne fremgangsmåde 
+ville ikke virke for dette projekt, da holdet skulle have en klar idé om hvad arbejderne havde brug for, og 
+ikke hvad deres chefer havde brug for.
+
+Mens systemet stadig var i koncept-fasen lavede holdet et klassediagram og et papir mockup om systemet for at vise 
+hvordan systemet skulle virke. Klassediagramer er et udbredt fænomen i større projekter, som er beskrevet i bogen 
+"Objekt Orienteret Analyse & Design", som er brugt til at give et samlet overblik over problemområdet, hvilket 
+er nyttigt for dette system da systemet skulle kunne holde styr på skibbet, opgaverne og det team som skulle 
+udføre disse opgaver. 
+
+Holdet som designede systemet brugte et såkaldt 'iterativ design'. Iterativ design fungerer ved at holdet 
+først laver en prototype. Denne prototype bliver så testet, analyseret or refineret, hvorefter holdet kigger 
+på hvad der skal laves om eller skal ændres. Disse ændringer bliver inkluderet i en ny prototype, som gennemgår 
+de samme trin som før indtil man har et færdigt produkt. Denne form for design er meget anderledes end et 
+traditionelt vandfaldsmodel, (hvor man antager at hvert trin bliver udført, og skal ikke laves om), eller et 
+spiralmodel, (fra "A Spiral Model of Software Development and Enhancement"), hvor man lavede en prototype  
+for hver gang man havde startet et nyt trin. Selvom et iterativ design er mere tidskrævende en et 
+vandfaldsmodel eller et spiralmodel, vil et iterativ design sørge for at når systemet bliver udleveret 
+vil der være færre bugs, problemer og ueffektive designelementer. Dette er meget vigtigt for et sikkerhedssystem, 
+da det kan koste liv hvis der sker en fejl.
+\end{document}
