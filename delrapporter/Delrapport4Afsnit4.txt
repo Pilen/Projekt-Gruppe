@@ -1,0 +1,20 @@
+Arkitektur
+
+Komponentarkitektur: {Klassediagram sættes ind her}
+
+Klassen "Bruger" er hvor det bestemmes hvilken opgaver man har og ikke har
+lave, hvor klassen "Opgaver" bestemmer forløbet. Under klassen "Spil" valgte 
+vi at generalisere "Færdig" og "Ikke Færdig/Fejl", hvilket bestemmer om brugeren 
+har lov til at fortsætte med den næste opgave, eller skal arbejde videre med den 
+opgave som de er i gang med. Disse to associeringer kan også aggregere "Opgaver" og 
+"Forløb" hvis de rigtige betingelser er mødt.
+
+Procesarkitektur: Vores system bliver udført på gymnasiets datamater. Potentiale 
+problemer med de forskellige processer forventes at blive løst af operativsystemet. 
+Kontrollen over vores system ligger i brugergrænsefladenkomponenten, hvilket er 
+håndteret af operativsystemet, (og i mindre grad, af den tekst editor som brugeren 
+bruger). Defor kan vi ikke lave en fordelingsdiagram.
+
+Standarder: Designet af de forskellige vinduer og fejlbeskeder vil følge ikke følge 
+en bestemt standard, da vi vil integrere dem med vores system så at de passer med 
+vores systems design. 
