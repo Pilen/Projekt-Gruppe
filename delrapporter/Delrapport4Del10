@@ -30,16 +30,21 @@ er diskuteret i "Cardboard Computers: Mockingit-up or Hands-on the Future", hjæ
 hvilken grænseflader holdet syntes vil være den bedste IT-løsning. Dette er en effektiv måde at vise et holds kunder 
 hvilken grænseflader de syntes vil være effektive, da de er hurtigere at lave i forhold til at lave prototyper, hvilket 
 betyder at et hold kan eksperimentere med forskellige design. Og da dette systems design er altafgørende, (da systemet 
-skulle være nemt og hurtigt for arbejderne at bruge), var det en umådelig god idé at lave forskellige papir mockups i stedet 
+skulle være nemt og hurtigt at bruge for arbejderne), var det en umådelig god idé at lave forskellige papir mockups i stedet 
 for at lave mange forskellige prototyper.
 
 Holdet som designede systemet brugte et såkaldt 'iterativ design'. Iterativ design fungerer ved at holdet 
-først laver en prototype. Denne prototype bliver så testet, analyseret or refineret, hvorefter holdet kigger 
+laver en prototype. Denne prototype bliver så testet, analyseret og refineret, hvorefter holdet kigger 
 på hvad der skal laves om eller skal ændres. Disse ændringer bliver inkluderet i en ny prototype, som gennemgår 
 de samme trin som før indtil man har et færdigt produkt. Denne form for design er meget anderledes end et 
-traditionelt vandfaldsmodel, (hvor man antager at hvert trin bliver udført, og skal ikke laves om), eller et 
+traditionelt vandfaldsmodel, (hvor man antager at hvert trin bliver udført perfekt, og skal ikke ændres), eller et 
 spiralmodel, (fra "A Spiral Model of Software Development and Enhancement"), hvor man lavede en prototype  
 for hver gang man havde startet et nyt trin. Selvom et iterativ design er mere tidskrævende en et 
 vandfaldsmodel eller et spiralmodel, vil et iterativ design sørge for at når systemet bliver udleveret 
 vil der være færre bugs, problemer og ueffektive designelementer. Dette er meget vigtigt for et sikkerhedssystem, 
-da det kan koste liv hvis der sker en fejl.
+da det kan koste liv hvis der sker en fejl. Artiklen "Designing for Usability: Key Principles and What The Designers 
+Think" er enig med at et iterativt design er den mest effektive designproces, da et iterativt designproces vil eventuelt 
+finde mange, hvis ikke alle, designproblemer, som for eksempel tvetydige beskeder. Artiklen give endda et eksempel 
+på et problem som et hold havde, hvor brugerne misforstod nogle af de kommandoer som de kunne bruge, som iterativt design 
+rettede op på. Tvetydige kommandoer eller funktioner ville have været et stort problem for projektet for brugerne, så 
+det var en god idé at bruge et iterativt designproces til systemet.
