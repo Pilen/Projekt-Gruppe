@@ -1,27 +1,10 @@
-\documentclass[10pt,a4paper,danish]{article}
-%%Pakker
-\usepackage{amssymb}
-\usepackage[danish]{babel}
-\usepackage[utf8]{inputenc}
-\usepackage{listings}
-\usepackage{fancyhdr}
-\usepackage{hyperref}
-\usepackage{booktabs}
-\usepackage{graphicx}
-\pagestyle{fancy}
-\fancyhead{}
-\fancyfoot{}
-\rhead{\today}
-\rfoot{\thepage}
-%%BeginDocument
-\begin{document}
-
 Artiklen "Designing the Handheld Maritime Communicator" handler om processen som omfattede at
-lave et system som ville være ansvarlig for sikkerheden for store fragtskibe. Artiklen går i dybde
-med dette, hvor den beskriver alle trinene bag systemet, fra udformningen af systemet, til interviews 
-med klientellet, indsamlingen af det information som skulle bruges, designet af systemet, og til sidst 
-den måde som designerne af systemet besluttede at teste systemet, (både brugertests og bugtesting). Fremgangsmåden 
-som programmørerne brugte til at designe systemet vil blive analyseret og sammenlignet med kursuslitteraturen.
+lave et system som ville være ansvarlig for at sørge for sikkerheden når risikabelt arbejde skulle udføres 
+i store fragtskibe. Artiklen går i dybde med dette, hvor den beskriver alle trinene bag systemet, fra 
+udformningen af systemet, til interviews med klientellet, indsamlingen af det information som skulle 
+bruges, designet af systemet, og til sidst den måde som designerne af systemet besluttede at teste systemet, 
+(både brugertests og bugtesting). Fremgangsmåden som programmørerne brugte til at designe systemet vil blive 
+analyseret samt sammenlignet med kursuslitteraturen.
 
 I stedet for interviews med deres klientel tog nogle medlemmer af holdet med på nogle af skibene for længere perioder, 
 (Det siges ikke hvor længe), hvor de tog noter om hvordan opgaver var klaret, (som for eksempel hvis sømændene skulle 
@@ -31,16 +14,24 @@ video segmenter fra om bord på et skib, og kiggede dem igennem. Dette var gjort
 idé om forholdene på skibene, samt også for at se hvilken ordrer der blev typisk givet. Deres plan var at bruge disse 
 til at kunne lave forprogrammerede kommandoer. Denne måde som holdet brugte til at få information vedrørende det 
 det system som deres kunde havde brug for er meget anderledes end den metode som Back to Thinking Mode havde 
-argumenteret for, hvor man skulle have adskillige interviews med sin kunde, hvor man skulle føre en dagbog, hvor 
-man hovedsageligt brugte et 'action-reaction' type format. Dog kan man argumentere for at denne fremgangsmåde 
-ville ikke virke for dette projekt, da holdet skulle have en klar idé om hvad arbejderne havde brug for, og 
-ikke hvad deres chefer havde brug for.
+argumenteret for, hvor man skulle have adskillige interviews med sin kunde, hvor man skulle føre en dagbog. Her brugte 
+man hovedsageligt et 'action-reaction' type format. Dog kan man argumentere at denne fremgangsmåde 
+ville ikke virke for dette projekt, da holdet havde brug for at have en klar idé om hvad arbejderne havde brug for, og 
+ikke hvad deres chefer havde brug for, samt hvis de havde foretaget interviews i stedet for feltarbejde ville holdet ikke 
+få at vide hvilken kommandoer var typisk givet fra kaptajnen eller lignende højrestående arbejdere.
 
 Mens systemet stadig var i koncept-fasen lavede holdet et klassediagram og et papir mockup om systemet for at vise 
-hvordan systemet skulle virke. Klassediagramer er et udbredt fænomen i større projekter, som er beskrevet i bogen 
+hvordan systemet skulle virke. Klassediagrammer er et udbredt fænomen i større projekter, som er beskrevet i bogen 
 "Objekt Orienteret Analyse & Design", som er brugt til at give et samlet overblik over problemområdet, hvilket 
 er nyttigt for dette system da systemet skulle kunne holde styr på skibbet, opgaverne og det team som skulle 
-udføre disse opgaver. 
+udføre disse opgaver. Klassediagrammer er effektive da de hjælper med at holde et overblik over systemet, og 
+også til at hjælpe folk med at se hvilken klasser har hvilken effekt på hvilken klasser. Papir mockups, som også 
+er diskuteret i "Cardboard Computers: Mockingit-up or Hands-on the Future", hjælper med at få folk til at forstå 
+hvilken grænseflader holdet syntes vil være den bedste IT-løsning. Dette er en effektiv måde at vise et holds kunder 
+hvilken grænseflader de syntes vil være effektive, da de er hurtigere at lave i forhold til at lave prototyper, hvilket 
+betyder at et hold kan eksperimentere med forskellige design. Og da dette systems design er altafgørende, (da systemet 
+skulle være nemt og hurtigt for arbejderne at bruge), var det en umådelig god idé at lave forskellige papir mockups i stedet 
+for at lave mange forskellige prototyper.
 
 Holdet som designede systemet brugte et såkaldt 'iterativ design'. Iterativ design fungerer ved at holdet 
 først laver en prototype. Denne prototype bliver så testet, analyseret or refineret, hvorefter holdet kigger 
@@ -52,4 +43,3 @@ for hver gang man havde startet et nyt trin. Selvom et iterativ design er mere t
 vandfaldsmodel eller et spiralmodel, vil et iterativ design sørge for at når systemet bliver udleveret 
 vil der være færre bugs, problemer og ueffektive designelementer. Dette er meget vigtigt for et sikkerhedssystem, 
 da det kan koste liv hvis der sker en fejl.
-\end{document}
