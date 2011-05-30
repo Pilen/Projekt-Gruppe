@@ -47,17 +47,28 @@ Gruppeid : LO6\\
 
 
 \section{Modelkomponent og Funktionskomponent}
+\subsection{Punktet giver ikke mening for os}
+At snakke om komponentstruktur i vores programmel giver ikke rigtig mening.
+Brugeren kan skifte trin, hvilket får programmet til at køre nogle tests eller
+man kan bede om flere hints. Så reelt set har vi et modelkomponent, der holder
+styr på hvilket trin brugeren er ved og hvilke hints, der er vist. Og et
+funktionskomponent, der kan skife trin, vise hints og signalere til model-
+komponentet om disse.
 
-Som jeg ser det, så er det meget begrænset hvad vi har her. Reelt set består
-modelkomponentet bare af at brugeren kan se hjælp + hint og evt. nogle beskeder
-hvis han allerede har teste det. 
+Vores stykke software handler mere om dets data, end om dets selvstændige
+funktionalitet, og der er ikke så frygteligt meget at sige om det.
 
-I baggrunden er der et funktionskomponent, som kører unit tests, printer nyt
-hjælp og hints hvis brugeren skifter trin og evt. giver nogle fejl meddelelser. 
 
-Der står at vi skal beskrive et klassediagram for det, og det har vi allerede
-lavet i en tidligere rapport. Det kan skrives i løbet af 10 minutter, hvis min
-forståelse af punktet er korrekt. 
+\subsection{Modelkomponentet}
+Vores modelkomponenet holder styr på hvor langt brugeren er i forløbet og
+hvilke tests, der skal køres på dennes kode. Desuden holder den styr på, hvor
+mange hints, der er vist.
+
+\subsection{Funktionskomponent}
+Funktionskomponentet er kun relevant for når brugeren skifter trin, når dette
+sker kørers der test og det signaleres til modelkomponentet, hvis testene ikke
+finder fejl. Ligeledes hvis brugeren ønsker et hint opdateres modelkomponentet,
+og et nyt hint vises.
 
 \section{Projektsamarbejdet}
 \subsection{Projektstyring}
@@ -161,21 +172,5 @@ ved siden af, så må man jo prioritere, og et godt produkt giver os ikke en god
 karakter i sidste ende, mens et "godt projektforløb" er guld. Vi syntes det er
 ærgerligt, at det skal være sådan, men vi har indrettet os efter det, og håber
 at det vil være anderledes i fremtidige projekter.
-
-"Nøglespørgsmål er bl.a.: Hvorledes har I prioriteret og styret projektindsatsen?
-Hvordan har I sikret fremdrift på de felter som var mest kritiske/afgørende for et
-succesfuldt resultat? Hvad gik godt? Hvad gik mindre godt? Hvad har I lært, som
-måske kan gøres bedre i et kommende IT-projekt?"
-
-Noget spice til dette punkt ville være lækkert, udmiddelbart kan jeg kunne komme i tanke om nedenstående:
-
-Versionsstyring godt
-Gruppestyring knap så heldig
-Hårde deadlines jatak
-Mere og bedre intern kommunikation
-Mere kundekontakt?
-En mere fladstruktur i gruppen fra begyndelsen af
-...
-
 
 \end{document}
