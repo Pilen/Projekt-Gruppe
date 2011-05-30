@@ -44,6 +44,86 @@ Gruppeid : LO6\\
 \newpage
 
 %% HER STARTER RAPPORTEN
+\section{Formål}
+\subsection{Systemdefinition}
+Systemet består af et digitalt interaktivt læringsværktøj hvis mål er at indføre elever på gymnasiefaget Informationsteknologi i programmering af systemer i forskellig størrelse. Disse systemer vil primært være fokuseret på udvikling af spil, men bredt datalogisk kompetencegivende. Systemet opbygges som et hjælpeprogram, som kører ved siden af brugerens teksteditor og en række præetablerede programmeringsforløb som eleven kan deltage i. Et forløb består af en række trin - konkrete programmeringsopgaver som hver indeholder en beskrivelse, en række hints samt et sæt tests der holder styr på om brugeren har opfyldt målet for hvert trin. Når brugeren har gennemgået alle trinene vil vedkommende have et komplet spil der kan afvikles seperat fra udviklingsværktøjet. Systemet vil blive udviklet som en skrivebordsapplikation der kan afvikles lokalt på den enkelte brugers datamat/foldedatamat eller på datamater i gymnasiets eventuelle it-rum.
+
+\subsection{BATOFF}
+\begin{itemize}
+\item \textbf{Betingelser}: Gymnasieelever med begrænsede programmering- og systemudviklingserfaringer. 
+\item \textbf{Anvendelsesområde}: Eleven som bruger af systemet. Hvis værktøjet instaleres centralt på et
+gymnasiums datamater vil der typisk være en Itadministrator hvis rolle er at opsætte systemet.
+\item \textbf{Teknologi}: Systemet designes til at kunne køre på almindelige hjemmedatamater/foldedatamater.
+Systemet vil blive baseret på python samt forskellige biblioteker dertil (i særdeleshed biblioteket pygame)
+\item \textbf{Objekter}: En bruger som udvikler et spil i forbindelse med et forløb af opgaver. 
+\item \textbf{Funktion}: Udvikling af spil.
+\item \textbf{Filosofi}:  Digitalt interaktivt læringsværktøj
+\end{itemize}
+
+\section{Kravsspecifikation}
+Den kravsspecifikation vi har arbejdet med bygger på følgende krav:
+
+\begin{enumerate}
+\item Systemet skal kunne oprette nye forløb, samt tilgå gamle, ikke-gennemførte forløb lagret lokalt på brugerens datamat. 
+\item Systemet skal indeholde funktioner til at registrere om et forløb er gennemført af en bruger. 
+\item Systemet skal indeholde flere forskellige læringsforløb som brugeren kan gå i gang med.  
+\item Systemet skal ikke tilbyde en integreret teksteditor.
+\item Systemet skal indeholde funktionalitet til at køre brugerens kode samt fremvise fejlbeskeder.
+\item Systemet skal for hvert (relevant) trin i en programmeringsopgave tilbyde en tekst med hints og links til relevant dokumentation.
+\item Brugergrænsefladen skal ligne (om end ikke være 100 procent ens med) figurerne (henvisning til figurerne)
+\item Systemet skal være intuitivt at arbejde med - kun det programmeringsfaglige skal være krævende. 
+\item Systemet skal kunne køre på både Windows, Mac og Linux
+\item Systemet skal ikke stille hardware-krav som ikke mødes af størstedelen af almindelige hjemme-PC'er.
+\end{enumerate}  
+
+Vi har i arbejdet med projektet lagt vægt på følgende designkriterier (opdelt efter vigtighed og
+hvorvidt det er opnået): 
+\begin{table}[h!]
+  \begin{center}
+    \begin{tabular}{llllll}
+      \toprule
+      Kriterium & Meget   & Vigtigt & Mindre  & Irrelevant & Trivielt \\
+                & vigtigt &         & vigtigt &            & opfyldt  \\
+      \midrule
+      Brugbart        & &x& & & \\
+      Sikkert         & & & &x& \\
+      Effektivt       & & &x& & \\
+      Korrekt         & & &x& & \\
+      Pålideligt      & & &x& & \\
+      Vedligeholdbart & & &x& & \\
+      Testbart        & & & &x& \\
+      Fleksibelt      &x& & & & \\
+      Forståeligt     & &x& & & \\
+      Genbrugeligt    & & &x& & \\
+      Flytbarhed      & &x& & & \\
+      Integrerbart    &x& & & & \\
+      \bottomrule
+    \end{tabular}
+    \caption{Kvalitetsattributter for klienten.}
+    \label{tab:kvalitetsattributter_program}
+  \end{center}
+\end{table}
+
+\section{Arkitektur}
+
+Komponentarkitektur: {Klassediagram sættes ind her}
+
+Klassen "Bruger" er hvor det bestemmes hvilken opgaver man har og ikke har
+lavet, hvor klassen "Opgaver" bestemmer forløbet. Under klassen "Spil" valgte 
+vi at generalisere "Færdig" og "Ikke Færdig/Fejl", hvilket bestemmer om brugeren 
+har lov til at fortsætte med den næste opgave, eller skal arbejde videre med den 
+opgave som de er i gang med. Disse to associeringer kan også aggregere "Opgaver" og 
+"Forløb" hvis de rigtige betingelser er mødt.
+
+Procesarkitektur: Vores system bliver udført på gymnasiets datamater. Potentielle 
+problemer med de forskellige processer forventes at blive løst af operativsystemet. 
+Kontrollen over vores system ligger i brugergrænsefladenkomponentet, hvilket er 
+håndteret af operativsystemet, (og i mindre grad, af den tekst editor som brugeren 
+bruger). Defor kan vi ikke lave en fordelingsdiagram.
+
+Standarder: Designet af de forskellige vinduer og fejlbeskeder vil følge ikke følge 
+en bestemt standard, da vi vil integrere dem med vores system så at de passer med 
+vores systems design. 
 
 
 \section{Modelkomponent og Funktionskomponent}
@@ -62,64 +142,279 @@ forståelse af punktet er korrekt.
 \section{Projektsamarbejdet}
 \subsection{Projektstyring}
 Siden sidste rapport har langt størstedelen af vores arbejde været rettet imod
-fremstilling af trinene til projektet og klargøring af test af disse. Vi har
-ikke haft så god tid som vi gerne ville have, og er også blevet presset af, at
-vores kundes elever er gået på læseferie. 
-
-(Jeg skal vide hvad der kommer til at stå i test-delen, for at fortsætte hele kunde delen).
+fremstilling af trinene til projektet og klargøring af test af disse. Processen
+omkring begge disse opgaver har været langt fra optimal: Selve udfærdigelsen af 
+trinene trak ud længere end det burde have gjort, eftersom samtlige gruppemedlemmer
+har været under forskellige former for tidspres, og generelt været dårlige til 
+at delegere tilstrækkelig tid til projektet. Selve afprøvningen er blevet presset
+af at vores kundes elever gik på læseferie inden vi kunne igangsætte afprøvningen. 
 
 Vi udviklede trinene ved først at uddelegere 2-3 trin til hvert enkelt gruppe-
 medlem, og derefter satte vi os sammen og strømlinede dem, så de blev ens i
 format og tilgang. Dette viste sig at være en rigtig god måde at tvinge alle
-til at være kreative, og komme med deres bud på en løsning. Vi har ikke lavet
-trin til hele første forløb endnu, men vi har nok til at kunne udføre sigende
-tests.
+til at være kreative, og komme med deres bud på en løsning. På nuværende tidspunkt
+er 10 ud af 13 trin i det første forløb blevet færdigproducerede. Dette er ikke 
+optimalt, men tilstrækkeligt til at kunne udføre sigende tests.
 
-Det har vist sig at sidste rapports ide med at give hovedansvaret for
-forskellige dele af projektet var lidt for ambitiøs. Vi har slet ikke haft tid
-eller overskud til at arbejde på alle delene, og sidste ende ikke været nogen
-grund til at holde hinanden i tovene på de forskellige områder. I stedet har vi
-kørt med den samme model som hidtil, hvor vi har en person med det overordnede
-ansvar. Det er stadig ikke optimalt, og vi har reelt kun den ene person med et
-egentlig overblik over projektet. Det skaber mere arbejde for den ansvarlige,
-og sætter de 3 andre medlemmer værre i en eksamenssituation.
+I Delrapport 3 fremsatte vi hensigten at uddele selve projektopgaven i 4 hovedområder
+(projektstyring, kode, afprøvning, dokumentation) og uddelegerede ansvar for hvert 
+område til et enkelt gruppemedlem. Siden da har det vist sig at denne idé måske var
+for ambitiøs: Vi har slet ikke haft tid eller overskud til at arbejde på alle områder, 
+og sidste ende ikke været nogen grund til at holde hinanden i tovene på de forskellige
+områder. I stedet har vi kørt med den samme model som hidtil, hvor vi har en person med 
+det overordnede ansvar. Det er stadig ikke optimalt, og vi har stadig problemet at det 
+ikke er alle gruppemedlemmer som har fuldt overblik over projektet.
+Det skaber meget mere arbejde for dem der rent faktisk har det,
+og sætter de resterende medlemmer værre i en eksamenssituation.
 
-Ydermere er vi pressede af at 2 af vores medlemmer er en del af DIKU-revyen,
-det lægger et stort tidspres på dem, og betyder at en større mængde arbejde
-end ellers har måttet flyttes ud på de resterende medlemmer. Vi har fået
-udsættelse på rapporten, men det fjerner desværre ikke alt presset. Vi havde
-ikke nogen møder i ugen op til revyen, og det var kun halvdelen af gruppen,
-som rent faktisk arbejde på projektet (udover test?).
+\subsection{Møder med brugeren}
+Siden delrapport 3 har vi afholdt ét yderligere møde med kunden, i form af 
+den afprøvningssession der beskrives i afsnit 8. Alt i alt vil dette sige 
+at vi har afholdt 3 møder med vores kunde (udover vores korrespondance pr. 
+mail og telefon) - et indledende møde hvor vi mødte eleverne og blev enige
+med deres underviser om projektets udformning, et møde hvor vi afprøvede 
+papir-mockups og afslutningsvis det møde der beskrives nedenfor. 
+
+\subsection{Referat- og dokumentationsstrategi}
+Alt i alt har vores referater under projektets forløb været forholdsvis 
+kaotiske. I projektets begyndelse har vi ført meget grundige (og hyppige)
+referater, som på nuværende tidspunkt ikke fremstår så nyttige eftersom 
+en stor del af selve projektet har ændret sig drastisk siden da. 
 
 I de møder vi har haft, har vi nok engang haft sløsede referater, men de har
 heller ikke været så relevant, da alt vores arbejde og tanker røg ned på papir
-i forbindelse med trinene, så der har ikke haft den store relevans. Vi har
+i forbindelse med de trin vi har udviklet. Vi har
 siden sidste rapport ikke oplevet problemer med opmøde, ud over at folk stadig
 kommer for sent. Ideen med at lægge møderne i forlængelse med undervisningen
 var som sådan ikke en dårlig ide, men det er som regel mest praktisk at lægge
 møderne tidligere på dagen, og folk har det tilsyneladende bedre med at komme
 for sent til disse end undervisning. 
 
-Det går godt med at bruge Github, vi har nu alt vores arbejde delt og sorteret
-i mapper og alt er let tilgængeligt. Der er heller ikke længere nogen, som
-har problemer med det, og det må siges at have været en succes.
+Vores valg af versionsstyringsværktøj fungerer til gengæld glimrende. Vi har nu alt vores
+arbejde delt og sorteret i mapper og alt er let tilgængeligt. Folk har en meget
+god forståelse for hvordan GitHub fungerer, og der er på nuværende tidspunkt ikke
+nogen der oplever problemer med at bruge det. Den eneste problematik vi oplever 
+på dén front er at nogle gruppemedlemmer ikke altid pusher så snart de er færdige 
+med en opgave, hvilket gør det besværligt at danne sig et overblik over hvor langt 
+vi er med enkelte delopgaver uden at skrive ud på mailinglisten eller at pinge folk
+provat. Dette er meget frustrerende, i sær eftersom det er et problem der er blevet
+påpeget og kritiseret gentagne gange i løbet af projektet. 
 
 \subsection{Perspektivering}
+\subsubsection{Projektstyring generelt}
+En overordnet ting vi alle sammen har oplevet i dette projekt er at vores valg
+af generel ansvarsfordeling ikke har fungeret. Modellen hvor et enkelt menneske
+har ansvar for selve projektstyringen fungerer sandsynligvis udmærket i professionel
+sammenhæng og på større projekter, men i vores størrelsesorden og niveau har det
+simpelthen ikke fungeret. Når man arbejder sammen så få mennesker, og i så løbende 
+kontakt som man gør som studerende, gør det næsten mere skade end gavn at have et 
+enkelt menneske med mere ansvar end resten af gruppen. Da vi traf beslutningen om 
+at organisere os på denne måde var vi i en lidt anden situation, med et yderligere 
+medlem i gruppen. Havde vedkommende ikke faldet fra projektet kunne vi muligvis
+have haft nytte af denne måde at organisere os på, men det kan jo ikke blive andet
+end spekulation på nuværende tidspunkt. 
 
-"Nøglespørgsmål er bl.a.: Hvorledes har I prioriteret og styret projektindsatsen?
-Hvordan har I sikret fremdrift på de felter som var mest kritiske/afgørende for et
-succesfuldt resultat? Hvad gik godt? Hvad gik mindre godt? Hvad har I lært, som
-måske kan gøres bedre i et kommende IT-projekt?"
+Vi valgte i processen at bruge en betragtelig mængde energi på det pædagogiske indhold
+af vores projekt, og på at finde ud af hvad selve spillet skulle gå ud på o. lign. På 
+denne måde er vores implementationsarbejder blevet meget forhalet, resulterende i at
+vi ikke kommer til at have en kørende prototype på det planlagte tidspunkt. I retrospekt
+ville en god idé have været at påbegynde implementeringen sideløbende (eller, potentielt, 
+inden) analysearbedet, så at vi ville have en base af fungerende programmel at udvide
+på i takt med at projektets indhold blev mere veldefineret. 
 
-Noget spice til dette punkt ville være lækkert, udmiddelbart kan jeg kunne komme i tanke om nedenstående:
+\subsubsection{Valg af kunde og kundekontakt}
+Ved indgangen til projektet stod vi overfor to alternativer til den kunde vi endte med
+at vælge at samarbejde med. En anden samarbejdspartner vi kunne have valgt at arbejde med
+var foreningen DKUUG, som var meget interesseret i et projekt af lignende tilskæring, om end
+med andet fagligt fokus end spiludvikling. Endvidere havde vi, udover tilbuddet fra Greve
+Gymnasium, muligheden for at samarbejde med et yderligere gymnasium og på denne måde fordoble
+mængden af gymnasieelever at bruge som testpersoner. 
 
-Versionsstyring godt
-Gruppestyring knap så heldig
-Hårde deadlines jatak
-Mere og bedre intern kommunikation
-Mere kundekontakt?
-En mere fladstruktur i gruppen fra begyndelsen af
-...
+Vi har generelt haft besvær med at komme ordentligt i kontakt med vores kunde på Greve Gymnasium. 
+Dette kan der have været mange forskellige grunde til - bl.a. kom vi jo ind i deres undervisningscyklus
+på et meget sent tidspunkt, hvilket måske bidrog til at dæmpe både underviserens og elevernes 
+interesse i at deltage i projektet. I sær her til sidst har vi haft meget svært ved at få fat
+på gymnasiet, af den simple grund at studentereksaminerne er gået i gang og både lærerens og
+elevernes prioriteter nu (forståeligt nok) ligger et helt andet sted. Vi forestiller os at vi ville
+have haft præcis de samme problemer hvis vi havde valgt et andet gymnasium at samarbejde med, samt 
+hvis vi havde valgt at arbejde med to sideløbende. Faktisk ville samarbejde med to gymnasier potentielt
+have været ret skadeligt for projektet, da det ville fordoble den (i forvejen betragtelige) opgave 
+at holde kontakt til kunden, informere om fremskridt og deltage i løbende møder. 
+
+I retrospekt ville et samarbejde (enten eksklusivt eller som én kunde sideløbende med et gymnasium) med 
+DKUUG måske have været en god idé. Et problem vi oplevede løbende med Greve Gymnasium var at gymnasielæreren
+vi havde størstedelen af vores kontakt med lod til at opfatte det som 'vores' projekt i højere grad end 
+hans som kunde. Han havde derfor ofte ikke så meget at bidrage med, hvilket gjorde at vi var nødt til at
+bestemme størsteden af kravene til systemet samt det pædagogiske indhold selv. Dette har vi ikke været tilfredse
+med, fordi det i høj grad har tilføjet til vores arbejdsbyrde i projektet. Folk fra DKUUG ville potentielt
+havde kunnet fratage os en del af dette ansvar, af den simple grund at de ville have bedre idé om præcis
+hvilken slags program de kunne tænke sig at ende op med. 
+
+\subsubsection{Analysearbejdet}
+En mere overordnet (og egentlig mere problematisk) observation vi har gjort os er at det projekt vi 
+har valgt ikke passer særlig godt på den analysemetode vi benytter på kurset. Selvom spillet selv 
+er objektorienteret er den applikation som er det egentlige program ret svært at beskrive med de 
+væktøjer og modeller der stilles til rådighed i bogen. Dette har betydet at en del af de opgaver der
+har været i forbindelse med forfatning af delrapporter har fungeret som yderligere arbejdsopgaver
+snarere end at hjælpe os med at udvikle og forstå programmet vi har arbejdet på. Når vi næste gang
+påbegynder et projekt vil vi derfor gøres os umage med at vælge projekt og analysemetode der rent 
+faktisk understøtter hinanden på en produktiv måde. 
+
+\section{Afprøvning med brugerne}
+Som nævnt i delrapport tre har vores afprøvning med brugerne (i dette tilfælde gymnasieelever)
+været en del anderledes end afprøvning beskrevet i kursuslitteraturen af den grund at vi ikke 
+har en kørende prototype af selve klienten til vores program. Hvad vi valgte at gøre var 
+derfor i stedet at fokusere på at afprøve det pædagogiske indhold i de trin vi har udfærdiget
+til programmets første udviklingsforløb. Dette involverede dog også en del forberedelse, i 
+særdeleshed i forbindelse med at udvælge det materiale der skulle afprøves. 
+
+Som nævnt i forgående afsnit havde vi indledningsvist meget svært ved at få kontakt til de 
+testpersoner vi gerne ville benytte i Greves datalogiklasse. Vi endte dog med at aftale en 
+afprøvningssession på to timer med tre elever d. 31. maj. Heraf dukkede to af dem op. Dette viste sig dog
+at fungere meget godt, da vi hurtigt løb tør for tid og det potentielt ville have krævet flere resourcer
+at have flere testpersoner.
+
+\subsection{Overvejelser og forberedelse inden afprøvningen}
+En stor del af de trin vi har udarbejdet indeholder python- eller pygamespecifik information (se vedlagte bilag), som 
+vi gerne ville undgå at forudsætte for meget af. Vi valgte derfor at fokusere på de helt 
+grundlæggende funktionaliteter i spiludviklingen, som nemmest kunne abstraheres og gøres forståelige.
+Et kriterium for de ting vi stillede spørgsmål til var at de såvidt muligt var nemme at
+forestille sig uden at tænke for meget på specifikke implementeringsdetaljer (fx. ville vi gerne undgå
+ting som input handling, som kræver et vist kendskab til håndtering af tastaturinput, og ting som 
+fokuserede for meget på matematiske udregninger, da mange har svært ved at udføre den slags på stående fod). 
+Vi valgte derfor at fokusere på at stille spørgsmål til opbygningen af de forskellige entitetsklasser i spillet
+(spilleren selv, vægge, monstre, guld), udvalgte dele af klassernes opførsel i spillet (hovedsageligt collision
+detection), samt den grundlæggende funktionalitet i main-funktionen. 
+
+Ca. en uge inden mødet havde vi sendt dem en mail med en kort introduktion til hvordan afprøvningen 
+ville foregå, samt links til information som de med fordel kunne sætte sig ind i inden afprøvningen 
+(grundlæggende objektorientering, pygame). Med i denne mail var desuden en kort beskrivelse af det spil
+vi ville stille dem spørgsmål til. 
+
+\subsection{Afprøvningen}
+Afprøvningen foregik ved at vi indledningsvist gentog de grundlæggende rammer for det
+spil vi ville arbejde med (hvad en spiller skulle kunne, 
+hvordan reglerne ifbm. monstre og guld var). Herefter foregik afprøvningen af de
+udvalgte trin ved at vi læste højt/forklarede den beskrivelse der indleder hvert 
+trin, og stillede de spørgsmål som trinnet indeholdt. I tilfælde hvor trinnene
+fokuserede på teknisk specifikke ting (fx. pygames klasser eller datastrukturer) 
+valgte vi at omformulere spørgsmålene så at de blev mere generelle. Når testpersonerne havde
+svært ved at forstå opgaven eller ikke kunne komme på en måde at løse opgaven
+gav vi dem de hints der ligeledes indgår i hvert trin. 
+
+Selve afprøvningen uspillede sig ikke 100 procent optimalt. Ved begyndelsen sagde
+begge testpersoner at de ikke havde haft tid til at sætte sig 
+ind i python (dette havde vi heller ikke som sådan forudsat), pygame eller havde nogen 
+erfaring med spiludvikling overhovedet. Dette viste sig at blive problematisk, fordi 
+vi gentagne gange blev nødt til at forklare dem hvordan overordnede ting i spiludviklingen
+fungerer, såsom nedarvning og konstruktion af klasser og tilhørende metoder. Disse forklaringer
+var i høj grad af information som var at finde i de links der blev henvist til i trinnene, 
+men det optog en del tid og vi havde indtryk af at testpersonerne havde svært ved at 
+håndtere så store mængder information på én gang. 
+
+Spørgsmålene til de allerførste trin foreløb forholdsvis kaotisk. Selve main-loopet
+blev vi nødt til at forklare i ganske høj detaljeringsgrad for at vores testpersoner
+kunne forstå det, og selv herefter blev vi hurtigt nødt til at fokusere på modellen
+i spillet fordi selve main-funktionen var svær for dem at forestille sig. Spørgsmålene
+til de enkelte klasser forløb en del bedre: Begge elever var i stand til at komme med 
+bud på hvilke metoder de forskellige klasser skulle indeholde, og efter noget tid (og
+yderligere forklaring) kunne den ene af testpersonerne give et bud på hvordan Player-klassen
+kunne initialiseres, samt hvordan man kunne lave funktionalitet til at få spilleren 
+til at samle guld op og blive angrebet af et monster. Hans bud på hvordan man kunne gøre 
+det var anderledes end den måde vi selv har implementeret det, men i testens kontekst
+var det så meget som vi håbede på.
+
+Som afprøvningen skred frem blev vi ret hurtigt nødt til at stille spørgsmål til 
+opgaver der lå udenfor de trin vi havde planlagt at spørge til. Dette var af den 
+simple grund at vi forholdvis hurtigt løb tør for spørgsmål som eleverne kunne løse
+på stående fod, og var nødt til at prøve at finde på andre ting at spørge om. I særdeleshed
+havde begge elever svært ved at forstå spørgsmålene til collision detection og 
+hvordan/hvor de klasser de havde beskrevet skulle initialiseres og sættes i brug. Vi 
+forsøgte os med at stille spørgsmål til de udvidede metoder til de forskellige klasser
+(move og update) men selv efter gentagne forklaringer og hints kunne
+ingen af eleverne give bud på hvordan nogen af metoderne kunne implementeres. 
+
+Begge elever sagde at en stor del af deres besvær med at løse de opgaver
+vi stillede dem havde at gøre med at de ikke følte sig sikre nok til at kunne
+komme med bud på algoritmer uden at kunne sidde og lege med det på egen hånd.
+De mente begge to at de ville kunne løse (de nemmere af) opgaverne alene, hvis
+de havde den fornødne tid til at læse de links der indgik i trinene og kunne
+sætte sig mere ind i python, pygame og objektorientering generelt. 
+
+
+\subsection{Overvejelser efter afprøvningen}
+Alt i alt synes vi at vores afprøvningssession med de to elever blev ret kaotisk.
+Af de specifikke ting de to elever havde svært ved er det svært at skelne imellem
+hvad der har at gøre med det faglige niveau i opgaverne og hvad der har at gøre med
+vores testpersoners manglende forberedelse og forvirring over den uvante måde at 
+skulle løse datalogiske problemer. Det lader dog til at de opgaver der har at gøre
+med de mere matematiske/abstrakte dele af programmet (fx. collision detection og move-metoden)
+skal forklares meget mere grundigt, og måske deles op på flere forskellige trin for
+at uvante programmører kan følge med. Det samme kan siges om de trin der har at gøre 
+med selve main-loopet. En måde at løse problematikken ved main-funtkionen og main-loopet
+ville være at give brugeren mere funktionalitet i skelettet der udleveres, så at 
+de kan se hvordan det bliver gjort i stedet for at skulle lave så meget af det
+fra bunden. 
+
+Begge elever virkede dog positivt stemte overfor idéen om programmet som helhed, 
+og syntes at (de mindre krævende af) opgaverne var sjove. Begge af dem var af den 
+mening at de, hvis de havde bedre tid og måske fik mere udførlige beskrivelser i de 
+svære trin, ville kunne gennemføre forløbet i sidste ende. 
+
+\section{Diskussion af artikel}
+Artiklen "Designing the Handheld Maritime Communicator" handler om processen som omfattede at
+lave et system som ville være ansvarlig for at sørge for sikkerheden når risikabelt arbejde skulle udføres 
+i store fragtskibe. Artiklen går i dybde med dette, hvor den beskriver alle trinene bag systemet, fra 
+udformningen af systemet, til interviews med klientellet, indsamlingen af det information som skulle 
+bruges, designet af systemet, og til sidst den måde som designerne af systemet besluttede at teste systemet, 
+(både brugertests og bugtesting). Fremgangsmåden som programmørerne brugte til at designe systemet vil blive 
+analyseret samt sammenlignet med kursuslitteraturen.
+
+I stedet for interviews med deres klientel tog nogle medlemmer af holdet med på nogle af skibene for længere perioder, 
+(Det siges ikke hvor længe), hvor de tog noter om hvordan opgaver var klaret, (som for eksempel hvis sømændene skulle 
+få deres last om bord på skibet). Ud over dette tog de også noter om problemer med den måde som sømændene klarede 
+disse problemer på, som så skulle løses. Holdet tog også lyd-og-video analyser, hvor de tog lyd segmenter eller 
+video segmenter fra om bord på et skib, og kiggede dem igennem. Dette var gjort så at holdet kunne få en bedre 
+idé om forholdene på skibene, samt også for at se hvilken ordrer der blev typisk givet. Deres plan var at bruge disse 
+til at kunne lave forprogrammerede kommandoer. Denne måde som holdet brugte til at få information vedrørende det 
+det system som deres kunde havde brug for er meget anderledes end den metode som Back to Thinking Mode havde 
+argumenteret for, hvor man skulle have adskillige interviews med sin kunde, hvor man skulle føre en dagbog. Her brugte 
+man hovedsageligt et 'action-reaction' type format. Dog kan man argumentere at denne fremgangsmåde 
+ville ikke virke for dette projekt, da holdet havde brug for at have en klar idé om hvad arbejderne havde brug for, og 
+ikke hvad deres chefer havde brug for, samt hvis de havde foretaget interviews i stedet for feltarbejde ville holdet ikke 
+få at vide hvilken kommandoer var typisk givet fra kaptajnen eller lignende højrestående arbejdere.
+
+Mens systemet stadig var i koncept-fasen lavede holdet et klassediagram og et papir mockup om systemet for at vise 
+hvordan systemet skulle virke. Klassediagrammer er et udbredt fænomen i større projekter, som er beskrevet i bogen 
+"Objekt Orienteret Analyse og Design", som er brugt til at give et samlet overblik over problemområdet, hvilket 
+er nyttigt for dette system da systemet skulle kunne holde styr på skibbet, opgaverne og det team som skulle 
+udføre disse opgaver. Klassediagrammer er effektive da de hjælper med at holde et overblik over systemet, og 
+også til at hjælpe folk med at se hvilken klasser har hvilken effekt på hvilken klasser. Papir mockups, som også 
+er diskuteret i "Cardboard Computers: Mockingit-up or Hands-on the Future", hjælper med at få folk til at forstå 
+hvilken grænseflader holdet syntes vil være den bedste IT-løsning. Dette er en effektiv måde at vise et holds kunder 
+hvilken grænseflader de syntes vil være effektive, da de er hurtigere at lave i forhold til at lave prototyper, hvilket 
+betyder at et hold kan eksperimentere med forskellige design. Og da dette systems design er altafgørende, (da systemet 
+skulle være nemt og hurtigt at bruge for arbejderne), var det en umådelig god idé at lave forskellige papir mockups i stedet 
+for at lave mange forskellige prototyper.
+
+Holdet som designede systemet brugte et såkaldt 'iterativ design'. Iterativ design fungerer ved at holdet 
+laver en prototype. Denne prototype bliver så testet, analyseret og refineret, hvorefter holdet kigger 
+på hvad der skal laves om eller skal ændres. Disse ændringer bliver inkluderet i en ny prototype, som gennemgår 
+de samme trin som før indtil man har et færdigt produkt. Denne form for design er meget anderledes end et 
+traditionelt vandfaldsmodel, (hvor man antager at hvert trin bliver udført perfekt, og skal ikke ændres), eller et 
+spiralmodel, (fra "A Spiral Model of Software Development and Enhancement"), hvor man lavede en prototype  
+for hver gang man havde startet et nyt trin. Selvom et iterativ design er mere tidskrævende en et 
+vandfaldsmodel eller et spiralmodel, vil et iterativ design sørge for at når systemet bliver udleveret 
+vil der være færre bugs, problemer og ueffektive designelementer. Dette er meget vigtigt for et sikkerhedssystem, 
+da det kan koste liv hvis der sker en fejl. Artiklen "Designing for Usability: Key Principles and What The Designers 
+Think" er enig med at et iterativt design er den mest effektive designproces, da et iterativt designproces vil eventuelt 
+finde mange, hvis ikke alle, designproblemer, som for eksempel tvetydige beskeder. Artiklen give endda et eksempel 
+på et problem som et hold havde, hvor brugerne misforstod nogle af de kommandoer som de kunne bruge, som iterativt design 
+rettede op på. Tvetydige kommandoer eller funktioner ville have været et stort problem for projektet for brugerne, så 
+det var en god idé at bruge et iterativt designproces til systemet.
+
+\section{Bilag}
+\subsection{Trin}
 
 
 \end{document}
