@@ -127,17 +127,28 @@ vores systems design.
 
 
 \section{Modelkomponent og Funktionskomponent}
+\subsection{Punktet giver ikke mening for os}
+At snakke om komponentstruktur i vores programmel giver ikke rigtig mening.
+Brugeren kan skifte trin, hvilket får programmet til at køre nogle tests eller
+man kan bede om flere hints. Så reelt set har vi et modelkomponent, der holder
+styr på hvilket trin brugeren er ved og hvilke hints, der er vist. Og et
+funktionskomponent, der kan skife trin, vise hints og signalere til model-
+komponentet om disse.
 
-Som jeg ser det, så er det meget begrænset hvad vi har her. Reelt set består
-modelkomponentet bare af at brugeren kan se hjælp + hint og evt. nogle beskeder
-hvis han allerede har teste det. 
+Vores stykke software handler mere om dets data, end om dets selvstændige
+funktionalitet, og der er ikke så frygteligt meget at sige om det.
 
-I baggrunden er der et funktionskomponent, som kører unit tests, printer nyt
-hjælp og hints hvis brugeren skifter trin og evt. giver nogle fejl meddelelser. 
 
-Der står at vi skal beskrive et klassediagram for det, og det har vi allerede
-lavet i en tidligere rapport. Det kan skrives i løbet af 10 minutter, hvis min
-forståelse af punktet er korrekt. 
+\subsection{Modelkomponentet}
+Vores modelkomponenet holder styr på hvor langt brugeren er i forløbet og
+hvilke tests, der skal køres på dennes kode. Desuden holder den styr på, hvor
+mange hints, der er vist.
+
+\subsection{Funktionskomponent}
+Funktionskomponentet er kun relevant for når brugeren skifter trin, når dette
+sker kørers der test og det signaleres til modelkomponentet, hvis testene ikke
+finder fejl. Ligeledes hvis brugeren ønsker et hint opdateres modelkomponentet,
+og et nyt hint vises.
 
 \section{Projektsamarbejdet}
 \subsection{Projektstyring}
@@ -152,6 +163,7 @@ af at vores kundes elever gik på læseferie inden vi kunne igangsætte afprøvn
 Vi udviklede trinene ved først at uddelegere 2-3 trin til hvert enkelt gruppe-
 medlem, og derefter satte vi os sammen og strømlinede dem, så de blev ens i
 format og tilgang. Dette viste sig at være en rigtig god måde at tvinge alle
+<<<<<<< HEAD
 til at være kreative, og komme med deres bud på en løsning. På nuværende tidspunkt
 er 10 ud af 13 trin i det første forløb blevet færdigproducerede. Dette er ikke 
 optimalt, men tilstrækkeligt til at kunne udføre sigende tests.
@@ -180,6 +192,16 @@ Alt i alt har vores referater under projektets forløb været forholdsvis
 kaotiske. I projektets begyndelse har vi ført meget grundige (og hyppige)
 referater, som på nuværende tidspunkt ikke fremstår så nyttige eftersom 
 en stor del af selve projektet har ændret sig drastisk siden da. 
+
+Det har vist sig at sidste rapports ide med at fordele hovedansvaret for
+forskellige dele af projektet var lidt for ambitiøs. Vi har slet ikke haft tid
+eller overskud til at arbejde på alle delene, og i sidste ende har der slet
+ikke været nogen grund til at holde hinanden i tovene på de forskellige områder.
+I stedet har vi kørt med den samme model som hidtil, hvor vi har en person med
+det overordnede ansvar. Det er stadig ikke optimalt, og vi har reelt kun den ene
+person med et egentlig overblik over projektet. Det skaber mere arbejde for den
+ansvarlige,og sætter de 3 andre medlemmer værre i en eksamenssituation, når de
+skal redegøre for forløbet og de forskellige projektdele.
 
 I de møder vi har haft, har vi nok engang haft sløsede referater, men de har
 heller ikke været så relevant, da alt vores arbejde og tanker røg ned på papir
@@ -214,15 +236,50 @@ medlem i gruppen. Havde vedkommende ikke faldet fra projektet kunne vi muligvis
 have haft nytte af denne måde at organisere os på, men det kan jo ikke blive andet
 end spekulation på nuværende tidspunkt. 
 
+Vi har gennem forløbet arbejdet en del med at forbedre vores dokumentations-
+strategi, til tider fungerede den godt, med aktions-reaktions skemaer for vores
+interviews, men til vores møder formåede vi aldrig at få skabt en god standard.
+De fleste af vores referater kan ikke bruges til meget mere end at tjekke
+egentlige beslutninger. I et fremtidigt projekt ville vi absolut udbedre dette,
+og bl.a. få argumenter og begrundelser med for de valg vi traf, så vi i mod-
+sætning til nu, kan se hvorfor vi valgte at gøre som gjorde.
+
 Vi valgte i processen at bruge en betragtelig mængde energi på det pædagogiske indhold
 af vores projekt, og på at finde ud af hvad selve spillet skulle gå ud på o. lign. På 
 denne måde er vores implementationsarbejder blevet meget forhalet, resulterende i at
 vi ikke kommer til at have en kørende prototype på det planlagte tidspunkt. I retrospekt
 ville en god idé have været at påbegynde implementeringen sideløbende (eller, potentielt, 
 inden) analysearbedet, så at vi ville have en base af fungerende programmel at udvide
-på i takt med at projektets indhold blev mere veldefineret. 
+på i takt med at projektets indhold blev mere veldefineret.
+
+I et fremtidigt projekt vil vi endvidere forsøge at være hårdere med deadlines da dette har
+været et gennemgående problem i gruppen, og har skabt stress og dårligere
+produkter. Det er dog svært at rette på, når det er et generelt problem i
+gruppen, og vi ikke har adgang til andre konsekvenser end at forlade gruppen.
+Det bliver uundgåeligt noget med at forsøge at holde hinanden i ørerne, og
+forsøge at holde konstant opsyn med status på forskellige opgaver, hvilket er
+generende for alle i gruppen. 
+
+Alt i alt er det der generer os mest, at vi har set os nød til at fokusere mere
+på at skrive rapporter, end at udvikle et produkt vi kunne være tilfreds med.
+Her et par uger før eksamen står vi ikke med noget der ligner et færdigt program,
+og det er ikke, fordi det er et voldsomt stort eller kompliceret program, men
+fordi rapporterne syntes at fylde mere end udviklingen. 
 
 \subsubsection{Valg af kunde og kundekontakt}
+Vi kunne godt have brugt mere kontakt med kunden, eftersom vi syntes at det blev meget "vores" projekt
+i stedet for et vi lavede i fællesskab. Specielt i starten virkede det heller ikke som om, at vi 
+havde den samme forståelse af meningen med projektet, og det ønskede produkt.
+Dette kunne bestemt gøres bedre, og ville forventeligt være anderledes i en
+situation, hvor vi var hyret til en opgave, i stedet for at vi er ude og sælge
+et projekt, som vi godt kunne tænke os at lave. Hvis der var en kontrakt invol-
+veret, ville det nok også have været anderledes, da kunden ville være mere 
+opsøgende i forhold til status og den videre udvikling af projektet, i stedet
+for passivt at vente på, hvad vi nu finder på at aflevere. Det var en risiko vi
+tog, da vi valgte at arbejde sammen med en enkelt gymnasielærer i de stressede
+månederne op til gymnasieeksamenerne. Dette skulle vi måske have været mere
+bevidste om. 
+
 Ved indgangen til projektet stod vi overfor to alternativer til den kunde vi endte med
 at vælge at samarbejde med. En anden samarbejdspartner vi kunne have valgt at arbejde med
 var foreningen DKUUG, som var meget interesseret i et projekt af lignende tilskæring, om end
@@ -415,6 +472,7 @@ det var en god idé at bruge et iterativt designproces til systemet.
 
 \section{Bilag}
 \subsection{Trin}
+
 
 
 \end{document}
