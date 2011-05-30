@@ -8,6 +8,7 @@
 \usepackage{hyperref}
 \usepackage{booktabs}
 \usepackage{graphicx}
+\usepackage{algorithmic}
 \pagestyle{fancy}
 \fancyhead{}
 \fancyfoot{}
@@ -104,6 +105,18 @@ hvorvidt det er opnået):
   \end{center}
 \end{table}
 
+\section{Den tekniske platform}
+Teknisk består vores program af 4 lag (startende nederst): python, pygame-biblioteket, 
+spilskelettet og vores applikation sammen med brugerens editor. \\
+
+Her vil python vil være den bærende del (da selve applikationen er kodet i dette sprog), 
+og pygame-bibliioteket bruger vi til at håndtere ting som 2d grafik, lyd og tastaturinput. 
+Spilskelettet er den ufærdige kildekode til spillet som brugeren får udleveret og skal bygge
+videre på.
+\\
+Øverst har vi et todelt lag bestående af vores applikation samt brugerens editor.
+Det vil være gennem dette lag at brugeren inteagerer med de dybere lag.
+
 \section{Arkitektur}
 
 Komponentarkitektur: {Klassediagram sættes ind her}
@@ -153,7 +166,8 @@ og et nyt hint vises.
 \section{Projektsamarbejdet}
 \subsection{Projektstyring}
 Siden sidste rapport har langt størstedelen af vores arbejde været rettet imod
-fremstilling af trinene til projektet og klargøring af test af disse. Processen
+fremstilling af trinene til projektet og klargøring af test af disse. Tre trin
+af disse er vedlagt nærværende rapport (se bilag). Processen
 omkring begge disse opgaver har været langt fra optimal: Selve udfærdigelsen af 
 trinene trak ud længere end det burde have gjort, eftersom samtlige gruppemedlemmer
 har været under forskellige former for tidspres, og generelt været dårlige til 
@@ -163,7 +177,6 @@ af at vores kundes elever gik på læseferie inden vi kunne igangsætte afprøvn
 Vi udviklede trinene ved først at uddelegere 2-3 trin til hvert enkelt gruppe-
 medlem, og derefter satte vi os sammen og strømlinede dem, så de blev ens i
 format og tilgang. Dette viste sig at være en rigtig god måde at tvinge alle
-<<<<<<< HEAD
 til at være kreative, og komme med deres bud på en løsning. På nuværende tidspunkt
 er 10 ud af 13 trin i det første forløb blevet færdigproducerede. Dette er ikke 
 optimalt, men tilstrækkeligt til at kunne udføre sigende tests.
@@ -471,8 +484,75 @@ rettede op på. Tvetydige kommandoer eller funktioner ville have været et stort
 det var en god idé at bruge et iterativt designproces til systemet.
 
 \section{Bilag}
-\subsection{Trin}
+\section{Trin}
+\subsection{Trin 2: Oprettelse af Player-klassen}
+\subsubsection{Skelet:}
+\begin{verbatim}
+Class player(pygame.sprite.Sprite):
+    def __init__(self, x, y):
+\end{verbatim}
+\subsubsection{Beskrivelse:}
+Du skal nu oprette en af de mest grundlæggende ting i spillet: selve spilleren.
+Vi gør dette ved at oprette en klasse (Player) som nedarver fra en klasse der
+er indbygget i pygame (Sprite). Det er hvad du kan se i det indbyggede skelet. 
+Eftersom din Player arver alle de metoder som Sprite-klassen har, bliver en 
+god del af din opgave at finde ud af hvilke metoder og attributter du vil bruge.
+Som det første skal du sørge for at din Player får indhentet et ikon, så den kan 
+blive tegnet på en bane (yderligere funktionalitet følger senere). 
+\\
+\subsubsection{Hints:}
+\begin{enumerate}
+\item Kig i resources.py. Er der funktionalitet der gør noget af 
+det du har brug for der? Hvad returnerer de funktioner der er defineret
+i det modul?
+\item Overvej hvilke attributter en spiller egentlig har brug for, udover
+et billede. Hvor er han henne? Hvor er han på vej hen? 
+\item Overvej om du kan kombinere indhentningen af billedet med indhentning
+af anden information om spilleren.
+\item Kig grundigt på dokumentationen til pygames Sprite-klasse. Er
+der noget du kan bruge? 
+\end{enumerate}
 
+\subsubsection{Links:}
+\begin{enumerate}
+\item Pygames dokumentation til Sprite-klassen: http://www.pygame.org/docs/ref/sprite.html
+\item Introduktion til Sprite-klassen: http://www.pygame.org/docs/tut/SpriteIntro.html
+\item Generel spil-tutorial som (bl.a.) benytter Sprite--klassen: http://pygame.org/docs/tut/chimp/ChimpLineByLine.html
+\end{enumerate}
 
+\subsection{Trin 7: Oprettelse af Wall-klassen}
+\subsubsection{Skelet:} 
+\begin{verbatim}
+class Wall(pygame.sprite.Sprite):
+    def __init__(self, x, y):
+\end{verbatim}
+
+\subsubsection{Beskrivelse:}
+Nu hvor du har en bane og en spiller der kan rykke
+rundt på den er det på tide at lave nogle mure som 
+kan gøre banen lidt mere spændende. Som enhver trænet
+koder tænker du øjeblikkeligt på at oprette en klasse
+til at modellere vægge. 
+\\
+En væg deler visse karakteristika med en spiller:
+De kan begge nedarve fra pygames Sprite-klasse, og 
+alle væggens grundlæggende metoder vil også kunne
+findes hos spilleren. 
+\\
+Når du har oprettet væg-klassen skal du sørge
+for at væggene bliver lagret det rigtige sted
+i spillet. 
+
+\subsubsection{Hints:}
+\begin{enumerate} 
+\item Prøv at overvej hvad en mur egentlig består af,
+   samt hvad den skal kunne. Skal den kunne flytte sig?
+   Skal den have et billede? Hvordan spiller disse 
+   to ting sammen?
+\item Hvor ligger informationerne om de ting der er 
+   at finde på en bane? Hvordan sørger du for at
+   væggen bliver placeret dér når dens init-metode
+   bliver kaldt?
+\end{enumerate}
 
 \end{document}
