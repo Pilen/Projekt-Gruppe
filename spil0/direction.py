@@ -14,5 +14,15 @@ def reverse(direction):
 def random():
     return rand.randint(1,4)
 
-
+def to_vector(direction, distance):
+    if direction == EAST:
+        return [distance,0]
+    elif direction == SOUTH:
+        return [0,distance]
+    elif direction == WEST:
+        return [-distance,0]
+    elif direction == NORTH:
+        return [0,-distance]
+    else:
+        return [0,0]
     

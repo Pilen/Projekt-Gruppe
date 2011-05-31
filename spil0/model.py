@@ -1,7 +1,7 @@
 
 import random
 import pygame
-import direction, data, resources, functions
+import direction, data, resources, functions, ai
 
 class Wall(pygame.sprite.Sprite):
     def __init__(self, x, y):
@@ -45,10 +45,7 @@ class Monster(pygame.sprite.Sprite):
             self.timeleft -= 1
             
         else:
-            #ai.pathfind(self.rect, player.rect) #not implemented yet
-            vector = [random.randint(0,self.SPEED*2)-self.SPEED,
-                      random.randint(0,self.SPEED*2)-self.SPEED]
-            self.move(vector)
+            self.move(direction.to_vector(ai.pathfinding(self.rect, data.player.rect),self.SPEED))
 
                
     def move(self, vector):
@@ -56,8 +53,6 @@ class Monster(pygame.sprite.Sprite):
         self.rect = self.rect.move(vector[0], vector[1])
         if len(pygame.sprite.spritecollide(self,data.walls, False)) > 0:
             self.rect = rect
-
-
 
 
 class Player(pygame.sprite.Sprite):
@@ -86,6 +81,8 @@ class Player(pygame.sprite.Sprite):
             vector = [0,self.SPEED]
 
         self.move(vector)
+        if len(pygame.sprite.spritecollide(self,data.monsters, False)) > 0:
+            functions.quit()
 
     def move(self, vector):
         rect = self.rect
