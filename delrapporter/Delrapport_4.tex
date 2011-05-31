@@ -47,13 +47,13 @@ Gruppeid : LO6\\
 %% HER STARTER RAPPORTEN
 \section{Formål}
 \subsection{Systemdefinition}
-Systemet består af et digitalt interaktivt læringsværktøj hvis mål er at indføre elever på gymnasiefaget Informationsteknologi i programmering af systemer i forskellig størrelse. Disse systemer vil primært være fokuseret på udvikling af spil, men bredt datalogisk kompetencegivende. Systemet opbygges som et hjælpeprogram, som kører ved siden af brugerens teksteditor og en række præetablerede programmeringsforløb som eleven kan deltage i. Et forløb består af en række trin - konkrete programmeringsopgaver som hver indeholder en beskrivelse, en række hints samt et sæt tests der holder styr på om brugeren har opfyldt målet for hvert trin. Når brugeren har gennemgået alle trinene vil vedkommende have et komplet spil der kan afvikles seperat fra udviklingsværktøjet. Systemet vil blive udviklet som en skrivebordsapplikation der kan afvikles lokalt på den enkelte brugers datamat/foldedatamat eller på datamater i gymnasiets eventuelle it-rum.
+Systemet består af et digitalt interaktivt læringsværktøj hvis mål er at indføre elever på gymnasiefaget Informationsteknologi i programmering af systemer i forskellig størrelse. Disse systemer vil primært være fokuseret på udvikling af spil, men bredt datalogisk kompetencegivende. Systemet opbygges som et hjælpeprogram, som kører ved siden af brugerens teksteditor og en række præetablerede programmeringsforløb som eleven kan deltage i. Et forløb består af en række trin - konkrete programmeringsopgaver som hver indeholder en beskrivelse, en række hints samt et sæt tests der holder styr på om brugeren har opfyldt målet for hvert trin. Når brugeren har gennemgået alle trinene vil vedkommende have et komplet spil der kan afvikles separat fra udviklingsværktøjet. Systemet vil blive udviklet som en skrivebordsapplikation der kan afvikles lokalt på den enkelte brugers datamat/foldedatamat eller på datamater i gymnasiets eventuelle it-rum.
 
 \subsection{BATOFF}
 \begin{itemize}
 \item \textbf{Betingelser}: Gymnasieelever med begrænsede programmering- og systemudviklingserfaringer. 
-\item \textbf{Anvendelsesområde}: Eleven som bruger af systemet. Hvis værktøjet instaleres centralt på et
-gymnasiums datamater vil der typisk være en Itadministrator hvis rolle er at opsætte systemet.
+\item \textbf{Anvendelsesområde}: Eleven som bruger af systemet. Hvis værktøjet installeres centralt på et
+gymnasiums datamater vil der typisk være en It-administrator hvis rolle er at opsætte systemet.
 \item \textbf{Teknologi}: Systemet designes til at kunne køre på almindelige hjemmedatamater/foldedatamater.
 Systemet vil blive baseret på python samt forskellige biblioteker dertil (i særdeleshed biblioteket pygame)
 \item \textbf{Objekter}: En bruger som udvikler et spil i forbindelse med et forløb af opgaver. 
@@ -110,12 +110,12 @@ Teknisk består vores program af 4 lag (startende nederst): python, pygame-bibli
 spilskelettet og vores applikation sammen med brugerens editor. \\
 
 Her vil python vil være den bærende del (da selve applikationen er kodet i dette sprog), 
-og pygame-bibliioteket bruger vi til at håndtere ting som 2d grafik, lyd og tastaturinput. 
+og pygame-biblioteket bruger vi til at håndtere ting som 2d grafik, lyd og tastaturinput. 
 Spilskelettet er den ufærdige kildekode til spillet som brugeren får udleveret og skal bygge
 videre på.
 \\
 Øverst har vi et todelt lag bestående af vores applikation samt brugerens editor.
-Det vil være gennem dette lag at brugeren inteagerer med de dybere lag.
+Det vil være gennem dette lag at brugeren interagerer med de dybere lag.
 
 \section{Arkitektur}
 
@@ -148,8 +148,8 @@ mange hints, der er vist.
 \subsubsection{Klasser i modelkomponentet}
 Klassen "Bruger" er hvor det bestemmes hvilken opgaver man har og ikke har
 lavet, hvor klassen "Opgaver" bestemmer de forløb en bruger kan være i gang med
-eller have gennemørt. Under klassen "Spil" valgte 
-vi at generalisere de to states "Færdig" og "Ikke Færdig/Fejl", hvilket bestemmer om brugeren 
+eller have gennemført. Under klassen "Spil" valgte 
+vi at generalisere de to stadier "Færdig" og "Ikke Færdig/Fejl", hvilket bestemmer om brugeren 
 har lov til at fortsætte med den næste opgave, eller skal arbejde videre med den 
 opgave som de er i gang med. Klassen "Test" refererer til de grupper af tests
 der er associeret med hvert enkelt trin, og som modellen kalder når klienten 
@@ -171,33 +171,33 @@ det første forløb (fem af disse er vedlagt som bilag til denne rapport). Vi ha
 på nuværende tidspunkt ingen kodet brugergrænseflade at fremvise. 
 
 \paragraph{}
-Vores tanker vedr. struktureringen af brugergrænsefladekomponentet er at det vigtigste
-er at græsefladen er så enkel som muligt, for ikke at forvirre brugeren unødigt. Dette
+Vores tanker vedrørende struktureringen af brugergrænsefladekomponentet er at det vigtigste
+er at grænsefladen er så enkel som muligt, for ikke at forvirre brugeren unødigt. Dette
 er heldigvis en overkommelig opgave da grænsefladen hovedsageligt vil skulle fremvise
 trin, som udelukkende består af nemt overskuelig tekst. 
 
 \paragraph{}
-Vores plan er at dele græsefladen op i 3 overorndede vinduer:
+Vores plan er at dele grænsefladen op i 3 overordnede vinduer:
 
 \paragraph{}
-Det første vindue (kaldet startup) vil stille brugeren overfor valget enten at starte et 
+Det første vindue (kaldet start-up) vil stille brugeren overfor valget enten at starte et 
 nyt forløb eller fortsætte på et der allerede er etableret.
 Hvis brugeren vælger at fortsætte på et tidligere startet forløb, vil en dialogboks komme 
 frem hvori han kan navigere hen til forløbet og fortsætte på det.
-Hvis brugeren derimod vælger at starte et nyt forløb bliver han dirregeret til hovedevindue
+Hvis brugeren derimod vælger at starte et nyt forløb bliver han dirigeret til hovedvindue
 nummer 2. Vinduet består af 3 knapper for at holde tingene så simple som muligt: 
 \begin{itemize}
 \item \textit{Start nyt forløb} knappen
-\item \textit{Fortsæt tidlligere forløb} knappen
+\item \textit{Fortsæt tidligere forløb} knappen
 \item \textit{Hjælp} knappen der åbner en dialogboks hvor man kan læse om brugen af programmet.
 \end{itemize}
 
 \paragraph{}
-Det andet vindue (kaldet initialisation) vil være der hvor brugern kan starte et nyt forløb og
+Det andet vindue (kaldet initialisation) vil være der hvor brugeren kan starte et nyt forløb og
 indtaste navn og sti i filsystemet (hvor forløbet skal gemmes).
-Det er også her hvor brugern skal finde ud af hvilket forløb han vil gå igang med: De forskellige
+Det er også her hvor brugeren skal finde ud af hvilket forløb han vil gå i gang med: De forskellige
 forløb vil præsentere hvilket spil de laver, hvad man lærer af at lave dette spil samt hvor svært/hvilke
- krav der til brugeren før han kan gå igang (f.eks. at brugeren har styr på de grundlæggende dele af python)
+ krav der til brugeren før han kan gå i gang (f.eks. at brugeren har styr på de grundlæggende dele af python)
 Når brugeren er klar kan han trykke start.
 
 \paragraph{}
@@ -251,8 +251,8 @@ underliggende data for klienten, og som de enkelte trin tager udgangspunkt i.
 
 \paragraph {} 
 Hele spillet er på nuværende tidspunkt kørende og afprøvet, og indeholder al den data vi
-gerne ville have at give brugere i udviklingsarbejdet (bl.a. har vi lavet
-en række ikoner til brug i tegningen af de forskellige entititeter i spillet). 
+gerne ville give brugere i udviklingsarbejdet (bl.a. har vi lavet
+en række ikoner til brug i tegningen af de forskellige entiteter i spillet). 
 Den kildekode der er vedhæftet denne rapport er fra spillets model.py-modul, som
 lagrer alle klasserne i spillet samt enkelte af de metoder de deler. 
 
@@ -268,7 +268,7 @@ Alt i alt består vores spil af følgende moduler:
 \item \textit{resources.py} indeholder alt funktionalitet der har med faktisk indlæsning af data at gøre.
 \end{itemize}
 
-Udover disse filer findes to mapper \textit{images} som indeholder alt billedmaterialle, samt \textit{maps} der indeholder banefiler.
+Udover disse filer findes to mapper \textit{images} som indeholder alt billedmateriale, samt \textit{maps} der indeholder banefiler.
 
 \section{Projektsamarbejdet}
 \subsection{Projektstyring}
@@ -288,17 +288,6 @@ til at være kreative, og komme med deres bud på en løsning. På nuværende ti
 er 10 ud af 13 trin i det første forløb blevet færdigproducerede. Dette er ikke 
 optimalt, men tilstrækkeligt til at kunne udføre sigende tests.
 
-I Delrapport 3 fremsatte vi hensigten at uddele selve projektopgaven i 4 hovedområder
-(projektstyring, kode, afprøvning, dokumentation) og uddelegerede ansvar for hvert 
-område til et enkelt gruppemedlem. Siden da har det vist sig at denne idé måske var
-for ambitiøs: Vi har slet ikke haft tid eller overskud til at arbejde på alle områder, 
-og sidste ende ikke været nogen grund til at holde hinanden i tovene på de forskellige
-områder. I stedet har vi kørt med den samme model som hidtil, hvor vi har en person med 
-det overordnede ansvar. Det er stadig ikke optimalt, og vi har stadig problemet at det 
-ikke er alle gruppemedlemmer som har fuldt overblik over projektet.
-Det skaber meget mere arbejde for dem der rent faktisk har det,
-og sætter de resterende medlemmer værre i en eksamenssituation.
-
 \subsection{Møder med brugeren}
 Siden delrapport 3 har vi afholdt ét yderligere møde med kunden, i form af 
 den afprøvningssession der beskrives i afsnit 8. Alt i alt vil dette sige 
@@ -313,14 +302,16 @@ kaotiske. I projektets begyndelse har vi ført meget grundige (og hyppige)
 referater, som på nuværende tidspunkt ikke fremstår så nyttige eftersom 
 en stor del af selve projektet har ændret sig drastisk siden da. 
 
-Det har vist sig at sidste rapports ide med at fordele hovedansvaret for
-forskellige dele af projektet var lidt for ambitiøs. Vi har slet ikke haft tid
-eller overskud til at arbejde på alle delene, og i sidste ende har der slet
-ikke været nogen grund til at holde hinanden i tovene på de forskellige områder.
-I stedet har vi kørt med den samme model som hidtil, hvor vi har en person med
-det overordnede ansvar. Det er stadig ikke optimalt, og vi har reelt kun den ene
-person med et egentlig overblik over projektet. Det skaber mere arbejde for den
-ansvarlige,og sætter de 3 andre medlemmer værre i en eksamenssituation, når de
+I Delrapport 3 fremsatte vi hensigten at uddele selve projektopgaven i 4 hovedområder
+(projektstyring, kode, afprøvning, dokumentation) og uddelegerede ansvar for hvert 
+område til et enkelt gruppemedlem. Siden da har det vist sig at denne idé måske var
+for ambitiøs: Vi har slet ikke haft tid eller overskud til at arbejde på alle områder, 
+og sidste ende ikke været nogen grund til at holde hinanden i tovene på de forskellige
+områder. I stedet har vi kørt med den samme model som hidtil, hvor vi har en person med 
+det overordnede ansvar. Det er stadig ikke optimalt, og vi har stadig problemet at det 
+ikke er alle gruppemedlemmer som har fuldt overblik over projektet.
+Det skaber meget mere arbejde for dem der rent faktisk har det,
+og sætter de resterende medlemmer værre i en eksamenssituation, når de
 skal redegøre for forløbet og de forskellige projektdele.
 
 I de møder vi har haft, har vi nok engang haft sløsede referater, men de har
@@ -336,7 +327,7 @@ Vores valg af versionsstyringsværktøj fungerer til gengæld glimrende. Vi har 
 arbejde delt og sorteret i mapper og alt er let tilgængeligt. Folk har en meget
 god forståelse for hvordan GitHub fungerer, og der er på nuværende tidspunkt ikke
 nogen der oplever problemer med at bruge det. Den eneste problematik vi oplever 
-på dén front er at nogle gruppemedlemmer ikke altid pusher så snart de er færdige 
+på den front er at nogle gruppemedlemmer ikke altid pusher så snart de er færdige 
 med en opgave, hvilket gør det besværligt at danne sig et overblik over hvor langt 
 vi er med enkelte delopgaver uden at skrive ud på mailinglisten eller at pinge folk
 provat. Dette er meget frustrerende, i sær eftersom det er et problem der er blevet
@@ -366,10 +357,10 @@ sætning til nu, kan se hvorfor vi valgte at gøre som gjorde.
 
 Vi valgte i processen at bruge en betragtelig mængde energi på det pædagogiske indhold
 af vores projekt, og på at finde ud af hvad selve spillet skulle gå ud på o. lign. På 
-denne måde er vores implementationsarbejder blevet meget forhalet, resulterende i at
+denne måde er vores implementationsarbejdet blevet meget forhalet, resulterende i at
 vi ikke kommer til at have en kørende prototype på det planlagte tidspunkt. I retrospekt
 ville en god idé have været at påbegynde implementeringen sideløbende (eller, potentielt, 
-inden) analysearbedet, så at vi ville have en base af fungerende programmel at udvide
+inden) analysearbejdet, så at vi ville have en base af fungerende programmel at udvide
 på i takt med at projektets indhold blev mere veldefineret.
 
 I et fremtidigt projekt vil vi endvidere forsøge at være hårdere med deadlines da dette har
@@ -392,8 +383,7 @@ i stedet for et vi lavede i fællesskab. Specielt i starten virkede det heller i
 havde den samme forståelse af meningen med projektet, og det ønskede produkt.
 Dette kunne bestemt gøres bedre, og ville forventeligt være anderledes i en
 situation, hvor vi var hyret til en opgave, i stedet for at vi er ude og sælge
-et projekt, som vi godt kunne tænke os at lave. Hvis der var en kontrakt invol-
-veret, ville det nok også have været anderledes, da kunden ville være mere 
+et projekt, som vi godt kunne tænke os at lave. Hvis der var en kontrakt involveret, ville det nok også have været anderledes, da kunden ville være mere 
 opsøgende i forhold til status og den videre udvikling af projektet, i stedet
 for passivt at vente på, hvad vi nu finder på at aflevere. Det var en risiko vi
 tog, da vi valgte at arbejde sammen med en enkelt gymnasielærer i de stressede
@@ -422,7 +412,7 @@ I retrospekt ville et samarbejde (enten eksklusivt eller som én kunde sideløbe
 DKUUG måske have været en god idé. Et problem vi oplevede løbende med Greve Gymnasium var at gymnasielæreren
 vi havde størstedelen af vores kontakt med lod til at opfatte det som 'vores' projekt i højere grad end 
 hans som kunde. Han havde derfor ofte ikke så meget at bidrage med, hvilket gjorde at vi var nødt til at
-bestemme størsteden af kravene til systemet samt det pædagogiske indhold selv. Dette har vi ikke været tilfredse
+bestemme størstedelen af kravene til systemet samt det pædagogiske indhold selv. Dette har vi ikke været tilfredse
 med, fordi det i høj grad har tilføjet til vores arbejdsbyrde i projektet. Folk fra DKUUG ville potentielt
 havde kunnet fratage os en del af dette ansvar, af den simple grund at de ville have bedre idé om præcis
 hvilken slags program de kunne tænke sig at ende op med. 
@@ -431,7 +421,7 @@ hvilken slags program de kunne tænke sig at ende op med.
 En mere overordnet (og egentlig mere problematisk) observation vi har gjort os er at det projekt vi 
 har valgt ikke passer særlig godt på den analysemetode vi benytter på kurset. Selvom spillet selv 
 er objektorienteret er den applikation som er det egentlige program ret svært at beskrive med de 
-væktøjer og modeller der stilles til rådighed i bogen. Dette har betydet at en del af de opgaver der
+værktøjer og modeller der stilles til rådighed i bogen. Dette har betydet at en del af de opgaver der
 har været i forbindelse med forfatning af delrapporter har fungeret som yderligere arbejdsopgaver
 snarere end at hjælpe os med at udvikle og forstå programmet vi har arbejdet på. Når vi næste gang
 påbegynder et projekt vil vi derfor gøres os umage med at vælge projekt og analysemetode der rent 
@@ -448,7 +438,7 @@ særdeleshed i forbindelse med at udvælge det materiale der skulle afprøves.
 Som nævnt i forgående afsnit havde vi indledningsvist meget svært ved at få kontakt til de 
 testpersoner vi gerne ville benytte i Greves datalogiklasse. Vi endte dog med at aftale en 
 afprøvningssession på to timer med tre elever d. 31. maj. Heraf dukkede to af dem op. Dette viste sig dog
-at fungere meget godt, da vi hurtigt løb tør for tid og det potentielt ville have krævet flere resourcer
+at fungere meget godt, da vi hurtigt løb tør for tid og det potentielt ville have krævet flere ressourcer
 at have flere testpersoner.
 
 \subsection{Overvejelser og forberedelse inden afprøvningen}
@@ -482,7 +472,7 @@ eller omformulere opgaven så at den blev uafhængig af den programdel. Når tes
 svært ved at forstå opgaven eller ikke kunne komme på en måde at løse opgaven
 gav vi dem de hints der ligeledes indgår i hvert trin. 
 
-Selve afprøvningen uspillede sig ikke 100 procent optimalt. Ved begyndelsen sagde
+Selve afprøvningen udspillede sig ikke 100 procent optimalt. Ved begyndelsen sagde
 begge testpersoner at de ikke havde haft tid til at sætte sig 
 ind i python (dette havde vi heller ikke som sådan forudsat), pygame eller havde nogen 
 erfaring med spiludvikling overhovedet. Dette viste sig at blive problematisk, fordi 
@@ -492,7 +482,7 @@ var i høj grad af information som var at finde i de links der blev henvist til 
 men det optog en del tid og vi havde indtryk af at testpersonerne havde svært ved at 
 håndtere så store mængder information på én gang. 
 
-Spørgsmålene til de allerførste trin foreløb forholdsvis kaotisk. Selve main-loopet
+Spørgsmålene til de allerførste trin forløb forholdsvis kaotisk. Selve main-loopet
 blev vi nødt til at forklare i ganske høj detaljeringsgrad for at vores testpersoner
 kunne forstå det, og selv herefter blev vi hurtigt nødt til at fokusere på modellen
 i spillet fordi selve main-funktionen var svær for dem at forestille sig. Spørgsmålene
@@ -506,7 +496,7 @@ var det så meget som vi håbede på.
 
 Som afprøvningen skred frem blev vi ret hurtigt nødt til at stille spørgsmål til 
 opgaver der lå udenfor de trin vi havde planlagt at spørge til. Dette var af den 
-simple grund at vi forholdvis hurtigt løb tør for spørgsmål som eleverne kunne løse
+simple grund at vi forholdsvis hurtigt løb tør for spørgsmål som eleverne kunne løse
 på stående fod, og var nødt til at prøve at finde på andre ting at spørge om. I særdeleshed
 havde begge elever svært ved at forstå spørgsmålene til collision detection og 
 hvordan/hvor de klasser de havde beskrevet skulle initialiseres og sættes i brug. Vi 
@@ -531,7 +521,7 @@ skulle løse datalogiske problemer. Det lader dog til at de opgaver der har at g
 med de mere matematiske/abstrakte dele af programmet (fx. collision detection og move-metoden)
 skal forklares meget mere grundigt, og måske deles op på flere forskellige trin for
 at uvante programmører kan følge med. Det samme kan siges om de trin der har at gøre 
-med selve main-loopet. En måde at løse problematikken ved main-funtkionen og main-loopet
+med selve main-loopet. En måde at løse problematikken ved main-funktionen og main-loopet
 ville være at give brugeren mere funktionalitet i skelettet der udleveres, så at 
 de kan se hvordan det bliver gjort i stedet for at skulle lave så meget af det
 fra bunden. 
@@ -567,7 +557,7 @@ få at vide hvilken kommandoer var typisk givet fra kaptajnen eller lignende hø
 Mens systemet stadig var i koncept-fasen lavede holdet et klassediagram og et papir mockup om systemet for at vise 
 hvordan systemet skulle virke. Klassediagrammer er et udbredt fænomen i større projekter, som er beskrevet i bogen 
 "Objekt Orienteret Analyse og Design", som er brugt til at give et samlet overblik over problemområdet, hvilket 
-er nyttigt for dette system da systemet skulle kunne holde styr på skibbet, opgaverne og det team som skulle 
+er nyttigt for dette system da systemet skulle kunne holde styr på skibet, opgaverne og det team som skulle 
 udføre disse opgaver. Klassediagrammer er effektive da de hjælper med at holde et overblik over systemet, og 
 også til at hjælpe folk med at se hvilken klasser har hvilken effekt på hvilken klasser. Papir mockups, som også 
 er diskuteret i "Cardboard Computers: Mockingit-up or Hands-on the Future", hjælper med at få folk til at forstå 
@@ -585,7 +575,7 @@ traditionelt vandfaldsmodel, (hvor man antager at hvert trin bliver udført perf
 spiralmodel, (fra "A Spiral Model of Software Development and Enhancement"), hvor man lavede en prototype  
 for hver gang man havde startet et nyt trin. Selvom et iterativ design er mere tidskrævende en et 
 vandfaldsmodel eller et spiralmodel, vil et iterativ design sørge for at når systemet bliver udleveret 
-vil der være færre bugs, problemer og ueffektive designelementer. Dette er meget vigtigt for et sikkerhedssystem, 
+vil der være færre bugs, problemer og ineffektive designelementer. Dette er meget vigtigt for et sikkerhedssystem, 
 da det kan koste liv hvis der sker en fejl. Artiklen "Designing for Usability: Key Principles and What The Designers 
 Think" er enig med at et iterativt design er den mest effektive designproces, da et iterativt designproces vil eventuelt 
 finde mange, hvis ikke alle, designproblemer, som for eksempel tvetydige beskeder. Artiklen give endda et eksempel 
@@ -709,7 +699,7 @@ def handle_input():
 \subsubsection{Beskrivelse:}
 Du skal nu kode den del af spillet der håndterer input fra spilleren - 
 dvs. at du skal få spillet til at reagere på det data det modtager fra
-tastaturen (fx. når spilleren trykker på piletasterne). I handle\_input() 
+tastaturet (fx. når spilleren trykker på piletasterne). I handle\_input() 
 skal du konkret finde ud af at stoppe spillet, samt at få spilleren til 
 at bevæge sig vha. input fra tastaturet. 
 //
@@ -761,13 +751,13 @@ både var tilfældet med spilleren og væggene skal du
 oprette en klasse til at modellere dine præmier. 
 //
 Udover de standardattributter som klassen skal have
-(billede, rect etc), bør du overveje hvordan denne 
+(billede, rect etc.), bør du overveje hvordan denne 
 klasse skal relatere sig til Player-klassen. Hvad skal 
 der ske når spilleren samler en præmie op? Hvilken 
 klasse skal opdateres i det tilfælde?
 //
 Når du har oprettet klassen skal du (selvfølgelig)
-sørge for at den bliver tiløjet til data.py det
+sørge for at den bliver tilføjet til data.py det
 rigtige sted. Du skal dog også kigge på hvor du
 kan initialisere dine præmier, så at de bliver
 tegnet i den bane der bliver spillet på.  
