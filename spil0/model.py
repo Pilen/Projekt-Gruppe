@@ -81,6 +81,8 @@ class Player(pygame.sprite.Sprite):
             vector = [0,self.SPEED]
 
         self.move(vector)
+        if len(pygame.sprite.spritecollide(self,data.monsters, False)) > 0:
+            functions.quit()
 
     def move(self, vector):
         rect = self.rect
