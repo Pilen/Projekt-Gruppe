@@ -8,7 +8,6 @@
 \usepackage{hyperref}
 \usepackage{booktabs}
 \usepackage{graphicx}
-\usepackage{algorithmic}
 \pagestyle{fancy}
 \fancyhead{}
 \fancyfoot{}
@@ -244,31 +243,95 @@ af grænsefladen. \begin{figure}[h]
 \newpage
 
 \section{Implementering af IT-løsningen}
-Status på implementeringen af selve klienten (som er det egentlige produkt 
-i dette projekt) er desværre på samme status som brugergrænsefladen. Hvad vi
-har fokuseret på at kode hidtil har været det spil der fungerer som det 
-underliggende data for klienten, og som de enkelte trin tager udgangspunkt i.
+Vores projekt delt op i 2 dele:
 
-\paragraph {} 
-Hele spillet er på nuværende tidspunkt kørende og afprøvet, og indeholder al den data vi
-gerne ville give brugere i udviklingsarbejdet (bl.a. har vi lavet
-en række ikoner til brug i tegningen af de forskellige entiteter i spillet). 
-Den kildekode der er vedhæftet denne rapport er fra spillets model.py-modul, som
-lagrer alle klasserne i spillet samt enkelte af de metoder de deler. 
+Først er der spillet som brugeren skal udvikle. 
+For at kunne stille en ramme op for brugeren og for at kunne indele udviklingen i mindre opgaver, måtte vi lave en virkende udgave af spillet til at starte med.
 
-\paragraph {} 
-Alt i alt består vores spil af følgende moduler: 
+Udover spillet er der selve programmet hvori brugeren bliver guidet igennem udviklingen, via små opgaver formuleret som trin i det forløb udviklingen udgør.
+Det er dette programs opgave at køre forskellige tests af brugerens kode, på den måde kan vi være sikre på at brugeren har løst opgaven korrekt så vi kan fortsætte videre i forløbet.
+
+\paragraph{}
+Status er lige nu at selve programmet (som kan ses som projektets egentlige produkt) desværre ikke er udviklet færdig. Hvad vi har fokuseret på at kode hidtil har været det spil der fungerer som det underliggende data for klienten, og som de enkelte trin tager udgangspunkt i.
+
+\paragraph{}
+Til at starte med havde vi kun en vag ide om hvordan forløbet om at skabe et spil bedst kunne struktureres, derfor var det naturligt at dele udviklingen op i 3 faser.
+\begin{enumerate}
+  \item Udviklingen af et virkende spil.
+  \item Opdeling af kode opgaver i mindre trin som tilsammen udgør et forløb.
+  \item Udvikling af selve hovedprogrammet.
+\end{enumerate}
+Denne rækkefølge var nødvendig da vi var nød til at vide hvordan spillet fungerede før vi kunne lave et forløb ud af det. Og vi var nød til at vide ret præcist hvordan et forløb med dets trin fungerede før vi kunne implementere det ordentligt i programmet.
+
+\paragraph{}
+Vi valgte derfor den ovenstående rækkefølge. Dette har dog også betydet at vi ikke kunne arbejde med projekterne parralelt og er derfor løbet ind i tidsproblemer. Vi er i gruppen kun nået til punkt 2 og har ikke fået udviklet selve programmet endnu.
+
+\paragraph{}
+Dette har i høj grad været en prioterings sag. Selve programmets funktionalitet er ret simpel men uden et forløb er det ubrugeligt. Det er derimod muligt at håndkøre et forløb hvilket gør at vi kan teste forløbene uden at have et virkende program.
+
+\subsection{Implementation af spillet}
+Vi valgte at udvikle spillet i python primært fordi det er et lettilgængeligt sprog, både for os, men i lige så høj grad for brugerne. Samtidig havde vi gode erfaringer med biblioteket pygame som er i stand til at håndtere mange grundlæggene ting som tegning af billeder, håndtering af input fra brugeren osv.
+Kombinationen af python og pygame gør det muligt at udvikle prototyper enormt hurtigt og gør det muligt at have en meget agil tilgang til udviklingen. Da vi på forhånd ikke havde så dybdegående ideer om hvordan man bedst kunne strukturere spillet så det passede bedst ind i et forløb valgte vi at bruge en meget itterativ udviklings procces. Først blev der lavet en så simpel men virkende grundfunktionalitet som muligt. Herefter blev koden udbygget med mere funktionalitet samtidig med den blev refaktoreret. Ofte startede vi med at lave store funktioner der tog sig af al funktionaliteten, men som vi arbejdede videre blev disse funktioner splittet op i mindre bidder der gjorde koden mere overskuelig. Samtidig betød de mindre funktioner at vi fik nemmere ved at dele koden op i mindre opgaver. Dette er især tydeligt i \textit{game.py} som startede med en funktion kaldet main som tog sig af alting. Funktionen blev dog løbende splittet op i mindre dele og hovedløkken blev skilt fra og delt op i mindre bider. Med hovedløkken delt op i timing, håndtering af input, opdatering af spillet og rendering, blev det pludseligt meget simplere og mere overskueligt. Så selv om vi kun startede med en ide om hvordan koden skulle ende lykkedes det os med en agil og itterativ tilgang at skabe en kodebase med små letforståelige funktioner som forhåbentligt gør spillet lettere at forstå for brugeren samt lige så vigtigt, gør det nemmere at lave tests af brugerens kode.
+
+\paragraph{}
+Vi valgte at gå ud fra Model-View-Control mønstret da vi lavede spillet. MVC er et ret udbredt mønster i spilverdenen og vi har derfor valgt at følge det. 
+
+\paragraph{}
+Spillet selv er splittet op i en række forskellige moduler der tager sig af forskellige ting. Vi har valgt at være ret agressive med opdelingen, dels for at gøre det mere overskueligt for brugeren og dels for at vænne dem til at dele deres kode mere op. Opdelt kode er lettere at overskue, rette og teste - tre ting vi gør brug af i projektet.
+
+\paragraph{}
+Spillet består af følgende filer:
 \begin{itemize}
 \item \textit{game.py} indeholder \"main\" metoden, det er herfra spillet startes. Derudover indeholder den selve spilløkken.
 \item \textit{model.py} indeholder alle de klasser der er i spillet, her er alle spilobjekterne defineret.
 \item \textit{data.py} er en slags database over alt i spillet. Modulet holder styr på de forskellige spilkonstanter så som vinduestørrelsen, samt sæt af spillets objekter. Når et nyt objekt bliver oprettet skal det tilføje sig i de relevante grupper så de bliver opdateret og vist korrekt.
 \item \textit{mapping.py} banerne til spillet består af simple tekstfiler der indlæses og gemmes i data modulet. Når banerne er blevet indlæst er der funktionalitet i mapping modulet der kan omsætte banen til faktiske objekter.
 \item \textit{direction.py} Udgør enums for alle 4 verdenshjørner, modulet bliver brugt til bevægelse af spilleren.
-\item \textit{functions.py} indeholder enkelte funktioner som var for generelle til at passe ind i andre moduler.
+\item \textit{functions.py} indeholder lidt blandede funktioner.
 \item \textit{resources.py} indeholder alt funktionalitet der har med faktisk indlæsning af data at gøre.
+\item \textit{ai.py} indeholder algoritmer til pathfinding.
 \end{itemize}
 
-Udover disse filer findes to mapper \textit{images} som indeholder alt billedmateriale, samt \textit{maps} der indeholder banefiler.
+\paragraph{}
+Udover disse filer findes to mapper \textit{images} som indeholder alt billedmaterialle, samt \textit{maps} der indeholder banefiler.
+
+\paragraph{}
+Spillet startes ved at køre \textit{game.py} i python. main metoden initialisere spillet og starter derefter hovedløkken. Hovedløkken er ret simpel, den sørger for at spillet kører med en jævn hastighed derefter håndteres input fra spilleren, alting i spillet opdateres hvorefter det tegnes på skærmen. Dette gøres i en uendelig løkke indtil spillet er ovre. \textit{game.py} indeholder den funktionalitet der har med control delen at gøre.
+
+\paragraph{}
+I \textit{model.py} findes selve spilklasserne til spillet og udgør dermed model delen. Hver klasse er barn af pygames Sprite klasse hvormed vi kan få pygame til at tage sig af mange af de praktiske ting, så som collision detection og rendering. Fælles for alle objekter er at de har en konstruktør hvor de henter deres sprite, indsætter sig i deres respektive grupper samt positionerer sig korrekt på banen. Både Player klassen og Monster klassen som er de to \"aktive\" klasser indeholder derudover en update metode. Update metoden bliver kaldt hvert frame og sørger for at udfører alt logikken. Player klassens logik består i at rykke sig hvis brugeren ønsker det og der ikke er en væg i vejen. Tilsvarende vil Monster klassen prøve på at komme hen mod spilleren hvis denne er inde for rækkevide, dette gøres med at kalde pathfindingalgoritmen i \textit{ai.py}, det skal dog siges at denne algoritme er ekstremt dårlig da den på nuværende tidspunkt blot returnerer en tilfældig retning. Det er ideen at vi bruger en bedre algoritme her såsom A* eller et genereret Leemap som der så kan slås op i.
+
+\paragraph{}
+I \textit{data.py} lagres alt informationen om spillet, denne konstruktion sikrer at alle dele af spillet har let adgang til spillets data.
+Det vigtiste her er de såkaldte spritegroups som er en datastruktur pygame bruger for hurtigt at kunne arbejde med sprites. Spritegroups har indbygget funktionalitet så man f.eks. kan kalde alle medlemmers update metode med et enkelt kald. Derudover bruges spritegroups også til collisiondetection samt hurtig rendering af flere sprites. Sprite og Spritegroupsne er implementeret i c og brugt rigtigt kan de være med til at få spil lavet i python til at køre forholdsvist hurtigt.
+
+\paragraph{}
+\textit{direction.py} indeholder en slags enum over de fire verdenshjørner samt retningen NONE, derudover er der funktioner til f.eks. at lave en retning om til en vektor.
+
+\paragraph{}
+\textit{functions.py}, \textit{resources.py} og \textit{mapping.py} er hjælpe moduler med ekstra funktionalitet. \textit{resources.py} tager sig af alt hvad der har med indlæsning af filer at gøre. \textit{mapping.py} tager sig af at lave en indlæst tekstfil om til spilobjekter. \textit{functions.py} indeholder pythagoras funktionen samt funktionen quit der afslutter spillet og udskriver spillerens score til terminalen.
+
+\paragraph{}
+Hele spillet er på nuværende tidspunkt kørende og afprøvet, der mangler kun at blive implementeret en ordentlig pathfinding algoritme. Dette har dog ikke været en hindring for at gå igang med at indele koden i forskellige opgaver til vores forløb.
+Udover koden er graffiken til spillet også færdig, grafikken består af .png filer i images mappen.  maps/ mappen indeholder eksempler på hvordan en bane lagres.
+Tanken er at brugeren kan manipulere disse filer som han har lyst.
+
+Kildekoden der er vedhæftet denne rapport er fra spillets model.py-modul.
+
+
+
+\subsection{Hovedprogrammet}
+
+Selve programmet har vi ikke nået at udvikle, det er ærgeligt men ikke katastrofalt. Det er muligt at afprøve forløbene ved at udlevere koden og opgaveteksterene til hvert trin et ad gangen, man kan så manuelt se om det brugeren har lavet er korekt. Det er altså muligt at teste vores program uden automatiserede unittests og visning af opgave beskrivelser.
+
+For at forstå hvordan programmet virker er det nødvendigt at have en ide om hvordan forløbet skal organiseres.
+Forløbet består af en række trin som hver er en opgave som brugeren skal løse. Når brugeren mener han har løst opgaven trykker han på \"videre\" knappen, herved køres en række unittests af hans kode, hvis testsne gennemføres ved vi at brugeren har løst opgaven korrekt og han føres videre til næste trin, hvis en test fejler visses en besked med hvad der gik galt og hvad der evt. kan gøres for at rette fejlen.
+
+Hvert trin skal derfor have en beskrivelse af opgaven, for at gøre værktøjet så fleksibelt som muligt er tanken at dette laves i et markup sprog ala html der kan håndtere ting som hyperlinks, grundlæggene typografi, billeder, tabeller, lister osv. Testsne er et python script der køres, hver test er så en funktion der enten lykkedes med succes, eller returnerer en fejl meddelelse som vises i et popup vindue eller lignende. Ideen er at værktøjet er så fleksibelt at man kan proppe mange forskellige typer forløb ind i det. Det kunne f.eks. være at man istedet for at skulle lave et spil skulle lave et andet program, værktøjets fleksibilitet kan faktisk udnyttes til alt der kan sættes på formen bestående af et forløb af opgaver med efterfølgene tests.
+
+Programmet vil være let at udvikle. Ved at bruge et gui bibliotek med funktionalitet til at tegne vinduer med html indhold, selve testsne er nemme at håndtere da man blot skal indlæse dem og lade pythons fortolker afvikle dem. Meget mere funktionalitet er ikke nødvendig.
+
+
 
 \section{Projektsamarbejdet}
 \subsection{Projektstyring}
@@ -780,6 +843,6 @@ dine præmier bliver initialiseret dér?
 \end{enumerate}
 
 \section{Kildekode}
-\lstinputlisting{model.py}
+\lstinputlisting{../spil0/model.py}
 
 \end{document}
