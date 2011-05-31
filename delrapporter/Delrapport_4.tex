@@ -164,6 +164,91 @@ signalerer til modelkomponentet hvor brugeren er i et forløb - dog er
 klienten også ansvarlig for opgaven at vise selve grænsefladen for brugeren, og
 kan ikke kaldes udelukkende et funktionskomponent. 
 
+\section{Brugergrænsefladekomponent}
+Som det også forklares i afsnittet om projektarbejdet: Siden Delrapport 3 har vores 
+indsats udelukkende været fokuseret omkring udvikling af de forskellige trin der udgør
+det første forløb (fem af disse er vedlagt som bilag til denne rapport). Vi har derfor
+på nuværende tidspunkt ingen kodet brugergrænseflade at fremvise. 
+
+\paragraph{}
+Vores tanker vedr. struktureringen af brugergrænsefladekomponentet er at det vigtigste
+er at græsefladen er så enkel som muligt, for ikke at forvirre brugeren unødigt. Dette
+er heldigvis en overkommelig opgave da grænsefladen hovedsageligt vil skulle fremvise
+trin, som udelukkende består af nemt overskuelig tekst. 
+
+\paragraph{}
+Vores plan er at dele græsefladen op i 3 overorndede vinduer:
+
+\paragraph{}
+Det første vindue (kaldet startup) vil stille brugeren overfor valget enten at starte et 
+nyt forløb eller fortsætte på et der allerede er etableret.
+Hvis brugeren vælger at fortsætte på et tidligere startet forløb, vil en dialogboks komme 
+frem hvori han kan navigere hen til forløbet og fortsætte på det.
+Hvis brugeren derimod vælger at starte et nyt forløb bliver han dirregeret til hovedevindue
+nummer 2. Vinduet består af 3 knapper for at holde tingene så simple som muligt: 
+\begin{itemize}
+\item \textit{Start nyt forløb} knappen
+\item \textit{Fortsæt tidlligere forløb} knappen
+\item \textit{Hjælp} knappen der åbner en dialogboks hvor man kan læse om brugen af programmet.
+\end{itemize}
+
+\paragraph{}
+Det andet vindue (kaldet initialisation) vil være der hvor brugern kan starte et nyt forløb og
+indtaste navn og sti i filsystemet (hvor forløbet skal gemmes).
+Det er også her hvor brugern skal finde ud af hvilket forløb han vil gå igang med: De forskellige
+forløb vil præsentere hvilket spil de laver, hvad man lærer af at lave dette spil samt hvor svært/hvilke
+ krav der til brugeren før han kan gå igang (f.eks. at brugeren har styr på de grundlæggende dele af python)
+Når brugeren er klar kan han trykke start.
+
+\paragraph{}
+Det tredje vindue er selve applikationen.
+Vinduet er tænkt at fylde i højden men ikke i bredden.
+Her vil man have en række knapper til at navigere med, samt et større område med tekst.
+Øverst vil der sidde 4 knapper: 
+\begin{itemize}
+  \item En tilbage knap, symboliseret med en pil der peger mod venstre.
+  \item En kør knap der starter spillet.
+  \item En hjælp knap med et spørgsmålstegn der åbner hjælpesiden som i vindue 1.
+  \item En frem knap symboliseret med en pil mod højre.
+\end{itemize}
+
+\paragraph{}
+For at opnå en forståelse af hvordan vi har tænkt os at brugergrænsefladen 
+kommer til at tage sig ud, har vi vedlagt figurene \ref{fig:startvindue}, 
+\ref{fig:hovedvindue} og  \ref{fig:nytforloeb} som viser vores tegnede mockups
+af grænsefladen. \begin{figure}[h]
+  \begin{center}
+    \includegraphics[scale=0.4]{startvindue.png}
+    \caption{Programmets startvindue}
+    \label{fig:startvindue}
+  \end{center}
+\end{figure}
+\newpage
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[scale=0.4]{hovedvindue.png}
+    \caption{Programmets hovedvindue}
+    \label{fig:hovedvindue}
+  \end{center}
+\end{figure}
+\newpage
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[scale=0.4]{nytforloeb.png}
+    \caption{Et nyt forløb}
+    \label{fig:nytforloeb}
+  \end{center}
+\end{figure}
+\newpage
+
+
+
+\section{Implementering af IT-løsningen}
+
+
+
 
 \section{Projektsamarbejdet}
 \subsection{Projektstyring}
@@ -555,6 +640,130 @@ i spillet.
    at finde på en bane? Hvordan sørger du for at
    væggen bliver placeret dér når dens init-metode
    bliver kaldt?
+\end{enumerate}
+
+\subsection{Trin 8: Collision detection }
+\subsubsection{Skelet:} 
+\begin{verbatim}
+Intet skelet udleveres til dette trin. 
+\end{verbatim}
+\subsubsection{Beskrivelse:}
+Du skal nu tilføje 'collision detection'. Dette skal bruges
+til at sørge for at din spiller f.eks. ikke kan stå oven i 
+mure. Dette skal implementeres som en del af move-metoden i 
+player klassen, som du oprettede tidligere.
+Collision detection kan man med fordel kode med udgangspunkt
+i de biblioteker du får fra pygame.
+
+\begin{enumerate}
+\item Et godt udgangspunkt er metoden spriteCollide fra den gammelkendte
+Sprite-klasse. 
+\item Når du specifikt skal undgå at din spiller går ind i mure, hvilke 
+argumenter skal din metode så bruge?
+\item Hvordan sørger du for at der ikke er mere én sprite på en bestemt
+position?
+\end{enumerate}
+
+\subsubsection{Links:}
+\begin{enumerate}
+\item Wikipedias artikel om collision detection: http://en.wikipedia.org/wiki/Collision\_detection
+\item Tutorial om collision detection i pygame: http://www.switchonthecode.com/tutorials/collision-detection-with-pygame
+\item Grundlæggende pygame-tutorial indeholdende helt basal introduktion til collision detection
+og rects: http://pygame.org/docs/tut/newbieguide.html
+\item Endnu en tutorial (også indeholdende sprite-grupper): http://www.devshed.com/c/a/Python/PyGame-for-Game-Development-Sprite-Groups-and-Collision-Detection/
+\end{enumerate}
+
+\subsection{Trin 6: Input handling}
+\subsubsection{Skelet:} 
+\begin{verbatim}
+def handle_input():
+    for event in pygame.event.get():
+            if event.key == pygame.K_UP:
+                ''Få spilleren til at skifte retning''
+            elif event.key == pygame.K_DOWN:
+                ''Få spilleren til at skifte til en anden retning''
+\end{verbatim}
+\subsubsection{Beskrivelse:}
+Du skal nu kode den del af spillet der håndterer input fra spilleren - 
+dvs. at du skal få spillet til at reagere på det data det modtager fra
+tastaturen (fx. når spilleren trykker på piletasterne). I handle\_input() 
+skal du konkret finde ud af at stoppe spillet, samt at få spilleren til 
+at bevæge sig vha. input fra tastaturet. 
+//
+Måden vi gør dette i pygame er vha. såkaldt hændelseshåndtering (event
+handling). Dette står beskrevet i nærmere detaljer under links-sektionen. 
+//
+Som du kan se af kodeskelettet lægger vi ud med at indhente en liste 
+(også kaldet en kø) af hændelser fra tastaturet (ln 1). Denne undersøger 
+vi herefter, og angiver hvordan spillet skal reagere på beskeder fra de 
+forskellige taster (eksempel: ln 2-5). 
+
+\subsubsection{Hints:}
+\begin{enumerate}
+\item Størstedelen af det data der skal manipuleres her er spillerens retning.
+   Hvor lagres det?
+
+\item Hvilket tastaturinput virker bedst til at bestemme retning på spilleren?
+   Hvornår vil du indhente dataet fra tasterne - når de er blevet trykket ned
+   eller når de er blevet sluppet igen?
+
+\item Du skal (ud fra en hændelse fra tastaturet) få spillet til at stoppe. Hvor
+   har du en funktion der stopper spillet?
+
+\item Du kan hente inputtet til at stoppe spillet på flere måder - bl.a. har 
+   pygame en indbygget quit-konstant. Hvordan kan du ellers stoppe spillet?
+   Er der behov for flere måder at stoppe spillet på?
+
+\item Undersøg forskellen på de to hændelsestyper pygame.KEYUP og pygame.KEYDOWN. 
+   Skal spillet reagere forskelligt på de to?
+\end{enumerate}
+\subsubsection{Links:}
+\begin{enumerate}
+\item Pygames hændelseshåndteringsmodul: http://www.pygame.org/docs/ref/event.html
+\item Pygames liste af tastatur-konstanter: http://www.pygame.org/docs/ref/key.html
+\item Kort opsummering af begerebet hændelseshåndtering: http://en.wikipedia.org/wiki/Event\_handler
+\item Mini-tutorial om hændelseshåndtering: http://lorenzod8n.wordpress.com/2007/05/30/pygame-tutorial-3-mouse-events/
+\item Pygames egen tutorial om hændelser mm. : http://inventwithpython.com/chapter18.html
+\end{enumerate}
+
+\subsection{Trin 10: Oprettelse af Gold-klassen}
+\subsubsection{Skelet:} 
+\begin{verbatim}
+Intet skelet udleveres. 
+\end{verbatim}
+\subsubsection{Beskrivelse:}
+Nu hvor vi har en spiller og en bane med mure kan du 
+oprette præmier som din spiller kan samle op. Som det 
+både var tilfældet med spilleren og væggene skal du
+oprette en klasse til at modellere dine præmier. 
+//
+Udover de standardattributter som klassen skal have
+(billede, rect etc), bør du overveje hvordan denne 
+klasse skal relatere sig til Player-klassen. Hvad skal 
+der ske når spilleren samler en præmie op? Hvilken 
+klasse skal opdateres i det tilfælde?
+//
+Når du har oprettet klassen skal du (selvfølgelig)
+sørge for at den bliver tiløjet til data.py det
+rigtige sted. Du skal dog også kigge på hvor du
+kan initialisere dine præmier, så at de bliver
+tegnet i den bane der bliver spillet på.  
+
+\subsubsection{Hints:}
+\begin{enumerate}
+\item Overvej helt præcis hvad der skal ske
+når din spiller samler en præmie op. Har du
+brug for en metode til at simulere det?
+\item Er der andre klasser der skal opdateres
+nu hvor du har en præmie-klasse?
+\item Overvej hvilken del af programmet der 
+lagrer information om hvad der er til stede 
+på selve banen. Hvordan kan du sørge for at
+dine præmier bliver initialiseret dér?
+\end{enumerate}
+\subsubsection{Links:}
+\begin{enumerate}
+\item Der er ingen links til dette trin. 
 \end{enumerate}
 
 \end{document}
