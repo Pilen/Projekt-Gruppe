@@ -243,18 +243,38 @@ af grænsefladen. \begin{figure}[h]
 \end{figure}
 \newpage
 
-
-
 \section{Implementering af IT-løsningen}
+Status på implementeringen af selve klienten (som er det egentlige produkt 
+i dette projekt) er desværre på samme status som brugergrænsefladen. Hvad vi
+har fokuseret på at kode hidtil har været det spil der fungerer som det 
+underliggende data for klienten, og som de enkelte trin tager udgangspunkt i.
 
+\paragraph {} 
+Hele spillet er på nuværende tidspunkt kørende og afprøvet, og indeholder al den data vi
+gerne ville have at give brugere i udviklingsarbejdet (bl.a. har vi lavet
+en række ikoner til brug i tegningen af de forskellige entititeter i spillet). 
+Den kildekode der er vedhæftet denne rapport er fra spillets model.py-modul, som
+lagrer alle klasserne i spillet samt enkelte af de metoder de deler. 
 
+\paragraph {} 
+Alt i alt består vores spil af følgende moduler: 
+\begin{itemize}
+\item \textit{game.py} indeholder \"main\" metoden, det er herfra spillet startes. Derudover indeholder den selve spilløkken.
+\item \textit{model.py} indeholder alle de klasser der er i spillet, her er alle spilobjekterne defineret.
+\item \textit{data.py} er en slags database over alt i spillet. Modulet holder styr på de forskellige spilkonstanter så som vinduestørrelsen, samt sæt af spillets objekter. Når et nyt objekt bliver oprettet skal det tilføje sig i de relevante grupper så de bliver opdateret og vist korrekt.
+\item \textit{mapping.py} banerne til spillet består af simple tekstfiler der indlæses og gemmes i data modulet. Når banerne er blevet indlæst er der funktionalitet i mapping modulet der kan omsætte banen til faktiske objekter.
+\item \textit{direction.py} Udgør enums for alle 4 verdenshjørner, modulet bliver brugt til bevægelse af spilleren.
+\item \textit{functions.py} indeholder enkelte funktioner som var for generelle til at passe ind i andre moduler.
+\item \textit{resources.py} indeholder alt funktionalitet der har med faktisk indlæsning af data at gøre.
+\end{itemize}
 
+Udover disse filer findes to mapper \textit{images} som indeholder alt billedmaterialle, samt \textit{maps} der indeholder banefiler.
 
 \section{Projektsamarbejdet}
 \subsection{Projektstyring}
 Siden sidste rapport har langt størstedelen af vores arbejde været rettet imod
-fremstilling af trinene til projektet og klargøring af test af disse. Tre trin
-af disse er vedlagt nærværende rapport (se bilag). Processen
+fremstilling af trinene til projektet og klargøring af test af disse. Fem af trinene
+er vedlagt nærværende rapport (se bilag). Processen
 omkring begge disse opgaver har været langt fra optimal: Selve udfærdigelsen af 
 trinene trak ud længere end det burde have gjort, eftersom samtlige gruppemedlemmer
 har været under forskellige former for tidspres, og generelt været dårlige til 
@@ -455,7 +475,10 @@ hvordan reglerne ifbm. monstre og guld var). Herefter foregik afprøvningen af d
 udvalgte trin ved at vi læste højt/forklarede den beskrivelse der indleder hvert 
 trin, og stillede de spørgsmål som trinnet indeholdt. I tilfælde hvor trinnene
 fokuserede på teknisk specifikke ting (fx. pygames klasser eller datastrukturer) 
-valgte vi at omformulere spørgsmålene så at de blev mere generelle. Når testpersonerne havde
+valgte vi at omformulere spørgsmålene så at de blev mere generelle. I tilfælde hvor 
+opgaverne i trinnene afhang af kendskab til data eller funktionalitet i andre dele 
+af programmet valgte vi enten at skitsere kort hvad der var i bemeldte del af programmet, 
+eller omformulere opgaven så at den blev uafhængig af den programdel. Når testpersonerne havde
 svært ved at forstå opgaven eller ikke kunne komme på en måde at løse opgaven
 gav vi dem de hints der ligeledes indgår i hvert trin. 
 
@@ -765,5 +788,8 @@ dine præmier bliver initialiseret dér?
 \begin{enumerate}
 \item Der er ingen links til dette trin. 
 \end{enumerate}
+
+\section{Kildekode}
+\lstinputlisting{model.py}
 
 \end{document}
