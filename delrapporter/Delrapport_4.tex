@@ -119,49 +119,51 @@ Det vil være gennem dette lag at brugeren inteagerer med de dybere lag.
 
 \section{Arkitektur}
 
-Komponentarkitektur: {Klassediagram sættes ind her}
+\subsection{Komponentarkitektur}
+Vores komponentarkitektur er opdelt i tre lag: klienten 
+(hvis ansvar det er at hente dataet fra de forskellige trin og vise dem), modelkomponentet
+(som opbevarer de forskellige trin og holder styr på hvor langt brugeren er i forløbet
+og således hvilke trin der kan blive vist og hvilke hints der kan blive givet)
+og så de tests der bliver kørt i forbindelse med hvert trin. To komponenter kan 
+siges at agere sideløbende med vores program, navnligt brugerens eget tekstredigeringsværktøj
+og selve det spil som brugeren arbejder på, som lagres lokalt på brugerens datamat. 
 
-Klassen "Bruger" er hvor det bestemmes hvilken opgaver man har og ikke har
-lavet, hvor klassen "Opgaver" bestemmer forløbet. Under klassen "Spil" valgte 
-vi at generalisere "Færdig" og "Ikke Færdig/Fejl", hvilket bestemmer om brugeren 
-har lov til at fortsætte med den næste opgave, eller skal arbejde videre med den 
-opgave som de er i gang med. Disse to associeringer kan også aggregere "Opgaver" og 
-"Forløb" hvis de rigtige betingelser er mødt.
+\subsection{Procesarkitektur:} Vores system bliver udført på gymnasiets datamater eller
+elevernes egne foldedatamater. Potentielle 
+problemer med samtidige processer forventes at blive løst af operativsystemet. 
+Kontrollen over vores system ligger i modelkompnentet  og klientkomponentet, hvilket er 
+håndteret af operativsystemet (og i mindre grad, af den tekst editor som brugeren 
+bruger). 
 
-Procesarkitektur: Vores system bliver udført på gymnasiets datamater. Potentielle 
-problemer med de forskellige processer forventes at blive løst af operativsystemet. 
-Kontrollen over vores system ligger i brugergrænsefladenkomponentet, hvilket er 
-håndteret af operativsystemet, (og i mindre grad, af den tekst editor som brugeren 
-bruger). Defor kan vi ikke lave en fordelingsdiagram.
-
-Standarder: Designet af de forskellige vinduer og fejlbeskeder vil følge ikke følge 
+\subsection{Standarder:} Designet af de forskellige vinduer og fejlbeskeder vil følge ikke følge 
 en bestemt standard, da vi vil integrere dem med vores system så at de passer med 
 vores systems design. 
 
-
 \section{Modelkomponent og Funktionskomponent}
-\subsection{Punktet giver ikke mening for os}
-At snakke om komponentstruktur i vores programmel giver ikke rigtig mening.
-Brugeren kan skifte trin, hvilket får programmet til at køre nogle tests eller
-man kan bede om flere hints. Så reelt set har vi et modelkomponent, der holder
-styr på hvilket trin brugeren er ved og hvilke hints, der er vist. Og et
-funktionskomponent, der kan skife trin, vise hints og signalere til model-
-komponentet om disse.
-
-Vores stykke software handler mere om dets data, end om dets selvstændige
-funktionalitet, og der er ikke så frygteligt meget at sige om det.
-
-
 \subsection{Modelkomponentet}
 Vores modelkomponenet holder styr på hvor langt brugeren er i forløbet og
-hvilke tests, der skal køres på dennes kode. Desuden holder den styr på, hvor
+hvilke tests, der skal køres på dennes kode. Desuden holder det styr på, hvor
 mange hints, der er vist.
 
+\subsubsection{Klasser i modelkomponentet}
+Klassen "Bruger" er hvor det bestemmes hvilken opgaver man har og ikke har
+lavet, hvor klassen "Opgaver" bestemmer de forløb en bruger kan være i gang med
+eller have gennemørt. Under klassen "Spil" valgte 
+vi at generalisere de to states "Færdig" og "Ikke Færdig/Fejl", hvilket bestemmer om brugeren 
+har lov til at fortsætte med den næste opgave, eller skal arbejde videre med den 
+opgave som de er i gang med. Klassen "Test" refererer til de grupper af tests
+der er associeret med hvert enkelt trin, og som modellen kalder når klienten 
+signalerer at brugeren er nået til et bestemt trin.  
+
 \subsection{Funktionskomponent}
-Funktionskomponentet er kun relevant for når brugeren skifter trin, når dette
-sker kørers der test og det signaleres til modelkomponentet, hvis testene ikke
-finder fejl. Ligeledes hvis brugeren ønsker et hint opdateres modelkomponentet,
-og et nyt hint vises.
+Vi har som sådan ikke rigtig arbejdet med et separat funktionskomponent, eftersom vores
+modelkomponent indeholder de funktioner som kontrollerer programmet (i 
+samarbejde med klienten). Man kan muligvis argumentere for at klienten selv 
+er en form for funktionskomponent, da det er denne del af programmet der 
+signalerer til modelkomponentet hvor brugeren er i et forløb - dog er 
+klienten også ansvarlig for opgaven at vise selve grænsefladen for brugeren, og
+kan ikke kaldes udelukkende et funktionskomponent. 
+
 
 \section{Projektsamarbejdet}
 \subsection{Projektstyring}
